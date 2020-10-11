@@ -1,0 +1,16 @@
+{
+  "GENERAL": {
+    "SUBJECT": "Asignatura",
+    "MATH": "Matematicas",
+    "ENGLISH": "Ingles",
+    "MUSIC": "Musica",
+    "DEV": "Desarrollo web",
+    "SEARCH": "Buscar"
+  },
+  "MENU": {
+    "LOGIN": "Login",
+    "REGISTER": "Registro",
+    "LOGOUT": "Desconectar",
+    "PRIVATE_AREA": "Area privada"
+  }
+}
