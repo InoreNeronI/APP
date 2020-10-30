@@ -1,5 +1,7 @@
 {
   "GENERAL": {
+    "LOGIN": "Login",
+    "REGISTER": "Registro",
     "SUBJECT": "Asignatura",
     "MATH": "Matematicas",
     "ENGLISH": "Ingles",
