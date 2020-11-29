@@ -28,6 +28,11 @@
           </li>
 
         </ul>
+        <div>
+          Lang:
+          <button (click)="changeLang('es')">ES</button>
+          <button (click)="changeLang('en')">EN</button>
+        </div>
         <div class="nav-item d-flex" *ngIf="authService.isLogged()">
           <a class="nav-link" (click)="logout()" routerLinkActive="active">Logout</a>
         </div>

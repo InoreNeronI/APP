@@ -12,10 +12,14 @@ export class AppComponent {
 
   constructor(
     public authService: AuthService,
-    translate: TranslateService
+    public translate: TranslateService
   ) {
     translate.setDefaultLang('es');
     translate.use('es');
+  }
+
+  changeLang(lang: string):void{
+    this.translate.use(lang);
   }
 
   logout(): void {

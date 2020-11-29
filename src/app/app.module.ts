@@ -7,6 +7,9 @@ import { AuthService } from './auth/services/auth.service';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import {AngularEditorModule} from '@kolkov/angular-editor';
 
 export function createTranslateLoader(http: any) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -26,7 +29,9 @@ export function createTranslateLoader(http: any) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularEditorModule
   ],
   providers: [
     AuthService

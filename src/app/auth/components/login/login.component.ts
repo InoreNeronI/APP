@@ -11,6 +11,11 @@ export class LoginComponent implements OnInit{
   error: boolean;
   loading = true;
 
+  subject = {
+    title: 'mate',
+    nivel: 'medio'
+  };
+
   form: FormGroup = new FormGroup({
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
