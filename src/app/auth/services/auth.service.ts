@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment} from '../../../environments/environment';
+import { HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
@@ -7,40 +9,51 @@ export class AuthService {
   private currentToken;
 
   constructor(
+    private http: HttpClient,
     private router: Router
     //private _http: HttpClient,
   ) { }
 
-  login({ username, password }): boolean{
-    const users: any[] = JSON.parse(localStorage.getItem('users')); // todo: user model
-    const loggedUser = users?.filter(user => user.username === username && user.password === password);
+  login({ email, password }) {
 
-    if (loggedUser && loggedUser.length > 0) {
-      localStorage.setItem('currentUser', JSON.stringify(username));
-      this.router.navigate(['/ships']);
-      return false;
-    } else {
-      return true;
-    }
+    const response$ = this.http.post(
+      environment.api.login,
+      {
+        observe: 'response',
+        email,
+        password
+      }
+    );
+
+    response$.subscribe(response => {
+      if(response){
+        localStorage.setItem('currentUser', JSON.stringify(email));
+        this.router.navigate(['/']);
+      }
+    });
+
+    return response$;
+
   }
 
-  register({firstName, lastName, username, password}): boolean {
-    const registeredUsers = JSON.parse(localStorage.getItem('users'));
-
-    if (registeredUsers && registeredUsers.length > 0) {
-      const foundUser = registeredUsers.filter(user =>  user.username === username);
-      if (foundUser && foundUser.length > 0) {
-        // username already exists
-        return true;
+  register({firstName, lastName, email, password}) {
+    const response$ = this.http.post(
+      environment.api.user,
+      {
+        observe: 'response',
+        email,
+        password
       }
-    }
+    )
 
-    const users = registeredUsers ? registeredUsers : [];
-    users.push({firstName, lastName, username, password});
-    localStorage.setItem('users', JSON.stringify(users));
-    this.router.navigate(['/auth']);
+    response$.subscribe(response =>{
+      console.log(response);
+      if(response && response['id']){
+        this.router.navigate(['/auth']);
+      }
+    });
 
-    return false;
+    return response$;
   }
 
   isLogged(): boolean {

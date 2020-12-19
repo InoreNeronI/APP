@@ -8,7 +8,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit{
-  error: boolean;
+  error: any;
   loading = true;
 
   subject = {
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit{
   };
 
   form: FormGroup = new FormGroup({
-    username: new FormControl('', Validators.required),
+    email: new FormControl('',[Validators.required, Validators.email] ),
     password: new FormControl('', Validators.required)
   });
 
@@ -30,7 +30,17 @@ export class LoginComponent implements OnInit{
   }
 
   login(): void {
-    this.error = this.authService.login(this.form.value);
+    const resp = this.authService.login(this.form.value);
+
+    resp.subscribe(
+      (response) => {
+        console.log('response received')
+      },
+      (error) => {
+        console.error('error caught in component')
+        this.error = error;
+      }
+    );
   }
 
 

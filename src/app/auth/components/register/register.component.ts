@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
-    username: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.email, Validators.required ] ),
     password: new FormControl('', Validators.required)
   });
 
@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register(): void {
-    this.error = this.authService.register(this.form.value);
+    this.authService.register(this.form.value);
   }
 
 }
