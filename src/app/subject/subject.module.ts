@@ -9,14 +9,16 @@ import { AnswerComponent } from './components/answer/answer.component';
 import {ExerciseService} from './services/exercise.service';
 import {UnitService} from './services/unit.service';
 import {SubjectService} from './services/subject.service';
+import {TranslateModule} from "@ngx-translate/core";
 
 
 @NgModule({
   declarations: [TestComponent, SubjectComponent, QuestionComponent, AnswerComponent],
-  imports: [
-    CommonModule,
-    SubjectRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        SubjectRoutingModule,
+        TranslateModule
+    ],
   providers: [
     ExerciseService,
     SubjectService,

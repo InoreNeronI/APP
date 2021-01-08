@@ -14,12 +14,21 @@ export class AppComponent {
     public authService: AuthService,
     public translate: TranslateService
   ) {
-    translate.setDefaultLang('es');
-    translate.use('es');
+    const lang = this.getLang();
+    translate.setDefaultLang(lang);
+    translate.use(lang);
   }
 
   changeLang(lang: string):void{
     this.translate.use(lang);
+  }
+
+  getLang():string{
+    const lang = navigator.language.slice(0, 2);
+    if (['en', 'es', 'eu'].indexOf(lang) != -1) {
+      return lang;
+    }
+    return 'en';
   }
 
   logout(): void {

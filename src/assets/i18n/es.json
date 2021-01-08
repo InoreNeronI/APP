@@ -1,18 +1,17 @@
 {
-  "GENERAL": {
-    "LOGIN": "Login",
-    "REGISTER": "Registro",
-    "SUBJECT": "Asignatura",
-    "MATH": "Matemáticas",
-    "ENGLISH": "Ingles",
-    "MUSIC": "Musica",
-    "DEV": "Desarrollo web",
-    "SEARCH": "Buscar"
-  },
-  "MENU": {
-    "LOGIN": "Login",
-    "REGISTER": "Registro",
-    "LOGOUT": "Desconectar",
-    "PRIVATE_AREA": "Area privada"
-  }
+  "BASQUE": "Vasco",
+  "DEV": "Desarrollo",
+  "ENGLISH": "Inglés",
+  "ICON": "Icono",
+  "LANGUAGE": "Idioma",
+  "LOGIN": "Iniciar sesión",
+  "LESSON": "Lección",
+  "LOGOUT": "Cerrar sesión",
+  "MATH": "Matemáticas",
+  "MUSIC": "Música",
+  "PRIVATE_AREA": "Área privada",
+  "REGISTER": "Registro",
+  "SIGN": "Iniciar sesión / Registro",
+  "SPANISH": "Español",
+  "SEARCH": "Buscar"
 }

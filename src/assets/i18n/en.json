@@ -1,15 +1,17 @@
 {
-  "GENERAL": {
-    "MATH": "Math",
-    "ENGLISH": "English",
-    "MUSIC": "Music",
-    "DEV": "Development",
-    "SEARCH": "Search"
-  },
-  "MENU": {
-    "LOGIN": "SignIn",
-    "REGISTER": "SignUp",
-    "LOGOUT": "LogOut",
-    "PRIVATE_AREA": "Private area"
-  }
+  "BASQUE": "Basque",
+  "DEV": "Development",
+  "ENGLISH": "English",
+  "ICON": "Icon",
+  "LANGUAGE": "Language",
+  "LOGIN": "Sign in",
+  "LESSON": "Lesson",
+  "LOGOUT": "Logout",
+  "MATH": "Math",
+  "MUSIC": "Music",
+  "PRIVATE_AREA": "Private area",
+  "REGISTER": "Sign up",
+  "SIGN": "Sign in / Sign up",
+  "SPANISH": "Spanish",
+  "SEARCH": "Search"
 }
