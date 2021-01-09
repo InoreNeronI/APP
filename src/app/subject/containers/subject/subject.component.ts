@@ -20,8 +20,7 @@ export class SubjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      console.log(params)
-      this.translate.get(params.get('subject').toUpperCase()).subscribe((text:string) => this.subject = text);
+      this.subject = params.get('subject').toUpperCase();
     });
 
     this.subjectService.getSubjects({page: 1}).subscribe(data => {
