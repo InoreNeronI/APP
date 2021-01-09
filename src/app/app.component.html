@@ -40,9 +40,15 @@
               <img src="https://material-icons.github.io/material-icons-png/png/white/translate/baseline.png" alt="{{'LANGUAGE' | translate}}">
             </button>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownLanguageButton">
-              <li><a class="dropdown-item" (click)="changeLang('en')">{{'ENGLISH' | translate}}</a></li>
-              <li><a class="dropdown-item" (click)="changeLang('es')">{{'SPANISH' | translate}}</a></li>
-              <li><a class="dropdown-item" (click)="changeLang('eu')">{{'BASQUE' | translate}}</a></li>
+              <li *ngIf="!isLang('en')">
+                <a class="dropdown-item" (click)="changeLang('en')">{{'ENGLISH' | translate}}</a>
+              </li>
+              <li *ngIf="!isLang('es')">
+                <a class="dropdown-item" (click)="changeLang('es')">{{'SPANISH' | translate}}</a>
+              </li>
+              <li *ngIf="!isLang('eu')">
+                <a class="dropdown-item" (click)="changeLang('eu')">{{'BASQUE' | translate}}</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -53,7 +59,7 @@
             </button>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownUserButton">
               <li *ngIf="authService.isLogged()">
-                <a class="dropdown-item" (click)="logout()" routerLinkActive="active">Logout</a>
+                <a class="dropdown-item" (click)="logout()" routerLinkActive="active">{{'LOGOUT' | translate}}</a>
               </li>
               <li *ngIf="!authService.isLogged()">
                 <a class="dropdown-item" routerLink="/auth/login" routerLinkActive="active">{{'LOGIN' | translate}}</a>

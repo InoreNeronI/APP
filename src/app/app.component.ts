@@ -19,16 +19,20 @@ export class AppComponent {
     translate.use(lang);
   }
 
-  changeLang(lang: string):void{
+  changeLang(lang: string): void {
     this.translate.use(lang);
   }
 
-  getLang():string{
+  getLang(): string {
     const lang = navigator.language.slice(0, 2);
     if (['en', 'es', 'eu'].indexOf(lang) != -1) {
       return lang;
     }
     return 'en';
+  }
+
+  isLang(lang: string): boolean {
+    return this.translate.currentLang === lang;
   }
 
   logout(): void {

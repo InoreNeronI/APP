@@ -14,11 +14,11 @@ import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [TestComponent, SubjectComponent, QuestionComponent, AnswerComponent],
-    imports: [
-        CommonModule,
-        SubjectRoutingModule,
-        TranslateModule
-    ],
+  imports: [
+    CommonModule,
+    SubjectRoutingModule,
+    TranslateModule
+  ],
   providers: [
     ExerciseService,
     SubjectService,
