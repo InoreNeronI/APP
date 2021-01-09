@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {SubjectService} from '../../services/subject.service';
-import {TranslateService} from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
+import { SubjectService } from '../../services/subject.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-subject',
@@ -9,7 +9,6 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./subject.component.sass']
 })
 export class SubjectComponent implements OnInit {
-
   subject;
 
   constructor(
@@ -27,5 +26,4 @@ export class SubjectComponent implements OnInit {
       console.log(data);
     });
   }
-
 }

@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid align-items-end align-items-lg-start">
         <a class="navbar-brand" id="dropdownMainButton" routerLink="/" routerLinkActive="active">
-          <img src="https://material-icons.github.io/material-icons-png/png/black/school/baseline.png" alt="{{'ICON' | translate}}" class="d-inline-block align-top"> {{title}}
+          <img src="https://material-icons.github.io/material-icons/svg/school/baseline.svg" alt="{{'ICON' | translate}}" class="d-inline-block align-top"> {{title}}
         </a>
         <div class="main-nav-menu order-last order-lg-0 text-end">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,22 +13,22 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" aria-labelledby="dropdownMainButton">
               <li class="nav-item">
                 <a class="nav-link" routerLink="/subject/math" routerLinkActive="active">
-                  <img src="https://material-icons.github.io/material-icons-png/png/black/functions/baseline.png" alt="{{'MATH' | translate}}" class="d-inline-block align-top"> {{'MATH' | translate}}
+                  <img src="https://material-icons.github.io/material-icons/svg/functions/baseline.svg" alt="{{'MATH' | translate}}" class="d-inline-block align-top"> {{'MATH' | translate}}
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="/subject/music" routerLinkActive="active">
-                  <img src="https://material-icons.github.io/material-icons-png/png/black/music_note/baseline.png" alt="{{'MUSIC' | translate}}" class="d-inline-block align-top"> {{'MUSIC' | translate}}
+                  <img src="https://material-icons.github.io/material-icons/svg/music_note/baseline.svg" alt="{{'MUSIC' | translate}}" class="d-inline-block align-top"> {{'MUSIC' | translate}}
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="/subject/english" routerLinkActive="active">
-                  <img src="https://material-icons.github.io/material-icons-png/png/black/language/baseline.png" alt="{{'ENGLISH' | translate}}" class="d-inline-block align-top"> {{'ENGLISH' | translate}}
+                  <img src="https://material-icons.github.io/material-icons/svg/language/baseline.svg" alt="{{'ENGLISH' | translate}}" class="d-inline-block align-top"> {{'ENGLISH' | translate}}
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="/subject/dev" routerLinkActive="active">
-                  <img src="https://material-icons.github.io/material-icons-png/png/black/code/baseline.png" alt="{{'DEV' | translate}}" class="d-inline-block align-top"> {{'DEV' | translate}}
+                  <img src="https://material-icons.github.io/material-icons/svg/code/baseline.svg" alt="{{'DEV' | translate}}" class="d-inline-block align-top"> {{'DEV' | translate}}
                 </a>
               </li>
             </ul>
@@ -36,10 +36,10 @@
         </div>
         <div class="main-nav-menu me-2 me-lg-0 order-1">
           <div class="dropstart text-end">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownLanguageButton" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://material-icons.github.io/material-icons-png/png/white/translate/baseline.png" alt="{{'LANGUAGE' | translate}}">
+            <button class="border btn btn-light dropdown-toggle" type="button" id="dropdownLanguageButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://material-icons.github.io/material-icons/svg/translate/baseline.svg" alt="{{'LANGUAGE' | translate}}">
             </button>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownLanguageButton">
+            <ul class="dropdown-menu" aria-labelledby="dropdownLanguageButton">
               <li *ngIf="!isLang('en')">
                 <a class="dropdown-item" (click)="changeLang('en')">{{'ENGLISH' | translate}}</a>
               </li>
@@ -54,10 +54,10 @@
         </div>
         <div class="main-nav-menu me-2 me-lg-0 order-2">
           <div class="dropstart text-end">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUserButton" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://material-icons.github.io/material-icons-png/png/white/face/baseline.png" alt="{{'SIGN' | translate}}">
+            <button class="border btn btn-light dropdown-toggle" type="button" id="dropdownUserButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://material-icons.github.io/material-icons/svg/face/baseline.svg" alt="{{'SIGN' | translate}}">
             </button>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownUserButton">
+            <ul class="dropdown-menu" aria-labelledby="dropdownUserButton">
               <li *ngIf="authService.isLogged()">
                 <a class="dropdown-item" (click)="logout()" routerLinkActive="active">{{'LOGOUT' | translate}}</a>
               </li>
@@ -79,5 +79,7 @@
   <section class="d-flex flex-fill justify-content-center align-items-center">
     <router-outlet></router-outlet>
   </section>
-  <footer class="border border-secondary text-center">© {{title}}</footer>
+  <footer class="bg-light border-top text-center">
+    <img src="https://material-icons.github.io/material-icons/svg/copyright/baseline.svg" alt="Copyright"> {{title}}
+  </footer>
 </main>
