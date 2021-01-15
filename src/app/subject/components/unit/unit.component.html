@@ -1,0 +1,7 @@
+<h3>{{unit.title}}</h3>
+
+<p [innerHTML]="unit.text"></p>
+
+<h4>{{'EXERCISES' | translate}}</h4>
+
+<app-exercise *ngFor="let exercise of exercises" [exercise]="exercise"></app-exercise>

@@ -1,12 +1,10 @@
 {
   "BASQUE": "Euskara",
   "DESCRIPTION": "Ikasgai desberdinen ikaskuntzarako aplikazioa: matematika, musika, ingelesa eta garapena.",
-  "DEV": "Garapena",
   "CANCEL": "Utzi",
   "EMAIL": "Posta elektronikoa",
   "EMAIL_EXISTS": "Posta elektronikoa lehendik badago",
   "EMAIL_REQUIRED": "Posta elektronikoa beharrezkoa da",
-  "ENGLISH": "Ingelesa",
   "FIRST_NAME": "Izena",
   "FIRST_NAME_REQUIRED": "Izena beharrezkoa da",
   "ICON": "Ikonoa",
@@ -15,9 +13,12 @@
   "LAST_NAME_REQUIRED": "Abizena beharrezkoa da",
   "LOGIN": "Hasi saioa",
   "LESSON": "Ikasgaia",
+  "COURSES": "Kurtxoak",
   "LOGOUT": "Saioa amaitu",
   "MATH": "Matematika",
   "MUSIC": "Musika",
+  "DEV": "Programazioa",
+  "ENGLISH": "Ingelesa",
   "PASSWORD": "Pasahitza",
   "PASSWORD_REQUIRED": "Pasahitza beharrezkoa da",
   "PRIVATE_AREA": "Eremu pribatua",
@@ -25,5 +26,9 @@
   "SIGN": "Hasi saioa / Izena eman",
   "SPANISH": "Gaztelania",
   "SEARCH": "Bilatu",
-  "TEST": "Proba"
+  "TEST": "Proba",
+  "TRUE": "Egia",
+  "FALSE": "Gezurra",
+  "UNITS": "Unitateak",
+  "EXERCISES": "Ariketak"
 }

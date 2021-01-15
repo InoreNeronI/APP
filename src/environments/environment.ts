@@ -9,9 +9,10 @@ export const environment = {
   apiUrl: basePublicUrl,
   api: {
     login: `${baseUrl}/login`,
-    exercise: `${basePublicUrl}/exercises`,
     subject: `${basePublicUrl}/subjects`,
+    course: `${basePublicUrl}/courses`,
     unit : `${basePublicUrl}/units`,
+    exercise: `${basePublicUrl}/exercises`,
     user : `${basePublicUrl}/users`
   }
 };

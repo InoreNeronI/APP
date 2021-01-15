@@ -1,12 +1,10 @@
 {
   "BASQUE": "Vasco",
   "DESCRIPTION": "Aplicación de aprendizaje de diferentes asignaturas: matemática, música, inglés y desarrollo.",
-  "DEV": "Desarrollo",
   "CANCEL": "Cancelar",
   "EMAIL": "Correo electrónico",
   "EMAIL_EXISTS": "El correo electrónico ya existe",
   "EMAIL_REQUIRED": "Se requiere correo electrónico",
-  "ENGLISH": "Inglés",
   "FIRST_NAME": "Nombre",
   "FIRST_NAME_REQUIRED": "Se requiere el nombre",
   "ICON": "Icono",
@@ -15,9 +13,12 @@
   "LAST_NAME_REQUIRED": "Se requiere el apellido",
   "LOGIN": "Iniciar sesión",
   "LESSON": "Lección",
+  "COURSES": "Cursos",
   "LOGOUT": "Cerrar sesión",
   "MATH": "Matemáticas",
   "MUSIC": "Música",
+  "DEV": "Desarrollo",
+  "ENGLISH": "Inglés",
   "PASSWORD": "Contraseña",
   "PASSWORD_REQUIRED": "Se requiere contraseña",
   "PRIVATE_AREA": "Área privada",
@@ -25,5 +26,9 @@
   "SIGN": "Iniciar sesión / Registro",
   "SPANISH": "Español",
   "SEARCH": "Buscar",
-  "TEST": "Prueba"
+  "TEST": "Prueba",
+  "TRUE": "Verdadero",
+  "FALSE": "Falso",
+  "UNITS": "Unidades",
+  "EXERCISES": "Ejercicios"
 }

@@ -1,6 +1,8 @@
 <div class="subject-box">
-  <h1>{{subject | translate}}</h1>
-  <p>{{'LESSON' | translate}}:</p>
+  <h1>{{subjectName | uppercase | translate}}</h1>
 
-  <app-test [id]="1"></app-test>
+  <h2>{{'UNITS' | translate}}:</h2>
+
+  <app-unit *ngFor="let unit of units" [unit]="unit"></app-unit>
+
 </div>

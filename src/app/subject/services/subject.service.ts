@@ -15,26 +15,19 @@ export class SubjectService {
     const params = new HttpParams().append('page', page);
 
     return this.http.get(
-      environment.api.exercise,
-      {
-        params,
-        observe: 'response'
-      }
+      environment.api.subject
     );
   }
 
   getSubject({ id }){
     return this.http.get(
-      environment.api.exercise + '/' + id,
-      {
-        observe: 'response'
-      }
+      environment.api.subject + '/' + id
     );
   }
 
   addSubject({ id }){
     return this.http.post(
-      environment.api.exercise + '/' + id,
+      environment.api.subject + '/' + id,
       {
         observe: 'response'
       }
@@ -43,7 +36,7 @@ export class SubjectService {
 
   editSubject({ id }){
     return this.http.put(
-      environment.api.exercise + '/' + id,
+      environment.api.subject + '/' + id,
       {
         observe: 'response'
       }
@@ -52,7 +45,7 @@ export class SubjectService {
 
   deleteSubject({ id }){
     return this.http.delete(
-      environment.api.exercise + '/' + id,
+      environment.api.subject + '/' + id,
       {
         observe: 'response'
       }

@@ -13,19 +13,13 @@ export class ExerciseService {
 
   getExercises({ pag }){
     return this.http.get(
-      environment.api.exercise,
-      {
-        observe: 'response'
-      }
+      environment.api.exercise
     );
   }
 
   getExercise({ id }){
     return this.http.get(
-      environment.api.exercise + '/' + id,
-      {
-        observe: 'response'
-      }
+      environment.api.exercise + '/' + id
     );
   }
 
