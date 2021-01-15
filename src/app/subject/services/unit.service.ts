@@ -1,54 +1,51 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import { environment} from '../../../environments/environment';
 
 @Injectable()
-export class UnitService {
+export class CourseService {
+
   constructor(
     private http: HttpClient,
     private router: Router
   ) { }
 
-  getUnits({ pag }){
+  getCourses({ page }){
+    const params = new HttpParams().append('page', page);
+
     return this.http.get(
-      environment.api.exercise,
-      {
-        observe: 'response'
-      }
+      environment.api.course
     );
   }
 
-  getUnit({ id }){
+  getCourse({ id }){
     return this.http.get(
-      environment.api.exercise + '/' + id,
-      {
-        observe: 'response'
-      }
+      environment.api.course + '/' + id
     );
   }
 
-  addUnit({ id }){
+  addCourse({ id }){
     return this.http.post(
-      environment.api.exercise + '/' + id,
+      environment.api.course + '/' + id,
       {
         observe: 'response'
       }
     );
   }
 
-  editUnit({ id }){
+  editCourse({ id }){
     return this.http.put(
-      environment.api.exercise + '/' + id,
+      environment.api.course + '/' + id,
       {
         observe: 'response'
       }
     );
   }
 
-  deleteUnit({ id }){
+  deleteCourse({ id }){
     return this.http.delete(
-      environment.api.exercise + '/' + id,
+      environment.api.course + '/' + id,
       {
         observe: 'response'
       }
