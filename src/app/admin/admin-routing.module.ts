@@ -5,7 +5,7 @@ import { NewItemComponent} from "./components/new-item/new-item.component";
 
 const routes: Routes = [
   { path: '', component: AdminComponent },
-  { path: '/new', component: NewItemComponent },
+  { path: 'new', component: NewItemComponent },
 ];
 
 @NgModule({
