@@ -1,16 +1,16 @@
 <main class="d-flex flex-column">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid align-items-end align-items-lg-start">
-        <a class="navbar-brand" id="dropdownMainButton" routerLink="/" routerLinkActive="active">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-1">
+      <div class="container-fluid p-1 px-sm-2 px-lg-3 px-xxl-4">
+        <a class="navbar-brand m-0" id="dropdownMainButton" routerLink="/" routerLinkActive="active">
           <img src="https://material-icons.github.io/material-icons/svg/school/baseline.svg" alt="{{'ICON' | translate}}" class="d-inline-block align-top"> {{title}}
         </a>
         <div class="main-nav-menu order-last order-lg-0 text-end">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler p-1 px-sm-2 px-lg-3 px-xxl-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" aria-labelledby="dropdownMainButton">
+            <ul class="navbar-nav" aria-labelledby="dropdownMainButton">
               <li class="nav-item">
                 <a class="nav-link" routerLink="/admin" routerLinkActive="active">
                   <img src="https://material-icons.github.io/material-icons/svg/settings/baseline.svg" alt="{{'ADMIN' | translate}}" class="d-inline-block align-top"> {{'ADMIN' | translate}}
@@ -39,9 +39,9 @@
             </ul>
           </div>
         </div>
-        <div class="main-nav-menu me-2 me-lg-0 order-1">
+        <div class="main-nav-menu order-1">
           <div class="dropend">
-            <button class="border btn btn-light dropdown-toggle" type="button" id="dropdownLanguageButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="border btn btn-light dropdown-toggle p-1 px-sm-2 px-lg-3 px-xxl-4" type="button" id="dropdownLanguageButton" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://material-icons.github.io/material-icons/svg/translate/baseline.svg" alt="{{'LANGUAGE' | translate}}">
             </button>
             <ul class="dropdown-menu text-start" aria-labelledby="dropdownLanguageButton">
@@ -57,9 +57,9 @@
             </ul>
           </div>
         </div>
-        <div class="main-nav-menu me-2 me-lg-0 order-2">
+        <div class="main-nav-menu order-2">
           <div class="dropstart">
-            <button class="border btn btn-light dropdown-toggle" type="button" id="dropdownUserButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="border btn btn-light dropdown-toggle p-1 px-sm-2 px-lg-3 px-xxl-4" type="button" id="dropdownUserButton" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://material-icons.github.io/material-icons/svg/face/baseline.svg" alt="{{'SIGN' | translate}}">
             </button>
             <ul class="dropdown-menu text-end" aria-labelledby="dropdownUserButton">
