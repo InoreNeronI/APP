@@ -13,6 +13,7 @@
   "LAST_NAME_REQUIRED": "Abizena beharrezkoa da",
   "LOGIN": "Hasi saioa",
   "LESSON": "Ikasgaia",
+  "LESSONS": "Ikasgaiak",
   "COURSES": "Kurtxoak",
   "LOGOUT": "Saioa amaitu",
   "MATH": "Matematika",
@@ -30,5 +31,6 @@
   "TRUE": "Egia",
   "FALSE": "Gezurra",
   "UNITS": "Unitateak",
-  "EXERCISES": "Ariketak"
+  "EXERCISES": "Ariketak",
+  "ADMIN": "Administrazioa"
 }

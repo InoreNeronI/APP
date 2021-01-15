@@ -13,6 +13,7 @@
   "LAST_NAME_REQUIRED": "Se requiere el apellido",
   "LOGIN": "Iniciar sesión",
   "LESSON": "Lección",
+  "LESSONS": "Lecciones",
   "COURSES": "Cursos",
   "LOGOUT": "Cerrar sesión",
   "MATH": "Matemáticas",
@@ -30,5 +31,7 @@
   "TRUE": "Verdadero",
   "FALSE": "Falso",
   "UNITS": "Unidades",
-  "EXERCISES": "Ejercicios"
+  "EXERCISES": "Ejercicios",
+  "ADMIN": "Administrador"
+
 }

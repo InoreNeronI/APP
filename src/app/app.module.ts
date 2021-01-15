@@ -10,6 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {AngularEditorModule} from '@kolkov/angular-editor';
+import {FormsModule} from "@angular/forms";
 
 export function createTranslateLoader(http: any) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,7 +32,8 @@ export function createTranslateLoader(http: any) {
       }
     }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    AngularEditorModule
+    AngularEditorModule,
+    FormsModule
   ],
   providers: [
     AuthService

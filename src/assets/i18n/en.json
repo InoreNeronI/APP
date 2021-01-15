@@ -12,6 +12,7 @@
   "LAST_NAME": "Last name",
   "LAST_NAME_REQUIRED": "Last name is required",
   "LOGIN": "Sign in",
+  "LESSONS": "Lessons",
   "LESSON": "Lesson",
   "COURSES": "Courses",
   "LOGOUT": "Logout",
@@ -30,5 +31,6 @@
   "TRUE": "True",
   "FALSE": "False",
   "UNITS": "Units",
-  "EXERCISES": "Exercises"
+  "EXERCISES": "Exercises",
+  "ADMIN": "Administrator"
 }
