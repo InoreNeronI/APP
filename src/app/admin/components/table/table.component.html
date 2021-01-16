@@ -3,46 +3,48 @@
   <img src="https://material-icons.github.io/material-icons/svg/add/baseline.svg" alt="{{'ADD' | translate}}" class="d-inline-block align-top"> {{'ADD' | translate}}
 </button>
 
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">First</th>
-    <th scope="col">Last</th>
-    <th scope="col">Handle</th>
-    <th scope="col">{{'ACTIONS' | translate}}</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>@mdo</td>
-    <td>
-      <button>
-        <img src="https://material-icons.github.io/material-icons/svg/edit/baseline.svg" alt="{{'EDIT' | translate}}" class="d-inline-block align-top">
-      </button>
-      <button>
-        <img src="https://material-icons.github.io/material-icons/svg/delete/baseline.svg" alt="{{'DELETE' | translate}}" class="d-inline-block align-top">
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Jacob</td>
-    <td>Thornton</td>
-    <td>@fat</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td colspan="2">Larry the Bird</td>
-    <td>@twitter</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td colspan="2">Larry the Bird</td>
-    <td>@twitter</td>
-  </tr>
-  </tbody>
-</table>
+<div *ngIf="data">
+
+  <table class="table table-bordered" *ngIf="data['hydra:member'] && data['hydra:totalItems']>0">
+    <thead>
+    <tr>
+      <th scope="col">#id</th>
+
+      <th *ngFor="let head of getArrayFieldsFromJSON(data['hydra:member'][0])">
+        {{head}}
+      </th>
+
+      <th scope="col">{{'ACTIONS' | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of data['hydra:member']">
+
+      <th scope="row">{{row.id}}</th>
+
+      <td *ngFor="let column of getArrayDataFromJSON(row)">
+        {{column}}
+      </td>
+
+      <td>
+        <button>
+          <img src="https://material-icons.github.io/material-icons/svg/edit/baseline.svg" alt="{{'EDIT' | translate}}" class="d-inline-block align-top">
+        </button>
+        <button>
+          <img src="https://material-icons.github.io/material-icons/svg/delete/baseline.svg" alt="{{'DELETE' | translate}}" class="d-inline-block align-top">
+        </button>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+
+
+  <p>
+    {{'TOTAL_ITEMS' | translate}}
+  </p>
+  {{data["hydra:totalItems"]}}
+
+</div>
+
+

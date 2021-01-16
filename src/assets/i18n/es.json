@@ -32,6 +32,7 @@
   "FALSE": "Falso",
   "UNITS": "Unidades",
   "EXERCISES": "Ejercicios",
-  "ADMIN": "Administrador"
-
+  "ADMIN": "Administrador",
+  "TOTAL_ITEMS": "Número de elementos",
+  "ACTIONS": "Acciones"
 }

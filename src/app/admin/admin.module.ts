@@ -6,8 +6,8 @@ import { AdminComponent } from './containers/admin/admin.component';
 import { TableComponent } from './components/table/table.component';
 import { TranslateModule} from "@ngx-translate/core";
 import { NewItemComponent } from './components/new-item/new-item.component';
-import {FormsModule} from "@angular/forms";
-import {AngularEditorModule} from "@kolkov/angular-editor";
+import { FormsModule} from "@angular/forms";
+import { AngularEditorModule} from "@kolkov/angular-editor";
 
 
 @NgModule({

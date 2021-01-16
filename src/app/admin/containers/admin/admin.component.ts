@@ -14,6 +14,7 @@ export class AdminComponent implements OnInit {
   page = 1;
 
   currentTab;
+  data$;
 
   lessons$ : Observable<any>;
   units$ : Observable<any>;
@@ -31,10 +32,27 @@ export class AdminComponent implements OnInit {
     this.lessons$ = this.subjectService.getSubjects({page: this.page});
     this.units$ = this.unitService.getUnits({page: this.page});
     this.exercises$ = this.exerciseService.getExercises({page: this.page});
+
+    //set default data:
+    this.setTableData('lessons');
   }
 
   setCurrentNav(event){
-    console.log(event)
+    this.currentTab = event.srcElement.id;
+  }
+
+  setTableData(element){
+    switch (element){
+      case 'lessons':
+        this.data$ = this.lessons$;
+        break;
+      case 'units':
+        this.data$ = this.units$;
+        break;
+      case 'exercises':
+        this.data$ = this.exercises$;
+        break;
+    }
   }
 
 }

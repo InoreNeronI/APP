@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -7,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
+  @Input() data;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  getArrayDataFromJSON(json){
+    return Object.keys(json).map(function(_) { return json[_]; })
+  }
+
+  getArrayFieldsFromJSON(json){
+    let keyNames = Object.keys(json);
+    console.log(keyNames);
+
+    return keyNames;
+
+  }
+
+  internalFieldsfilter(array){
+
+  }
+
+
 
 }

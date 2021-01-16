@@ -1,9 +1,4 @@
 
-<!--
-<angular-editor formControlName="htmlContent" [config]="editorConfig"></angular-editor>
--->
-
-
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <a class="nav-link active" id="lessons" (click)="setCurrentNav($event)" data-bs-toggle="tab" href="#nav-lessons" role="tab" aria-controls="nav-lessons" aria-selected="true">
@@ -20,16 +15,16 @@
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-lessons" role="tabpanel" aria-labelledby="nav-lessons-tab">
     A
-    <app-table></app-table>
+    <app-table [data]="data$ | async"></app-table>
   </div>
   <div class="tab-pane fade" id="nav-units" role="tabpanel" aria-labelledby="nav-units-tab">
     B
-    <app-table></app-table>
+    <app-table [data]="data$ | async"></app-table>
 
   </div>
   <div class="tab-pane fade" id="nav-exercises" role="tabpanel" aria-labelledby="nav-exercises-tab">
     C
-    <app-table></app-table>
+    <app-table [data]="data$ | async"></app-table>
 
   </div>
 </div>
