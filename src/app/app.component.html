@@ -11,7 +11,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav" aria-labelledby="dropdownMainButton">
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="authService.isAdmin()">
                 <a class="nav-link" routerLink="/admin" routerLinkActive="active">
                   <img src="https://material-icons.github.io/material-icons/svg/settings/baseline.svg" alt="{{'ADMIN' | translate}}" class="d-inline-block align-top"> {{'ADMIN' | translate}}
                 </a>

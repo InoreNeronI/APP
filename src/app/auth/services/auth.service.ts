@@ -11,7 +11,6 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router
-    //private _http: HttpClient,
   ) { }
 
   login({ email, password }) {
@@ -28,6 +27,9 @@ export class AuthService {
     response$.subscribe(response => {
       if(response){
         localStorage.setItem('currentUser', JSON.stringify(email));
+        if(response['roles'] && response['roles'][0]){
+          localStorage.setItem('currentRole', JSON.stringify(response['roles'][0]));
+        }
         this.router.navigate(['/']);
       }
     });
@@ -47,7 +49,6 @@ export class AuthService {
     )
 
     response$.subscribe(response =>{
-      console.log(response);
       if(response && response['id']){
         this.router.navigate(['/auth']);
       }
@@ -58,6 +59,10 @@ export class AuthService {
 
   isLogged(): boolean {
     return !!localStorage.getItem('currentUser');
+  }
+
+  isAdmin(): boolean {
+    return localStorage.getItem('currentRole') === '"ROL_ADMIN"';
   }
 
   logout(): void {
