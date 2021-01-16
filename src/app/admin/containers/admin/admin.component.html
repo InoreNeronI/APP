@@ -1,34 +1,28 @@
 
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-link active" id="lessons" data-bs-toggle="tab" href="#nav-lessons" role="tab" aria-controls="nav-lessons" aria-selected="true">
-      {{'LESSONS' | translate}}
+    <a class="nav-link active" id="subjects" (click)="setCurrentNav($event)" data-bs-toggle="tab" href="#nav-subject" role="tab" aria-controls="nav-subject" aria-selected="true">
+      {{'SUBJECTS' | translate}}
     </a>
-    <a class="nav-link" id="units" data-bs-toggle="tab" href="#nav-units" role="tab" aria-controls="nav-units" aria-selected="false">
+    <a class="nav-link" id="units" (click)="setCurrentNav($event)" data-bs-toggle="tab" href="#nav-units" role="tab" aria-controls="nav-units" aria-selected="false">
       {{'UNITS' | translate}}
     </a>
-    <a class="nav-link" id="exercises" data-bs-toggle="tab" href="#nav-exercises" role="tab" aria-controls="nav-exercises" aria-selected="false">
+    <a class="nav-link" id="exercises" (click)="setCurrentNav($event)" data-bs-toggle="tab" href="#nav-exercises" role="tab" aria-controls="nav-exercises" aria-selected="false">
       {{'EXERCISES' | translate}}
     </a>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-lessons" role="tabpanel" aria-labelledby="nav-lessons-tab">
-    A
-    <app-table [data]="lessons$ | async"></app-table>
+  <div class="tab-pane fade show active" id="nav-subject" role="tabpanel" aria-labelledby="nav-subject-tab">
+    <app-table [currentType]="currentTab" [data]="subjects$ | async" (delete)="delete($event)"></app-table>
   </div>
   <div class="tab-pane fade" id="nav-units" role="tabpanel" aria-labelledby="nav-units-tab">
-    B
-    <app-table [data]="units$ | async"></app-table>
-
+    <app-table [currentType]="currentTab" [data]="units$ | async" (delete)="delete($event)"></app-table>
   </div>
   <div class="tab-pane fade" id="nav-exercises" role="tabpanel" aria-labelledby="nav-exercises-tab">
-    C
-    <app-table [data]="exercises$ | async"></app-table>
-
+    <app-table [currentType]="currentTab" [data]="exercises$ | async" (delete)="delete($event)"></app-table>
   </div>
 </div>
-
 
 
 

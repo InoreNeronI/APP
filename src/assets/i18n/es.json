@@ -30,9 +30,11 @@
   "TEST": "Prueba",
   "TRUE": "Verdadero",
   "FALSE": "Falso",
+  "SUBJECTS": "Asignaturas",
   "UNITS": "Unidades",
   "EXERCISES": "Ejercicios",
   "ADMIN": "Administrador",
   "TOTAL_ITEMS": "Número de elementos",
-  "ACTIONS": "Acciones"
+  "ACTIONS": "Acciones",
+  "DELETED": "Borrado satisfactoriamente"
 }

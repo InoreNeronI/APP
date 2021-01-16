@@ -28,15 +28,11 @@ export class SubjectComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.subjectName = params.get('subject');
 
-      this.subjectService.getSubjects({page: 1}).subscribe(data => {
+      this.subjectService.get({page: 1}).subscribe(data => {
         this.subjects = data;
         this.subject = this.subjects["hydra:member"].find(value => value.name === this.subjectName);
 
-        console.log(this.subject)
-
-
-        this.unitService.getUnits({page: 1}).subscribe(units => {
-          console.log(units);
+        this.unitService.get({page: 1}).subscribe(units => {
           this.units = units['hydra:member'].filter(unit => unit.subjectId.split("/")[5] == this.subject.id);
 
         });

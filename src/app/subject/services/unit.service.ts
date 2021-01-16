@@ -11,7 +11,7 @@ export class UnitService {
     private router: Router
   ) { }
 
-  getUnits({ page }){
+  get({ page }){
     const params = new HttpParams().append('page', page);
 
     return this.http.get(
@@ -19,13 +19,13 @@ export class UnitService {
     );
   }
 
-  getUnit({ id }){
+  getOne(id){
     return this.http.get(
       environment.api.unit + '/' + id
     );
   }
 
-  addUnit({ id }){
+  add(id){
     return this.http.post(
       environment.api.unit + '/' + id,
       {
@@ -34,7 +34,7 @@ export class UnitService {
     );
   }
 
-  editUnit({ id }){
+  edit(id){
     return this.http.put(
       environment.api.unit + '/' + id,
       {
@@ -43,7 +43,7 @@ export class UnitService {
     );
   }
 
-  deleteUnit({ id }){
+  delete(id){
     return this.http.delete(
       environment.api.unit + '/' + id,
       {

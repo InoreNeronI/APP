@@ -3,6 +3,8 @@ import {SubjectService} from "../../../subject/services/subject.service";
 import {UnitService} from "../../../subject/services/unit.service";
 import {ExerciseService} from "../../../subject/services/exercise.service";
 import {Observable} from "rxjs";
+import {ToastrService} from "ngx-toastr";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-admin',
@@ -13,22 +15,69 @@ export class AdminComponent implements OnInit {
 
   page = 1;
 
-  lessons$ : Observable<any>;
+  currentTab;
+  currentService;
+
+  subjects$ : Observable<any>;
   units$ : Observable<any>;
   exercises$ : Observable<any>;
 
   constructor(
     public subjectService: SubjectService,
     public unitService: UnitService,
-    public exerciseService: ExerciseService
+    public exerciseService: ExerciseService,
+    private toastr: ToastrService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit(): void {
 
-    //Load items:
-    this.lessons$ = this.subjectService.getSubjects({page: this.page});
-    this.units$ = this.unitService.getUnits({page: this.page});
-    this.exercises$ = this.exerciseService.getExercises({page: this.page});
+    //Load all items: (prefetch all)
+    this.subjects$ = this.subjectService.get({page: this.page});
+    this.units$ = this.unitService.get({page: this.page});
+    this.exercises$ = this.exerciseService.get({page: this.page});
+
+    //Set default tab and service:
+    this.currentTab = 'subjects';
+    this.currentService = this.subjectService;
   }
+
+  setCurrentNav(event){
+    this.currentTab = event.srcElement.id;
+  }
+
+  add(item){
+
+  }
+
+  edit(item){
+
+  }
+
+  delete(id: number){
+    this.currentService.delete(id).subscribe(response => {
+      this.setCurrentData();
+      this.toastr.success(this.translateService.instant('DELETED'));
+    });
+  }
+
+  setCurrentData(){
+    switch (this.currentTab){
+      case 'subjects':
+        this.currentService = this.subjectService;
+        this.subjects$ = this.subjectService.get({page: this.page});
+        break;
+      case 'units':
+        this.currentService = this.unitService;
+        this.units$ = this.unitService.get({page: this.page});
+        break;
+      case 'exercises':
+        this.currentService = this.exerciseService;
+        this.exercises$ = this.exerciseService.get({page: this.page});
+        break;
+    }
+  }
+
+
 
 }

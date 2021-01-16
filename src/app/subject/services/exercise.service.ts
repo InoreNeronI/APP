@@ -11,19 +11,19 @@ export class ExerciseService {
     private router: Router
   ) { }
 
-  getExercises({ page }){
+  get({ page }){
     return this.http.get(
       environment.api.exercise
     );
   }
 
-  getExercise({ id }){
+  getOne(id: number){
     return this.http.get(
       environment.api.exercise + '/' + id
     );
   }
 
-  addExercise({ id }){
+  add(id: number){
     return this.http.post(
       environment.api.exercise + '/' + id,
       {
@@ -32,7 +32,7 @@ export class ExerciseService {
     );
   }
 
-  editExercise({ id }){
+  edit(id: number){
     return this.http.put(
       environment.api.exercise + '/' + id,
       {
@@ -41,7 +41,7 @@ export class ExerciseService {
     );
   }
 
-  deleteExercise({ id }){
+  delete(id: number){
     return this.http.delete(
       environment.api.exercise + '/' + id,
       {

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -8,6 +8,10 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TableComponent implements OnInit {
 
   @Input() data;
+  @Input() currentType;
+  fields;
+
+  @Output() delete = new EventEmitter<number>();
 
   constructor() { }
 
@@ -15,19 +19,29 @@ export class TableComponent implements OnInit {
   }
 
   getArrayDataFromJSON(json){
-    return Object.keys(json).map(function(_) { return json[_]; })
+    //console.log(json)
+    //return Object.keys(json).map(function(_) { return json[_]; });
+
+    let data = [];
+    for(let field of this.fields){
+      data.push(json[field]);
+    }
+    return data;
   }
 
   getArrayFieldsFromJSON(json){
-    let keyNames = Object.keys(json);
-    console.log(keyNames);
-
-    return keyNames;
+    this.fields = this.internalFieldsfilter(Object.keys(json));
+    return this.fields
 
   }
 
   internalFieldsfilter(array){
+    const fieldsToRemoveFromResponse = ["@id", "@type"];
+    return array.filter(value => fieldsToRemoveFromResponse.indexOf(value) < 0)
+  }
 
+  deleteByID(id: number){
+    this.delete.emit(id);
   }
 
 

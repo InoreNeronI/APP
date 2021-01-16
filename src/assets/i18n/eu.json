@@ -30,11 +30,13 @@
   "TEST": "Proba",
   "TRUE": "Egia",
   "FALSE": "Gezurra",
+  "SUBJECTS": "Ikasgaia",
   "UNITS": "Unitateak",
   "EXERCISES": "Ariketak",
   "ADMIN": "Administrazioa",
   "TOTAL_ITEMS": "Elementu totalak",
-  "ACTIONS": "Akzioak"
+  "ACTIONS": "Akzioak",
+  "DELETED": "Zuzen ezabatua"
 
 
 }

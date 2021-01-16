@@ -30,9 +30,11 @@
   "TEST": "Test",
   "TRUE": "True",
   "FALSE": "False",
+  "SUBJECTS": "Subjects",
   "UNITS": "Units",
   "EXERCISES": "Exercises",
   "ADMIN": "Administrator",
   "TOTAL_ITEMS": "Total items",
-  "ACTIONS": "Actions"
+  "ACTIONS": "Actions",
+  "DELETED": "Deleted succesfully"
 }

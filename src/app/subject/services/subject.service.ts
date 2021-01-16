@@ -11,7 +11,7 @@ export class SubjectService {
     private router: Router
   ) { }
 
-  getSubjects({ page }){
+  get({ page }){
     const params = new HttpParams().append('page', page);
 
     return this.http.get(
@@ -19,13 +19,13 @@ export class SubjectService {
     );
   }
 
-  getSubject({ id }){
+  getOne(id: number){
     return this.http.get(
       environment.api.subject + '/' + id
     );
   }
 
-  addSubject({ id }){
+  add(id: number){
     return this.http.post(
       environment.api.subject + '/' + id,
       {
@@ -34,7 +34,7 @@ export class SubjectService {
     );
   }
 
-  editSubject({ id }){
+  edit(id: number){
     return this.http.put(
       environment.api.subject + '/' + id,
       {
@@ -43,7 +43,7 @@ export class SubjectService {
     );
   }
 
-  deleteSubject({ id }){
+  delete(id: number){
     return this.http.delete(
       environment.api.subject + '/' + id,
       {
