@@ -4,6 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {SubjectService} from "../../../subject/services/subject.service";
 import {UnitService} from "../../../subject/services/unit.service";
 import {ExerciseService} from "../../../subject/services/exercise.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-new-item',
@@ -16,6 +17,7 @@ export class NewItemComponent implements OnInit {
   item;
   currentService;
   fields;
+  data;
   htmlContent = '';
 
   config: AngularEditorConfig = {
@@ -44,12 +46,20 @@ export class NewItemComponent implements OnInit {
     ]
   };
 
+  form: FormGroup;
+  formControlsArray = [];
+
   constructor(
     public route: ActivatedRoute,
     public subjectService: SubjectService,
     public unitService: UnitService,
     public exerciseService: ExerciseService,
-  ) { }
+    private _formBuilder: FormBuilder
+  ) {
+    this.form = this._formBuilder.group({
+      formControlsArray: this._formBuilder.array([])
+    });
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -71,15 +81,44 @@ export class NewItemComponent implements OnInit {
       }
 
       this.currentService.getOne(this.id).subscribe(details => {
-        this.fields = details;
+        this.data = details;
+        this.fields = this.internalFieldsfilter(Object.keys(details));
+
+        for(let field of this.fields){
+          //create form controls dinamically:
+          let formc = this._formBuilder.control(
+            {
+              value: this.data[field],
+              disabled: field === 'id'
+            }, Validators.required);
+
+          this.formControlsArray.push(formc);
+          this.form.addControl(field, formc);
+        }
+        console.log(this.fields)
+        console.log(this.formControlsArray)
       });
 
 
     });
   }
 
+  internalFieldsfilter(array){
+    const fieldsToRemoveFromResponse = ["@id", "@type", "@context"];
+    return array.filter(value => fieldsToRemoveFromResponse.indexOf(value) < 0)
+  }
+
   submit(){
     console.log("submit");
+
+    //edit test:
+    const values = this.form.value;
+    console.log(values)
+
+    this.currentService.edit(this.id, values).subscribe(response =>{
+      console.log(response);
+    });
+
   }
 
 }
