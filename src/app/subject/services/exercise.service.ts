@@ -11,7 +11,7 @@ export class ExerciseService {
     private router: Router
   ) { }
 
-  getExercises({ pag }){
+  getExercises({ page }){
     return this.http.get(
       environment.api.exercise
     );

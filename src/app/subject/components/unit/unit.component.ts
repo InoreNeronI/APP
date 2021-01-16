@@ -16,7 +16,7 @@ export class UnitComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.exerciseService.getExercises({pag: 1}).subscribe(exercises => {
+    this.exerciseService.getExercises({page: 1}).subscribe(exercises => {
       console.log("exercises");
       console.log(exercises)
 
