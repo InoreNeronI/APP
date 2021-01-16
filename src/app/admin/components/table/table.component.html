@@ -21,7 +21,7 @@
       </td>
 
       <td>
-        <button class="btn btn-primary" [routerLink]="['/admin/new/', currentType, row.id]">
+        <button class="btn btn-primary" [routerLink]="['/admin/edit/', currentType, row.id]">
           <img src="https://material-icons.github.io/material-icons/svg/edit/baseline.svg" alt="{{'EDIT' | translate}}" class="d-inline-block align-top">
         </button>
         <button class="btn btn-danger" (click)="deleteByID(row.id)">

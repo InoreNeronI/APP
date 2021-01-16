@@ -36,7 +36,9 @@
   "ADMIN": "Administrazioa",
   "TOTAL_ITEMS": "Elementu totalak",
   "ACTIONS": "Akzioak",
-  "DELETED": "Zuzen ezabatua"
+  "DELETED": "Zuzen ezabatua",
+  "SAVE": "Gorde",
+  "EDITED": "Zuzen aldatua"
 
 
 }

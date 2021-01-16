@@ -19,7 +19,6 @@ export class TableComponent implements OnInit {
   }
 
   getArrayDataFromJSON(json){
-    //console.log(json)
     //return Object.keys(json).map(function(_) { return json[_]; });
 
     let data = [];

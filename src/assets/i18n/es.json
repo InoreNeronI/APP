@@ -36,5 +36,7 @@
   "ADMIN": "Administrador",
   "TOTAL_ITEMS": "Número de elementos",
   "ACTIONS": "Acciones",
-  "DELETED": "Borrado satisfactoriamente"
+  "DELETED": "Borrado satisfactoriamente",
+  "SAVE": "Guardar",
+  "EDITED": "Editado satisfactoriamente"
 }

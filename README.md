@@ -14,3 +14,9 @@ npm install
 ## Run
 
 npm start
+
+### TODO
+- Paginator
+- PWA configuration
+- UX
+- Content

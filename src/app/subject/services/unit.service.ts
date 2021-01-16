@@ -19,31 +19,33 @@ export class UnitService {
     );
   }
 
-  getOne(id){
+  getOne(id: number){
     return this.http.get(
       environment.api.unit + '/' + id
     );
   }
 
-  add(id){
+  add(id: number, values){
     return this.http.post(
       environment.api.unit + '/' + id,
       {
-        observe: 'response'
+        observe: 'response',
+        ...values
       }
     );
   }
 
-  edit(id){
+  edit(id: number, values){
     return this.http.put(
       environment.api.unit + '/' + id,
       {
-        observe: 'response'
+        observe: 'response',
+        ...values
       }
     );
   }
 
-  delete(id){
+  delete(id: number){
     return this.http.delete(
       environment.api.unit + '/' + id,
       {

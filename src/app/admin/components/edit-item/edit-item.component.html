@@ -3,13 +3,12 @@
 
   <div *ngFor="let field of fields; let i=index">
     <label [for]="field" class="form-label">{{field}}</label>
-    <input type="text" class="form-control" [id]="field" [formControl]="formControlsArray[i]">
-    <!-- [value]="data[field]" -->
-  </div>
+    <input *ngIf="field !== 'text' && item !== 'exercise'" type="text" class="form-control" [id]="field" [formControl]="formControlsArray[i]">
 
-  <!--
-    <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
-  -->
+    <!--todo question improvement for show false or true / text-->
+    <angular-editor *ngIf="field === 'text' && item === 'exercise'" [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+
+  </div>
 
   <div class="actions">
     <button type="submit" class="btn btn-primary" (click)="submit()">{{ 'SAVE' | translate }}</button>

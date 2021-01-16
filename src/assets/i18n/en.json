@@ -36,5 +36,7 @@
   "ADMIN": "Administrator",
   "TOTAL_ITEMS": "Total items",
   "ACTIONS": "Actions",
-  "DELETED": "Deleted succesfully"
+  "DELETED": "Deleted successfully",
+  "SAVE": "Save",
+  "EDITED": "Edited successfully"
 }

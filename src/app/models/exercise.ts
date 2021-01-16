@@ -1,7 +1,8 @@
 
-export class Unit {
+export class Exercise {
   id?: number;
   title: string;
-  text: string;
-  subjectId: string;
+  question: string;
+  answer: string;
+  unitId: string;
 }

@@ -1,7 +1,7 @@
 
-export class Subject {
+export class Unit {
   id?: number;
-  name: string;
-  course: number;
+  title: string;
+  text: string;
+  subjectId: string;
 }
-

@@ -25,20 +25,22 @@ export class SubjectService {
     );
   }
 
-  add(id: number){
+  add(id: number, values){
     return this.http.post(
       environment.api.subject + '/' + id,
       {
-        observe: 'response'
+        observe: 'response',
+        ...values
       }
     );
   }
 
-  edit(id: number){
+  edit(id: number, values){
     return this.http.put(
       environment.api.subject + '/' + id,
       {
-        observe: 'response'
+        observe: 'response',
+        ...values
       }
     );
   }

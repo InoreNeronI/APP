@@ -5,13 +5,15 @@ import {SubjectService} from "../../../subject/services/subject.service";
 import {UnitService} from "../../../subject/services/unit.service";
 import {ExerciseService} from "../../../subject/services/exercise.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {ToastrService} from "ngx-toastr";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-new-item',
-  templateUrl: './new-item.component.html',
-  styleUrls: ['./new-item.component.sass']
+  templateUrl: './edit-item.component.html',
+  styleUrls: ['./edit-item.component.sass']
 })
-export class NewItemComponent implements OnInit {
+export class EditItemComponent implements OnInit {
 
   id;
   item;
@@ -54,7 +56,9 @@ export class NewItemComponent implements OnInit {
     public subjectService: SubjectService,
     public unitService: UnitService,
     public exerciseService: ExerciseService,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private toastr: ToastrService,
+    private translateService: TranslateService
   ) {
     this.form = this._formBuilder.group({
       formControlsArray: this._formBuilder.array([])
@@ -109,14 +113,12 @@ export class NewItemComponent implements OnInit {
   }
 
   submit(){
-    console.log("submit");
-
-    //edit test:
+    //edit
     const values = this.form.value;
-    console.log(values)
 
     this.currentService.edit(this.id, values).subscribe(response =>{
       console.log(response);
+      this.toastr.success(this.translateService.instant('EDITED'));
     });
 
   }

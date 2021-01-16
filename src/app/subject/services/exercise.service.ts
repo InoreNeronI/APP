@@ -23,20 +23,22 @@ export class ExerciseService {
     );
   }
 
-  add(id: number){
+  add(id: number, values){
     return this.http.post(
       environment.api.exercise + '/' + id,
       {
-        observe: 'response'
+        observe: 'response',
+        ...values
       }
     );
   }
 
-  edit(id: number){
+  edit(id: number, values){
     return this.http.put(
       environment.api.exercise + '/' + id,
       {
-        observe: 'response'
+        observe: 'response',
+        ...values
       }
     );
   }

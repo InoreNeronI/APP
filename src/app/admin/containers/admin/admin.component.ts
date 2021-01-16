@@ -46,14 +46,6 @@ export class AdminComponent implements OnInit {
     this.currentTab = event.srcElement.id;
   }
 
-  add(item){
-
-  }
-
-  edit(item){
-
-  }
-
   delete(id: number){
     this.currentService.delete(id).subscribe(response => {
       this.setCurrentData();
