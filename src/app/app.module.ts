@@ -11,6 +11,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {AngularEditorModule} from '@kolkov/angular-editor';
 import {FormsModule} from "@angular/forms";
+import {SubjectService} from "./subject/services/subject.service";
+import {UnitService} from "./subject/services/unit.service";
+import {ExerciseService} from "./subject/services/exercise.service";
 
 export function createTranslateLoader(http: any) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +39,10 @@ export function createTranslateLoader(http: any) {
     FormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    SubjectService,
+    UnitService,
+    ExerciseService
   ],
   bootstrap: [AppComponent]
 })

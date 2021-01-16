@@ -33,4 +33,8 @@ export class AdminComponent implements OnInit {
     this.exercises$ = this.exerciseService.getExercises({page: this.page});
   }
 
+  setCurrentNav(event){
+    console.log(event)
+  }
+
 }
