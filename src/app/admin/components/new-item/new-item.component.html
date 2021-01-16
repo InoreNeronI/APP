@@ -1,1 +1,19 @@
-<p>new-item works!</p>
+
+<form class="mb-3" [formGroup]="form">
+
+  <div *ngFor="let field of fields; let i=index">
+    <label [for]="field" class="form-label">{{field}}</label>
+    <input *ngIf="field !== 'text' && item !== 'exercise'" type="text" class="form-control" [id]="field" [formControl]="formControlsArray[i]">
+
+    <!--todo question improvement for show false or true / text-->
+    <!--
+    <angular-editor *ngIf="field === 'text' && item === 'exercise'" [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+    -->
+
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn btn-primary" (click)="submit()">{{ 'SAVE' | translate }}</button>
+  </div>
+</form>
+

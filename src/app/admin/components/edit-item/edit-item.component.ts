@@ -1,12 +1,14 @@
 import {Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {AngularEditorConfig} from "@kolkov/angular-editor";
 import {ActivatedRoute} from "@angular/router";
-import {SubjectService} from "../../../subject/services/subject.service";
-import {UnitService} from "../../../subject/services/unit.service";
-import {ExerciseService} from "../../../subject/services/exercise.service";
+import {SubjectService} from "../../../services/subject.service";
+import {UnitService} from "../../../services/unit.service";
+import {ExerciseService} from "../../../services/exercise.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import {TranslateService} from "@ngx-translate/core";
+import Utils from "../../../utils";
+
 
 @Component({
   selector: 'app-new-item',
@@ -86,7 +88,8 @@ export class EditItemComponent implements OnInit {
 
       this.currentService.getOne(this.id).subscribe(details => {
         this.data = details;
-        this.fields = this.internalFieldsfilter(Object.keys(details));
+
+        this.fields = Utils.internalFieldsfilter(Object.keys(details))
 
         for(let field of this.fields){
           //create form controls dinamically:
@@ -105,11 +108,6 @@ export class EditItemComponent implements OnInit {
 
 
     });
-  }
-
-  internalFieldsfilter(array){
-    const fieldsToRemoveFromResponse = ["@id", "@type", "@context"];
-    return array.filter(value => fieldsToRemoveFromResponse.indexOf(value) < 0)
   }
 
   submit(){

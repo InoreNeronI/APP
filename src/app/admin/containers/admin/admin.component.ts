@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {SubjectService} from "../../../subject/services/subject.service";
-import {UnitService} from "../../../subject/services/unit.service";
-import {ExerciseService} from "../../../subject/services/exercise.service";
+import {SubjectService} from "../../../services/subject.service";
+import {UnitService} from "../../../services/unit.service";
+import {ExerciseService} from "../../../services/exercise.service";
 import {Observable} from "rxjs";
 import {ToastrService} from "ngx-toastr";
 import {TranslateService} from "@ngx-translate/core";

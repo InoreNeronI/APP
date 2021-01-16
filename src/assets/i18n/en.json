@@ -38,5 +38,6 @@
   "ACTIONS": "Actions",
   "DELETED": "Deleted successfully",
   "SAVE": "Save",
-  "EDITED": "Edited successfully"
+  "EDITED": "Edited successfully",
+  "ADDED": "Added successfully"
 }

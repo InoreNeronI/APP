@@ -38,5 +38,7 @@
   "ACTIONS": "Acciones",
   "DELETED": "Borrado satisfactoriamente",
   "SAVE": "Guardar",
-  "EDITED": "Editado satisfactoriamente"
+  "EDITED": "Editado satisfactoriamente",
+  "ADDED": "Añadido satisfactoriamente"
+
 }

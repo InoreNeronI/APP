@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import { environment} from '../../../environments/environment';
+import { environment} from '../../environments/environment';
 
 @Injectable()
 export class UnitService {
@@ -25,9 +25,9 @@ export class UnitService {
     );
   }
 
-  add(id: number, values){
+  add(values){
     return this.http.post(
-      environment.api.unit + '/' + id,
+      environment.api.unit,
       {
         observe: 'response',
         ...values
