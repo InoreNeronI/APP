@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { AuthService } from './auth/services/auth.service';
+import { AuthService } from './modules/auth/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({

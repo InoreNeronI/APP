@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SubjectService } from '../../../services/subject.service';
+import { SubjectService } from '../../../../services/subject.service';
 import { TranslateService } from '@ngx-translate/core';
-import {UnitService} from "../../../services/unit.service";
-import {ExerciseService} from "../../../services/exercise.service";
+import {UnitService} from "../../../../services/unit.service";
+import {ExerciseService} from "../../../../services/exercise.service";
 
 @Component({
   selector: 'app-subject',

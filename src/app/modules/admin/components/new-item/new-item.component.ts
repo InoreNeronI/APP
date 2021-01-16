@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {SubjectService} from "../../../services/subject.service";
-import {UnitService} from "../../../services/unit.service";
-import {ExerciseService} from "../../../services/exercise.service";
+import {SubjectService} from "../../../../services/subject.service";
+import {UnitService} from "../../../../services/unit.service";
+import {ExerciseService} from "../../../../services/exercise.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import {TranslateService} from "@ngx-translate/core";

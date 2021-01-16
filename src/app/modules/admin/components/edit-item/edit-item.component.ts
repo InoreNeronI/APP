@@ -1,13 +1,13 @@
 import {Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {AngularEditorConfig} from "@kolkov/angular-editor";
 import {ActivatedRoute} from "@angular/router";
-import {SubjectService} from "../../../services/subject.service";
-import {UnitService} from "../../../services/unit.service";
-import {ExerciseService} from "../../../services/exercise.service";
+import {SubjectService} from "../../../../services/subject.service";
+import {UnitService} from "../../../../services/unit.service";
+import {ExerciseService} from "../../../../services/exercise.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import {TranslateService} from "@ngx-translate/core";
-import Utils from "../../../utils";
+import Utils from "../../../../utils";
 
 
 @Component({
