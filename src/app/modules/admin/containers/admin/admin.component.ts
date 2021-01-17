@@ -13,7 +13,7 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class AdminComponent implements OnInit {
 
-  page = 1;
+  page: number = 1;
 
   currentTab;
   currentService;
