@@ -26,6 +26,7 @@ export class SubjectService {
   }
 
   add(values){
+    values = this.changeCourseToNumber(values);
     return this.http.post(
       environment.api.subject,
       {
@@ -36,6 +37,7 @@ export class SubjectService {
   }
 
   edit(id: number, values){
+    values = this.changeCourseToNumber(values);
     return this.http.put(
       environment.api.subject + '/' + id,
       {
@@ -52,6 +54,13 @@ export class SubjectService {
         observe: 'response'
       }
     );
+  }
+
+  private changeCourseToNumber(json){
+    if(json.course){
+      json.course = Number(json.course);
+    }
+    return json;
   }
 
 }

@@ -24,6 +24,8 @@ export class ExerciseService {
   }
 
   add(values){
+    values.unitId = '/birt-api/public/api/units/' + values.unitId;
+
     return this.http.post(
       environment.api.exercise,
       {

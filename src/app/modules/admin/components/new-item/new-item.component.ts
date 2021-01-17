@@ -3,7 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {SubjectService} from "../../../../services/subject.service";
 import {UnitService} from "../../../../services/unit.service";
 import {ExerciseService} from "../../../../services/exercise.service";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import {TranslateService} from "@ngx-translate/core";
 
@@ -28,7 +28,11 @@ export class NewItemComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private toastr: ToastrService,
     private translateService: TranslateService
-  ) { }
+  ) {
+    this.form = this._formBuilder.group({
+      formControlsArray: this._formBuilder.array([])
+    });
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -36,14 +40,26 @@ export class NewItemComponent implements OnInit {
       switch (this.item) {
         case 'subjects':
           this.currentService = this.subjectService;
+          this.fields = ['name', 'course'];
           break;
         case 'units':
           this.currentService = this.unitService;
+          this.fields = ['title', 'text', 'subjectId'];
           break;
         case 'exercises':
           this.currentService = this.exerciseService;
+          this.fields = ['title', 'question', 'answer', 'unitId'];
           break;
       }
+
+      for(let field of this.fields){
+        //create form controls dinamically:
+        let formc = this._formBuilder.control('', Validators.required);
+
+        this.formControlsArray.push(formc);
+        this.form.addControl(field, formc);
+      }
+
     });
   }
 
