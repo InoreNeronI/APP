@@ -16,6 +16,7 @@ npm install
 npm start
 
 ### TODO
+- breadcrums
 - Paginator
 - PWA configuration
 - UX
