@@ -11,7 +11,7 @@
         <div class="card-body">
           <h5 class="card-title">{{subject.name | uppercase | translate}}</h5>
           <p *ngIf="subject.desc" class="card-text">{{subject.desc}}</p>
-          <a href="#" class="btn btn-primary">{{'LEARN' | translate}}</a>
+          <a [href]="'subject/'+subject.name" class="btn btn-primary">{{'LEARN' | translate}}</a>
         </div>
       </div>
     </div>
