@@ -26,5 +26,18 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-performance",
+      "urls": [
+        "http://pc2.labs.birt.eus/back-end/api/**"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxAge": "2m",
+        "maxSize": 50
+      }
+    }
   ]
 }
