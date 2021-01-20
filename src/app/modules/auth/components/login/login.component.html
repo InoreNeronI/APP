@@ -16,7 +16,7 @@
 
     <div class="alert alert-danger ng-scope" role="alert" *ngIf="error">
       <!-- Usuario o contraseña incorrectos. -->
-      {{ error.error.error }}
+      {{ error.error | translate }}
     </div>
 
     <div class="form-actions">
