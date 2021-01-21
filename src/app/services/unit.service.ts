@@ -26,7 +26,7 @@ export class UnitService {
   }
 
   add(values){
-    values.subjectId = '/birt-api/public/api/subjects/' + values.subjectId;
+    values.subjec = '/birt-api/public/api/subjects/' + values.subject;
     return this.http.post(
       environment.api.unit,
       {

@@ -72,7 +72,7 @@ export class NewItemComponent implements OnInit {
           break;
         case 'units':
           this.currentService = this.unitService;
-          this.fields = ['title', 'text', 'subjectId'];
+          this.fields = ['title', 'text', 'subject'];
           break;
         case 'exercises':
           this.currentService = this.exerciseService;
