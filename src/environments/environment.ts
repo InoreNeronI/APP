@@ -1,8 +1,8 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-const basePublicUrl = 'http://localhost/birt-api/public/api';
-const baseUrl = 'http://localhost/birt-api/public';
+const basePublicUrl = 'https://pc2.labs.birt.eus/back-end/api';
+const baseUrl = 'https://pc2.labs.birt.eus/back-end';
 
 export const environment = {
   production: false,
@@ -11,9 +11,9 @@ export const environment = {
     login: `${baseUrl}/login`,
     subject: `${basePublicUrl}/subjects`,
     course: `${basePublicUrl}/courses`,
-    unit : `${basePublicUrl}/units`,
+    unit: `${basePublicUrl}/units`,
     exercise: `${basePublicUrl}/exercises`,
-    user : `${basePublicUrl}/users`
+    user: `${basePublicUrl}/users`
   }
 };
 /*

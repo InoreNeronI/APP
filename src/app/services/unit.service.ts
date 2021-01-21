@@ -11,7 +11,7 @@ export class UnitService {
     //private router: Router
   ) { }
 
-  get(/*{ page }*/){
+  get(/*{ page }*/) {
     //const params = new HttpParams().append('page', page);
 
     return this.http.get(
@@ -19,14 +19,14 @@ export class UnitService {
     );
   }
 
-  getOne(id: number){
+  getOne(id: number) {
     return this.http.get(
       environment.api.unit + '/' + id
     );
   }
 
-  add(values){
-    values.subjec = '/birt-api/public/api/subjects/' + values.subject;
+  add(values) {
+    values.subject = '/birt-api/public/api/subjects/' + values.subject;
     return this.http.post(
       environment.api.unit,
       {
@@ -36,7 +36,7 @@ export class UnitService {
     );
   }
 
-  edit(id: number, values){
+  edit(id: number, values) {
     return this.http.put(
       environment.api.unit + '/' + id,
       {
@@ -46,7 +46,7 @@ export class UnitService {
     );
   }
 
-  delete(id: number){
+  delete(id: number) {
     return this.http.delete(
       environment.api.unit + '/' + id,
       {

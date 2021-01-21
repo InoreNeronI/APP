@@ -9,8 +9,8 @@ export const environment = {
     login: `${baseUrl}/login`,
     subject: `${basePublicUrl}/subjects`,
     course: `${basePublicUrl}/courses`,
-    unit : `${basePublicUrl}/units`,
+    unit: `${basePublicUrl}/units`,
     exercise: `${basePublicUrl}/exercises`,
-    user : `${basePublicUrl}/users`
+    user: `${basePublicUrl}/users`
   }
 };

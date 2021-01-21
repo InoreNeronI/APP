@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SubjectService} from "../../../../services/subject.service";
-import {TranslateService} from "@ngx-translate/core";
+import { SubjectService } from '../../../../services/subject.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import {TranslateService} from "@ngx-translate/core";
 export class HomeComponent implements OnInit {
 
   subjects;
-  page: number = 1;
+  //page: number = 1;
 
   constructor(
     public subjectService: SubjectService,
@@ -18,10 +18,9 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subjectService.get({page: this.page}).subscribe( subjects => {
-      console.log(subjects)
+    this.subjectService.get(/*{page: this.page}*/).subscribe( subjects => {
+      //console.log(subjects)
       this.subjects = subjects;
     })
   }
-
 }
