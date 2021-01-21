@@ -1,30 +1,29 @@
-<p>{{exercise.question}}</p>
 
 <div *ngIf="type === 'text'" class="mb-3 input-group has-validation">
-  <!--<label class="form-label">{{'resp'}}</label>-->
-  <input type="text" class="form-control" [name]="exercise.id" [id]="exercise.id" (keyup)="checkResponse($event)"  [ngClass]="{ 'is-valid': resp===true, 'is-invalid': resp===false }">
+  <label class="form-label" role="button" [for]="'exercise'+exercise.id">{{exercise.question}}</label>
+  <div class="w-100">
+    <input type="text" class="form-control" [name]="'exercise'+exercise.id" [id]="'exercise'+exercise.id" (keyup)="checkResponse($event)" [ngClass]="{ 'is-valid': resp===true, 'is-invalid': resp===false }">
+  </div>
 </div>
 
-<div *ngIf="type === 'number'">
+<div *ngIf="type === 'number'" class="mb-3">
+  <p class="m-0">{{exercise.question}}</p>
 
   <div class="form-check input-group has-validation">
-    <input class="form-check-input" type="radio" [name]="exercise.id" [id]="exercise.id"  value="1" (change)="checkResponse($event)" [ngClass]="{ 'is-valid': resp===true, 'is-invalid': resp===false }">
-    <label class="form-check-label">
+    <input class="form-check-input" role="button" type="radio" [name]="'exercise'+exercise.id" [id]="'true'+exercise.id" value="1" (change)="checkResponse($event)" [ngClass]="{ 'is-valid': resp===true, 'is-invalid': resp===false }">
+    <label class="form-check-label ms-1" role="button" [for]="'true'+exercise.id">
       {{ 'TRUE' | translate}}
     </label>
   </div>
 
   <div class="form-check input-group has-validation">
-    <input class="form-check-input" type="radio" [name]="exercise.id" [id]="exercise.id"  value="0" (change)="checkResponse($event)" [ngClass]="{ 'is-valid': resp===true, 'is-invalid': resp===false }">
-    <label class="form-check-label">
+    <input class="form-check-input" role="button" type="radio" [name]="'exercise'+exercise.id" [id]="'false'+exercise.id" value="0" (change)="checkResponse($event)" [ngClass]="{ 'is-valid': resp===true, 'is-invalid': resp===false }">
+    <label class="form-check-label ms-1" role="button" [for]="'false'+exercise.id">
       {{ 'FALSE' | translate}}
     </label>
   </div>
 
 </div>
-
-
-
 
 <!--
 <div *ngIf="response" class="invalid-feedback" [ngClass]="{response.correct ? 'valid-feedback' : 'invalid-feedbacko'}">

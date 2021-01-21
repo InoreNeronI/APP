@@ -4,5 +4,5 @@ export class Exercise {
   title: string;
   question: string;
   answer: string;
-  unitId: string;
+  unit: string;
 }

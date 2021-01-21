@@ -1,12 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-exercise',
   templateUrl: './exercise.component.html',
   styleUrls: ['./exercise.component.sass']
 })
-export class ExerciseComponent implements OnInit {
 
+export class ExerciseComponent implements OnInit {
   @Input() exercise;
   type;
   resp;
@@ -14,20 +14,10 @@ export class ExerciseComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if(isNaN(this.exercise.answer)){
-      this.type="text";
-    }else{
-      this.type="number";
-    }
+    this.type = isNaN(this.exercise.answer) ? 'text' : 'number';
   }
 
-  checkResponse(event){
-    if(event.srcElement.value == this.exercise.answer){
-      this.resp = true;
-    }else{
-      this.resp = false;
-    }
-
+  checkResponse(event) {
+    this.resp = event.target.value === this.exercise.answer;
   }
-
 }

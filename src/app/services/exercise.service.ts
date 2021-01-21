@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+//import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
@@ -8,23 +8,23 @@ export class ExerciseService {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    //private router: Router
   ) { }
 
-  get({ page }){
+  get(/*{ page }*/) {
     return this.http.get(
       environment.api.exercise
     );
   }
 
-  getOne(id: number){
+  getOne(id: number) {
     return this.http.get(
       environment.api.exercise + '/' + id
     );
   }
 
-  add(values){
-    values.unitId = '/birt-api/public/api/units/' + values.unitId;
+  add(values) {
+    values.unit = '/birt-api/public/api/units/' + values.unit;
 
     return this.http.post(
       environment.api.exercise,
@@ -35,7 +35,7 @@ export class ExerciseService {
     );
   }
 
-  edit(id: number, values){
+  edit(id: number, values) {
     return this.http.put(
       environment.api.exercise + '/' + id,
       {
@@ -45,7 +45,7 @@ export class ExerciseService {
     );
   }
 
-  delete(id: number){
+  delete(id: number) {
     return this.http.delete(
       environment.api.exercise + '/' + id,
       {
@@ -53,5 +53,4 @@ export class ExerciseService {
       }
     );
   }
-
 }

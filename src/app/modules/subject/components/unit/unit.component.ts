@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ExerciseService} from "../../../../services/exercise.service";
+import { Component, Input, OnInit } from '@angular/core';
+import { ExerciseService } from '../../../../services/exercise.service';
 
 @Component({
   selector: 'app-unit',
@@ -16,10 +16,8 @@ export class UnitComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.exerciseService.get({page: 1}).subscribe(exercises => {
-      this.exercises = exercises['hydra:member'].filter(exercise => exercise.unitId.split("/")[5] == this.unit.id);
+    this.exerciseService.get(/*{page: 1}*/).subscribe(exercises => {
+      this.exercises = exercises['hydra:member'].filter(exercise => exercise.unit.split('/')[4] === this.unit.id.toString());
     });
-
   }
-
 }

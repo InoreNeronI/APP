@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {SubjectService} from "../../../../services/subject.service";
-import {UnitService} from "../../../../services/unit.service";
-import {ExerciseService} from "../../../../services/exercise.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ToastrService} from "ngx-toastr";
-import {TranslateService} from "@ngx-translate/core";
-import {AngularEditorConfig} from "@kolkov/angular-editor";
+import { ActivatedRoute } from '@angular/router';
+import { SubjectService } from '../../../../services/subject.service';
+import { UnitService } from '../../../../services/unit.service';
+import { ExerciseService } from '../../../../services/exercise.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-new-item',
@@ -33,17 +33,17 @@ export class NewItemComponent implements OnInit {
     ],
     customClasses: [
       {
-        name: "quote",
-        class: "quote",
+        name: 'quote',
+        class: 'quote',
       },
       {
         name: 'redText',
         class: 'redText'
       },
       {
-        name: "titleText",
-        class: "titleText",
-        tag: "h1",
+        name: 'titleText',
+        class: 'titleText',
+        tag: 'h1',
       },
     ]
   };
@@ -76,11 +76,11 @@ export class NewItemComponent implements OnInit {
           break;
         case 'exercises':
           this.currentService = this.exerciseService;
-          this.fields = ['title', 'question', 'answer', 'unitId'];
+          this.fields = ['title', 'question', 'answer', 'unit'];
           break;
       }
 
-      for(let field of this.fields){
+      for (let field of this.fields) {
         //create form controls dinamically:
         let formc = this._formBuilder.control('', Validators.required);
 
@@ -91,7 +91,7 @@ export class NewItemComponent implements OnInit {
     });
   }
 
-  submit(){
+  submit() {
     const values = this.form.value;
 
     this.currentService.add(values).subscribe(response =>{
