@@ -7,6 +7,8 @@ import { ExerciseService } from '../../../../services/exercise.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
@@ -96,11 +98,13 @@ export class NewItemComponent implements OnInit {
   }
 
   submit() {
-    const values = this.form.value;
-
-    this.currentService.add(values).subscribe(response =>{
-      console.log(response);
-      this.toastr.success(this.translateService.instant('ADDED'));
-    });
+    this.currentService.add(this.form.value)
+      .pipe(catchError((err) => {
+        this.toastr.error(err.error['hydra:description']);
+        return throwError(err);
+      }))
+      .subscribe(() => {
+        this.toastr.success(this.translateService.instant('ADDED'));
+      });
   }
 }

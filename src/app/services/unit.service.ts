@@ -26,7 +26,7 @@ export class UnitService {
   }
 
   add(values) {
-    values.subject = '/birt-api/public/api/subjects/' + values.subject;
+    values.subject = environment.api.subject + '/' + values.subject;
     return this.http.post(
       environment.api.unit,
       {
@@ -44,7 +44,7 @@ export class UnitService {
         ...values
       }
     );
-  }
+  }/*
 
   delete(id: number) {
     return this.http.delete(
@@ -53,5 +53,5 @@ export class UnitService {
         observe: 'response'
       }
     );
-  }
+  }*/
 }

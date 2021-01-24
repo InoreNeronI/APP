@@ -5,8 +5,8 @@
     alt="{{'ADD' | translate}}" title="{{'ADD' | translate}}" class="d-inline-block align-top">
 </button>
 
-<div *ngIf="data">
-  <table class="table table-bordered" *ngIf="data['hydra:member'] && data['hydra:totalItems']>0">
+<div *ngIf="data && data['hydra:member'] && data['hydra:totalItems'] > 0">
+  <table class="table table-bordered">
     <thead>
     <tr class="text-center">
       <th *ngFor="let head of getArrayFieldsFromJSON(data['hydra:member'][0])">
@@ -32,7 +32,7 @@
     </tbody>
   </table>
   <p>
-    {{'TOTAL_ITEMS' | translate}}: {{data["hydra:totalItems"]}}
+    {{'TOTAL_ITEMS' | translate}}: {{data['hydra:totalItems']}}
   </p>
   <!--todo: paginator component-->
   <!--

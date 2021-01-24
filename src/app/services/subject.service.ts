@@ -43,7 +43,7 @@ export class SubjectService {
         ...SubjectService.changeCourseToNumber(values)
       }
     );
-  }
+  }/*
 
   delete(id: number) {
     return this.http.delete(
@@ -52,7 +52,7 @@ export class SubjectService {
         observe: 'response'
       }
     );
-  }
+  }*/
 
   private static changeCourseToNumber(json) {
     if (json.course) {

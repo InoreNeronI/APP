@@ -24,8 +24,7 @@ export class ExerciseService {
   }
 
   add(values) {
-    values.unit = '/birt-api/public/api/units/' + values.unit;
-
+    values.unit = environment.api.unit + '/' + values.unit;
     return this.http.post(
       environment.api.exercise,
       {
@@ -43,7 +42,7 @@ export class ExerciseService {
         ...values
       }
     );
-  }
+  }/*
 
   delete(id: number) {
     return this.http.delete(
@@ -52,5 +51,5 @@ export class ExerciseService {
         observe: 'response'
       }
     );
-  }
+  }*/
 }

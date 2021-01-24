@@ -8,6 +8,8 @@ import { ExerciseService } from '../../../../services/exercise.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 import Utils from '../../../../utils';
 
 @Component({
@@ -89,8 +91,7 @@ export class EditItemComponent implements OnInit {
 
       this.currentService.getOne(this.id).subscribe(details => {
         this.data = details;
-
-        this.fields = Utils.internalFieldsfilter(Object.keys(details))
+        this.fields = Utils.internalFieldsFilter(Object.keys(details));
 
         for (let field of this.fields) {
           //create form controls dinamically:
@@ -103,8 +104,6 @@ export class EditItemComponent implements OnInit {
           this.formControlsArray.push(formc);
           this.form.addControl(field, formc);
         }
-        //console.log(this.fields)
-        //console.log(this.formControlsArray)
       });
     });
   }
@@ -114,12 +113,13 @@ export class EditItemComponent implements OnInit {
   }
 
   submit() {
-    //edit
-    const values = this.form.value;
-
-    this.currentService.edit(this.id, values).subscribe(response =>{
-      //console.log(response);
-      this.toastr.success(this.translateService.instant('EDITED'));
-    });
+    this.currentService.edit(this.id, this.form.value)
+      .pipe(catchError((err) => {
+        this.toastr.error(err.error['hydra:description']);
+        return throwError(err);
+      }))
+      .subscribe(() => {
+        this.toastr.success(this.translateService.instant('EDITED'));
+      });
   }
 }
