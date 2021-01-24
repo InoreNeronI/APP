@@ -2,48 +2,39 @@
 <button class="btn btn-light" [routerLink]="['/admin/new/', currentType]">
   <img
     src="https://material-icons.github.io/material-icons/svg/add/baseline.svg"
-    alt="{{'ADD' | translate}}" class="d-inline-block align-top">
+    alt="{{'ADD' | translate}}" title="{{'ADD' | translate}}" class="d-inline-block align-top">
 </button>
 
 <div *ngIf="data">
-
   <table class="table table-bordered" *ngIf="data['hydra:member'] && data['hydra:totalItems']>0">
     <thead>
-    <tr>
+    <tr class="text-center">
       <th *ngFor="let head of getArrayFieldsFromJSON(data['hydra:member'][0])">
-        {{head}}
+        {{head | translate}}
       </th>
       <th scope="col">{{'ACTIONS' | translate}}</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let row of data['hydra:member']">
+    <tr *ngFor="let row of data['hydra:member']" class="text-center">
       <td *ngFor="let column of getArrayDataFromJSON(row)">
         {{column}}
       </td>
-
       <td>
-        <button class="btn btn-light" [routerLink]="['/admin/edit/', currentType, row.id]">
-          <img src="https://material-icons.github.io/material-icons/svg/edit/baseline.svg" alt="{{'EDIT' | translate}}" class="d-inline-block align-top">
+        <button class="btn btn-light p-0" [routerLink]="['/admin/edit/', currentType, row.id]">
+          <img src="https://material-icons.github.io/material-icons/svg/edit/baseline.svg" alt="{{'EDIT' | translate}}" title="{{'EDIT' | translate}}" class="d-inline-block align-top">
         </button>
-        <button class="btn btn-light" (click)="deleteByID(row.id)">
-          <img src="https://material-icons.github.io/material-icons/svg/delete/baseline.svg" alt="{{'DELETE' | translate}}" class="d-inline-block align-top">
+        <button class="btn btn-light ms-2 p-0" (click)="deleteByID(row.id)">
+          <img src="https://material-icons.github.io/material-icons/svg/delete/baseline.svg" alt="{{'DELETE' | translate}}" title="{{'DELETE' | translate}}" class="d-inline-block align-top">
         </button>
       </td>
-
     </tr>
     </tbody>
   </table>
-
-
   <p>
-    {{'TOTAL_ITEMS' | translate}}
+    {{'TOTAL_ITEMS' | translate}}: {{data["hydra:totalItems"]}}
   </p>
-  {{data["hydra:totalItems"]}}
-
-
   <!--todo: paginator component-->
-
   <!--
   <nav aria-label="Page navigation example">
     <ul class="pagination">
@@ -54,7 +45,4 @@
     </ul>
   </nav>
   -->
-
 </div>
-
-

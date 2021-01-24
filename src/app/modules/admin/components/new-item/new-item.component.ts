@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { SubjectService } from '../../../../services/subject.service';
 import { UnitService } from '../../../../services/unit.service';
@@ -13,14 +14,13 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   templateUrl: './new-item.component.html',
   styleUrls: ['./new-item.component.sass']
 })
-export class NewItemComponent implements OnInit {
 
+export class NewItemComponent implements OnInit {
   item;
   currentService;
   fields;
   form: FormGroup;
   formControlsArray = [];
-
 
   config: AngularEditorConfig = {
     editable: true,
@@ -55,7 +55,8 @@ export class NewItemComponent implements OnInit {
     public exerciseService: ExerciseService,
     private _formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private _location: Location
   ) {
     this.form = this._formBuilder.group({
       formControlsArray: this._formBuilder.array([])
@@ -87,8 +88,11 @@ export class NewItemComponent implements OnInit {
         this.formControlsArray.push(formc);
         this.form.addControl(field, formc);
       }
-
     });
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
   submit() {
@@ -99,5 +103,4 @@ export class NewItemComponent implements OnInit {
       this.toastr.success(this.translateService.instant('ADDED'));
     });
   }
-
 }

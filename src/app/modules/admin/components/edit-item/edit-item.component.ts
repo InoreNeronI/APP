@@ -1,22 +1,22 @@
-import {Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {AngularEditorConfig} from "@kolkov/angular-editor";
-import {ActivatedRoute} from "@angular/router";
-import {SubjectService} from "../../../../services/subject.service";
-import {UnitService} from "../../../../services/unit.service";
-import {ExerciseService} from "../../../../services/exercise.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ToastrService} from "ngx-toastr";
-import {TranslateService} from "@ngx-translate/core";
-import Utils from "../../../../utils";
-
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { ActivatedRoute } from '@angular/router';
+import { SubjectService } from '../../../../services/subject.service';
+import { UnitService } from '../../../../services/unit.service';
+import { ExerciseService } from '../../../../services/exercise.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
+import Utils from '../../../../utils';
 
 @Component({
   selector: 'app-new-item',
   templateUrl: './edit-item.component.html',
   styleUrls: ['./edit-item.component.sass']
 })
-export class EditItemComponent implements OnInit {
 
+export class EditItemComponent implements OnInit {
   id;
   item;
   currentService;
@@ -35,17 +35,17 @@ export class EditItemComponent implements OnInit {
     ],
     customClasses: [
       {
-        name: "quote",
-        class: "quote",
+        name: 'quote',
+        class: 'quote',
       },
       {
         name: 'redText',
         class: 'redText'
       },
       {
-        name: "titleText",
-        class: "titleText",
-        tag: "h1",
+        name: 'titleText',
+        class: 'titleText',
+        tag: 'h1',
       },
     ]
   };
@@ -60,7 +60,8 @@ export class EditItemComponent implements OnInit {
     public exerciseService: ExerciseService,
     private _formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private _location: Location
   ) {
     this.form = this._formBuilder.group({
       formControlsArray: this._formBuilder.array([])
@@ -70,7 +71,7 @@ export class EditItemComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.item = params.get('item');
-      switch (this.item){
+      switch (this.item) {
         case 'subjects':
           this.currentService = this.subjectService;
           break;
@@ -91,7 +92,7 @@ export class EditItemComponent implements OnInit {
 
         this.fields = Utils.internalFieldsfilter(Object.keys(details))
 
-        for(let field of this.fields){
+        for (let field of this.fields) {
           //create form controls dinamically:
           let formc = this._formBuilder.control(
             {
@@ -102,23 +103,23 @@ export class EditItemComponent implements OnInit {
           this.formControlsArray.push(formc);
           this.form.addControl(field, formc);
         }
-        console.log(this.fields)
-        console.log(this.formControlsArray)
+        //console.log(this.fields)
+        //console.log(this.formControlsArray)
       });
-
-
     });
   }
 
-  submit(){
+  backClicked() {
+    this._location.back();
+  }
+
+  submit() {
     //edit
     const values = this.form.value;
 
     this.currentService.edit(this.id, values).subscribe(response =>{
-      console.log(response);
+      //console.log(response);
       this.toastr.success(this.translateService.instant('EDITED'));
     });
-
   }
-
 }

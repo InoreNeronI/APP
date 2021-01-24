@@ -1,16 +1,13 @@
 
 <form class="mb-3" [formGroup]="form">
-
-  <div *ngFor="let field of fields; let i=index">
-    <label [for]="field" class="form-label">{{field}}</label>
-
-    <input *ngIf="field !== 'text'"  type="text" class="form-control" [id]="field" [formControl]="formControlsArray[i]">
-
+  <div *ngFor="let field of fields; let i=index" class="mt-2">
+    <label [for]="field" class="form-label" role="button">{{field | translate}}</label>
+    <input *ngIf="field !== 'text'" type="text" class="form-control" [id]="field" [formControl]="formControlsArray[i]">
+    <!--todo question improvement for show false or true / text-->
     <angular-editor *ngIf="item === 'units' && field === 'text' " [formControl]="formControlsArray[i]" [config]="config"></angular-editor>
   </div>
-
-  <div class="actions">
-    <button type="submit" class="btn btn-primary" (click)="submit()">{{ 'SAVE' | translate }}</button>
+  <div class="form-actions mt-2 text-center">
+    <button type="submit" class="btn btn-primary" (click)="submit()">{{'SAVE' | translate}}</button>
+    <button (click)="backClicked()" class="btn btn-dark ms-2">{{'GO_BACK' | translate}}</button>
   </div>
 </form>
-
