@@ -1,6 +1,6 @@
 
-const basePublicUrl = 'https://pc2.labs.birt.eus/back-end/api';
-const baseUrl = 'https://pc2.labs.birt.eus/back-end';
+const basePublicUrl = 'https://pc2.labs.birt.eus/api';
+const baseUrl = 'https://pc2.labs.birt.eus';
 
 export const environment = {
   production: true,
