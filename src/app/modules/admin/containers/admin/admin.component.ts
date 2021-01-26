@@ -3,16 +3,14 @@ import { SubjectService } from '../../../../services/subject.service';
 import { UnitService } from '../../../../services/unit.service';
 import { ExerciseService } from '../../../../services/exercise.service';
 import { Observable } from 'rxjs';
-import { ToastrService } from 'ngx-toastr';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.sass']
 })
-export class AdminComponent implements OnInit {
 
+export class AdminComponent implements OnInit {
   //page: number = 1;
 
   currentTab;
@@ -25,13 +23,10 @@ export class AdminComponent implements OnInit {
   constructor(
     public subjectService: SubjectService,
     public unitService: UnitService,
-    public exerciseService: ExerciseService,
-    private toastr: ToastrService,
-    private translateService: TranslateService
+    public exerciseService: ExerciseService
   ) { }
 
   ngOnInit(): void {
-
     //Load all items: (prefetch all)
     this.subjects$ = this.subjectService.get(/*{page: this.page}*/);
     this.units$ = this.unitService.get(/*{page: this.page}*/);
@@ -44,13 +39,6 @@ export class AdminComponent implements OnInit {
 
   setCurrentNav(event) {
     this.currentTab = event.target.id;
-  }
-
-  delete(id: number) {
-    this.currentService.delete(id).subscribe(response => {
-      this.setCurrentData();
-      this.toastr.success(this.translateService.instant('DELETED'));
-    });
   }
 
   setCurrentData() {

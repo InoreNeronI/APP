@@ -8,6 +8,7 @@ import { EditItemComponent } from './components/edit-item/edit-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularEditorModule} from '@kolkov/angular-editor';
 import { NewItemComponent } from './components/new-item/new-item.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 @NgModule({
   declarations: [AdminComponent, TableComponent, EditItemComponent, NewItemComponent],
@@ -18,7 +19,8 @@ import { NewItemComponent } from './components/new-item/new-item.component';
     FormsModule,
     ReactiveFormsModule,
     AngularEditorModule
-  ]
+  ],
+  providers: [AuthGuard]
 })
 
 export class AdminModule { }

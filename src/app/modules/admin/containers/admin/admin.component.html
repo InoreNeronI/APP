@@ -14,13 +14,13 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-subject" role="tabpanel" aria-labelledby="nav-subject-tab">
-    <app-table [currentType]="currentTab" [data]="subjects$ | async" (delete)="delete($event)"></app-table>
+    <app-table [currentType]="currentTab" [data]="subjects$ | async"></app-table>
   </div>
   <div class="tab-pane fade" id="nav-units" role="tabpanel" aria-labelledby="nav-units-tab">
-    <app-table [currentType]="currentTab" [data]="units$ | async" (delete)="delete($event)"></app-table>
+    <app-table [currentType]="currentTab" [data]="units$ | async"></app-table>
   </div>
   <div class="tab-pane fade" id="nav-exercises" role="tabpanel" aria-labelledby="nav-exercises-tab">
-    <app-table [currentType]="currentTab" [data]="exercises$ | async" (delete)="delete($event)"></app-table>
+    <app-table [currentType]="currentTab" [data]="exercises$ | async"></app-table>
   </div>
 </div>
 

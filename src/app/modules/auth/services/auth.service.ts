@@ -16,6 +16,10 @@ export class AuthService {
     return localStorage.getItem('currentRole') === 'ROLE_ADMIN';
   }
 
+  isUser(): boolean {
+    return localStorage.getItem('currentRole') === 'ROLE_USER';
+  }
+
   async logout(): Promise<void> {
     localStorage.removeItem('currentUser');
     localStorage.removeItem('currentRole');
