@@ -1,5 +1,5 @@
 <div class="subject-box container" >
-  <h1>{{subjectName | uppercase | translate}}</h1>
-  <h3 *ngIf="units && units.length>0">{{'UNITS' | translate}}:</h3>
+  <h1 class="text-center">{{subjectName | uppercase | translate}}</h1>
+  <h3 *ngIf="units && units.length > 0"><u>{{'UNITS' | translate}}:</u></h3>
   <app-unit *ngFor="let unit of units" [unit]="unit"></app-unit>
 </div>
