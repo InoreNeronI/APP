@@ -8,9 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-
   subjects;
-  //page: number = 1;
 
   constructor(
     public subjectService: SubjectService,
@@ -18,8 +16,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subjectService.get(/*{page: this.page}*/).subscribe( subjects => {
-      //console.log(subjects)
+    this.subjectService.get(/*{page: this.page}*/).subscribe(subjects => {
       this.subjects = subjects;
     })
   }
