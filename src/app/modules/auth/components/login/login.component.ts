@@ -5,12 +5,15 @@ import { environment } from '../../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.sass']
 })
+
 export class LoginComponent implements OnInit {
   error: any;
   form: FormGroup = new FormGroup({
@@ -21,7 +24,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -40,11 +45,10 @@ export class LoginComponent implements OnInit {
       this.error = err.error;
       return throwError(err);
     })).subscribe(async response => {
-      if (response) {
+      if (response.hasOwnProperty('roles')) {
         localStorage.setItem('currentUser', email);
-        if (response.hasOwnProperty('roles')) {
-          localStorage.setItem('currentRole', JSON.parse(response['roles'].content)[0]);
-        }
+        localStorage.setItem('currentRole', JSON.parse(response['roles'].content)[0]);
+        this.toastr.info(this.translateService.instant('LOGGED_IN'));
         await this.router.navigate(['/']);
       }
     });

@@ -1,34 +1,31 @@
 <div class="container-sm">
-  <h2>{{'REGISTER' | translate}}</h2>
+  <h2 class="text-center">{{'REGISTER' | translate}}</h2>
   <form name="form" [formGroup]="form" role="form" (ngSubmit)="register()">
     <div class="form-group" [ngClass]="{ 'has-error': form.controls.firstName.touched && form.controls.firstName.errors?.required }">
-      <label for="firstName">{{'FIRST_NAME' | translate}}</label>
+      <label for="firstName" role="button">{{'FIRST_NAME' | translate}}</label>
       <input type="text" name="firstName" formControlName="firstName" id="firstName" class="form-control" required />
-      <span *ngIf="form.controls.firstName.touched && form.controls.firstName.errors?.required" class="help-block">{{'FIRST_NAME_REQUIRED' | translate}}</span>
+      <span *ngIf="form.controls.firstName.touched && form.controls.firstName.errors?.required" class="form-text">{{'FIRST_NAME_REQUIRED' | translate}}</span>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': form.controls.lastName.touched && form.controls.lastName.errors?.required }">
-      <label for="lastName">{{'LAST_NAME' | translate}}</label>
+      <label for="lastName" role="button">{{'LAST_NAME' | translate}}</label>
       <input type="text" name="lastName" formControlName="lastName" id="lastName" class="form-control" required />
-      <span *ngIf="form.controls.lastName.touched && form.controls.lastName.errors?.required" class="help-block">{{'LAST_NAME_REQUIRED' | translate}}</span>
+      <span *ngIf="form.controls.lastName.touched && form.controls.lastName.errors?.required" class="form-text">{{'LAST_NAME_REQUIRED' | translate}}</span>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': form.controls.email.touched && form.controls.email.errors?.required }">
-      <label for="email">{{'EMAIL' | translate}}</label>
+      <label for="email" role="button">{{'EMAIL' | translate}}</label>
       <input type="text" name="email" id="email" formControlName="email" class="form-control" required />
-      <span *ngIf="form.controls.email.touched && form.controls.email.errors?.required" class="help-block">{{'EMAIL_REQUIRED' | translate}}</span>
+      <span *ngIf="form.controls.email.touched && form.controls.email.errors?.required" class="form-text">{{'EMAIL_REQUIRED' | translate}}</span>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': form.controls.password.touched && form.controls.password.errors?.required }">
-      <label for="password">{{'PASSWORD' | translate}}</label>
+      <label for="password" role="button">{{'PASSWORD' | translate}}</label>
       <input type="password" name="password" id="password" formControlName="password" class="form-control" required />
-      <span *ngIf="form.controls.password.touched && form.controls.password.errors?.required" class="help-block">{{'PASSWORD_REQUIRED' | translate}}</span>
+      <span *ngIf="form.controls.password.touched && form.controls.password.errors?.required" class="form-text">{{'PASSWORD_REQUIRED' | translate}}</span>
     </div>
-
-    <div class="alert alert-danger ng-scope" role="alert" *ngIf="error">{{'EMAIL_EXISTS' | translate}}</div>
-
-    <div class="form-actions">
-      <button type="submit" [disabled]="!form.valid && !loading" class="btn btn-primary">{{'REGISTER' | translate}}</button>
-      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-      <button [routerLink]="['/auth']" class="btn btn-grey">{{'CANCEL' | translate}}</button>
+    <div class="alert alert-danger mb-0 mt-3 px-2 py-1" role="alert" *ngIf="error">{{'EMAIL_EXISTS' | translate}}</div>
+    <div class="form-actions mt-3 text-center">
+      <button type="submit" [disabled]="!form.valid && !loading" class="btn btn-outline-primary">{{'REGISTER' | translate}}</button>
+      <img *ngIf="loading" alt="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      <button [routerLink]="['/auth']" class="btn btn-outline-dark ms-3">{{'CANCEL' | translate}}</button>
     </div>
   </form>
-
 </div>

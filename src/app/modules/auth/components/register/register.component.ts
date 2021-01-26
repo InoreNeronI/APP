@@ -5,6 +5,8 @@ import { environment } from '../../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +26,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +46,8 @@ export class RegisterComponent implements OnInit {
       this.error = err.error;
       return throwError(err);
     })).subscribe(async response => {
-      if (response) {
+      if (response.hasOwnProperty('email')) {
+        this.toastr.info(this.translateService.instant('SIGNED_UP', { email: response['email'] }));
         await this.router.navigate(['/auth']);
       }
     });
