@@ -33,7 +33,8 @@ export class SubjectComponent implements OnInit {
         this.subject = this.subjects['hydra:member'].find(value => value.name === this.subjectName);
 
         this.unitService.get(/*{page: 1}*/).subscribe(units => {
-          this.units = units['hydra:member'].filter(unit => unit.subject.split('/')[4] === this.subject.id.toString());
+          console.log(units[0].subject.split('/')[3])
+          this.units = units['hydra:member'].filter(unit => unit.subject.split('/')[3] === this.subject.id.toString());
         });
       });
     });
