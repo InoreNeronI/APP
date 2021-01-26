@@ -1,3 +1,4 @@
+<h6 *ngIf="exercise.title !== ''" class="text-center"><strong>{{exercise.title}}</strong></h6>
 
 <div *ngIf="type === 'text'" class="mb-3 input-group has-validation">
   <label class="form-label" role="button" [for]="'exercise'+exercise.id">{{exercise.question}}</label>
