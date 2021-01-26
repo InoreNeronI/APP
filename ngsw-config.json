@@ -31,7 +31,8 @@
     {
       "name": "api-performance",
       "urls": [
-        "http://pc2.labs.birt.eus/back-end/api/**"
+        "http://pc2.labs.birt.eus/api/**",
+        "https://pc2.labs.birt.eus/api/**"
       ],
       "cacheConfig": {
         "strategy": "performance",
