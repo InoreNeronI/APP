@@ -6,21 +6,21 @@
 </button>
 
 <div *ngIf="data && data['hydra:member'] && data['hydra:totalItems'] > 0">
-  <table class="table table-bordered">
+  <table class="table table-bordered" role="table">
     <thead>
-    <tr class="text-center">
-      <th *ngFor="let head of getArrayFieldsFromJSON(data['hydra:member'][0])">
+    <tr class="table-row text-center" role="rowgroup">
+      <th *ngFor="let head of getArrayFieldsFromJSON(data['hydra:member'][0])" role="columnheader" scope="col">
         {{head | translate}}
       </th>
-      <th scope="col">{{'ACTIONS' | translate}}</th>
+      <th role="columnheader" scope="col">{{'ACTIONS' | translate}}</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let row of data['hydra:member']" class="text-center">
-      <td *ngFor="let column of getArrayDataFromJSON(row)">
+    <tr *ngFor="let row of data['hydra:member']" class="table-body table-row text-center" role="rowgroup">
+      <td *ngFor="let column of getArrayDataFromJSON(row)" role="cell">
         {{column}}
       </td>
-      <td>
+      <td role="cell">
         <button class="btn btn-light p-0" [routerLink]="['/admin/edit/', currentType, row.id]">
           <img src="https://material-icons.github.io/material-icons/svg/edit/baseline.svg" alt="{{'EDIT' | translate}}" title="{{'EDIT' | translate}}" class="d-inline-block align-top">
         </button>
