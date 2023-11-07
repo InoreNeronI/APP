@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -15,11 +15,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class RegisterComponent implements OnInit {
   error: any;
-  form: FormGroup = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.email, Validators.required ] ),
-    password: new FormControl('', Validators.required)
+  form: UntypedFormGroup = new UntypedFormGroup({
+    firstName: new UntypedFormControl('', Validators.required),
+    lastName: new UntypedFormControl('', Validators.required),
+    email: new UntypedFormControl('', [Validators.email, Validators.required ] ),
+    password: new UntypedFormControl('', Validators.required)
   });
   loading = true;
 

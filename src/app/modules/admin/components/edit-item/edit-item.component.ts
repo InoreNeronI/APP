@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SubjectService } from '../../../../services/subject.service';
 import { UnitService } from '../../../../services/unit.service';
 import { ExerciseService } from '../../../../services/exercise.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 import { catchError } from 'rxjs/operators';
@@ -51,7 +51,7 @@ export class EditItemComponent implements OnInit {
     ]
   };
 
-  form: FormGroup;
+  form: UntypedFormGroup;
   formControlsArray = [];
 
   constructor(
@@ -59,7 +59,7 @@ export class EditItemComponent implements OnInit {
     public subjectService: SubjectService,
     public unitService: UnitService,
     public exerciseService: ExerciseService,
-    private _formBuilder: FormBuilder,
+    private _formBuilder: UntypedFormBuilder,
     private toastr: ToastrService,
     private translateService: TranslateService,
     private _location: Location

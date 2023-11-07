@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -15,9 +15,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LoginComponent implements OnInit {
   error: any;
-  form: FormGroup = new FormGroup({
-    email: new FormControl('',[Validators.required, Validators.email] ),
-    password: new FormControl('', Validators.required)
+  form: UntypedFormGroup = new UntypedFormGroup({
+    email: new UntypedFormControl('',[Validators.required, Validators.email] ),
+    password: new UntypedFormControl('', Validators.required)
   });
   loading = true;
 
