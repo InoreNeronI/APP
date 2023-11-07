@@ -11,7 +11,6 @@ import { throwError } from 'rxjs';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.sass']
 })
-
 export class TableComponent {
   @Input() data;
   @Input() currentType;

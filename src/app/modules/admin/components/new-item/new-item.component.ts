@@ -16,7 +16,6 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   templateUrl: './new-item.component.html',
   styleUrls: ['./new-item.component.sass']
 })
-
 export class NewItemComponent implements OnInit {
   item;
   currentService;

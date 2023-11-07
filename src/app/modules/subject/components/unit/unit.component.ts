@@ -7,7 +7,6 @@ import { ExerciseService } from '../../../../services/exercise.service';
   styleUrls: ['./unit.component.sass']
 })
 export class UnitComponent implements OnInit {
-
   @Input() unit;
   exercises;
 

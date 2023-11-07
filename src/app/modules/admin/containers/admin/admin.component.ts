@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.sass']
 })
-
 export class AdminComponent implements OnInit {
   //page: number = 1;
 

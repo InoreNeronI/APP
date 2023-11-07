@@ -5,7 +5,6 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './exercise.component.html',
   styleUrls: ['./exercise.component.sass']
 })
-
 export class ExerciseComponent implements OnInit {
   @Input() exercise;
   type;

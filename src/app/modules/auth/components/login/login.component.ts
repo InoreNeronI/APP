@@ -13,7 +13,6 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.sass']
 })
-
 export class LoginComponent implements OnInit {
   error: any;
   form: FormGroup = new FormGroup({

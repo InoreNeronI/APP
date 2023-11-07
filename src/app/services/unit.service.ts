@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
-//import { Router } from '@angular/router';
-import { HttpClient/*, HttpParams*/ } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment} from '../../environments/environment';
 
 @Injectable()
 export class UnitService {
 
   constructor(
-    private http: HttpClient,
-    //private router: Router
+    private http: HttpClient
   ) { }
 
   get(/*{ page }*/) {
-    //const params = new HttpParams().append('page', page);
-
     return this.http.get(
       environment.api.unit
     );
