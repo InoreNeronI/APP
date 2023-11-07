@@ -58,28 +58,22 @@
         <div class="main-nav-menu order-1">
           <div class="dropstart">
             <button class="border btn dropdown-toggle p-1 px-sm-2 px-lg-3 px-xxl-4" type="button" id="dropdownThemeButton" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://material-icons.github.io/material-icons/svg/tune/baseline.svg" alt="{{'LANGUAGE' | translate}}">
+              <img src="https://material-icons.github.io/material-icons/svg/tune/baseline.svg" alt="{{'THEME' | translate}}">
             </button>
             <ul class="dropdown-menu text-start" aria-labelledby="dropdownThemeButton">
               <li class="nav-item">
                 <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
-                  <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
-                  {{'LIGHT' | translate}}
-                  <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                  <img class="bi-2x d-inline-block" src="https://material-icons.github.io/material-icons/svg/light_mode/baseline.svg" alt="{{'LIGHT' | translate}}">&nbsp;{{'LIGHT' | translate}}
                 </button>
               </li>
               <li class="nav-item">
                 <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
-                  <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
-                  {{'DARK' | translate}}
-                  <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                  <img class="bi-2x d-inline-block" src="https://material-icons.github.io/material-icons/svg/dark_mode/baseline.svg" alt="{{'DARK' | translate}}">&nbsp;{{'DARK' | translate}}
                 </button>
               </li>
               <li class="nav-item">
-                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
-                  <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
-                  {{'AUTO' | translate}}
-                  <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                  <img class="bi-2x d-inline-block" src="https://material-icons.github.io/material-icons/svg/contrast/baseline.svg" alt="{{'AUTO' | translate}}">&nbsp;{{'AUTO' | translate}}
                 </button>
               </li>
             </ul>
@@ -110,16 +104,16 @@
             </button>
             <ul class="dropdown-menu text-end" aria-labelledby="dropdownUserButton">
               <li *ngIf="authService.isLogged()">
-                <a class="dropdown-item" (click)="logout()" routerLinkActive="active">{{'LOGOUT' | translate}}</a>
+                <a class="dropdown-item" (click)="logout()" routerLinkActive="active"><img class="bi-2x d-inline-block" src="https://material-icons.github.io/material-icons/svg/logout/baseline.svg" alt="{{'LOGOUT' | translate}}">&nbsp;{{'LOGOUT' | translate}}</a>
               </li>
               <li *ngIf="!authService.isLogged()">
-                <a class="dropdown-item" routerLink="/auth/login" routerLinkActive="active">{{'LOGIN' | translate}}</a>
+                <a class="dropdown-item" routerLink="/auth/login" routerLinkActive="active"><img class="bi-2x d-inline-block" src="https://material-icons.github.io/material-icons/svg/login/baseline.svg" alt="{{'LOGIN' | translate}}">&nbsp;{{'LOGIN' | translate}}</a>
               </li>
               <li *ngIf="!authService.isLogged()">
                 <hr class="dropdown-divider">
               </li>
               <li *ngIf="!authService.isLogged()">
-                <a class="dropdown-item" routerLink="/auth/register" routerLinkActive="active">{{'REGISTER' | translate}}</a>
+                <a class="dropdown-item" routerLink="/auth/register" routerLinkActive="active"><img class="bi-2x d-inline-block" src="https://material-icons.github.io/material-icons/svg/app_registration/baseline.svg" alt="{{'REGISTER' | translate}}">&nbsp;{{'REGISTER' | translate}}</a>
               </li>
             </ul>
           </div>
