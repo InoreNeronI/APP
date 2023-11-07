@@ -11,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   languages = ['en', 'es', 'eu'];
-  title = 'Eduglee';
+  title = 'APP';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
