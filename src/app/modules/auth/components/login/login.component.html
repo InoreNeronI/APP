@@ -14,7 +14,7 @@
     <div class="alert alert-danger mb-0 mt-3 px-2 py-1" role="alert" *ngIf="error">{{ error.error | translate }}</div>
     <div class="form-actions mt-3 text-center">
       <button type="submit" [disabled]="!form.valid && !loading" class="btn btn-outline-primary me-3">{{'LOGIN' | translate}}</button>
-      <button [routerLink]="['/auth/register']" class="btn btn-outline-dark">{{'REGISTER' | translate}}</button>
+      <button [routerLink]="['/auth/register']" class="btn btn-outline">{{'REGISTER' | translate}}</button>
     </div>
   </form>
 </div>

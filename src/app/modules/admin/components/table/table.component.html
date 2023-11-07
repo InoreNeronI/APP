@@ -21,10 +21,10 @@
         {{column}}
       </td>
       <td role="cell">
-        <button class="btn btn-light p-0" [routerLink]="['/admin/edit/', currentType, row.id]">
+        <button class="btn p-0" [routerLink]="['/admin/edit/', currentType, row.id]">
           <img src="https://material-icons.github.io/material-icons/svg/edit/baseline.svg" alt="{{'EDIT' | translate}}" title="{{'EDIT' | translate}}" class="d-inline-block align-top">
         </button>
-        <button class="btn btn-light ms-2 p-0" (click)="deleteByID(row.id)">
+        <button class="btn ms-2 p-0" (click)="deleteByID(row.id)">
           <img src="https://material-icons.github.io/material-icons/svg/delete/baseline.svg" alt="{{'DELETE' | translate}}" title="{{'DELETE' | translate}}" class="d-inline-block align-top">
         </button>
       </td>
