@@ -1,4 +1,3 @@
-
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <a class="nav-link active" id="subjects" (click)="setCurrentNav($event)" data-bs-toggle="tab" href="#nav-subject" role="tab" aria-controls="nav-subject" aria-selected="true">
@@ -23,8 +22,3 @@
     <app-table [currentType]="currentTab" [data]="exercises$ | async"></app-table>
   </div>
 </div>
-
-
-
-
-
