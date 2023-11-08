@@ -7,8 +7,8 @@
     <angular-editor *ngIf="item === 'units' && field === 'text' " [formControl]="formControlsArray[i]" [config]="config"></angular-editor>
   </div>
   <div class="form-actions mt-3 text-center">
-    <button type="submit" class="btn btn-outline-primary" (click)="submit()">{{ 'SAVE' | translate }}</button>
-    <button (click)="backClicked()" class="btn btn-outlinems-3">{{'GO_BACK' | translate}}</button>
+    <button type="submit" class="btn btn-outline-primary me-3" (click)="submit()">{{ 'SAVE' | translate }}</button>
+    <button (click)="backClicked()" class="btn btn-outline">{{'GO_BACK' | translate}}</button>
   </div>
 </form>
 
