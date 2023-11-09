@@ -9,9 +9,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { SubjectService } from './services/subject.service';
-import { UnitService} from './services/unit.service';
+import { UnitService } from './services/unit.service';
 import { ExerciseService } from './services/exercise.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,9 +21,7 @@ export function createTranslateLoader(http: any) {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -32,7 +30,7 @@ export function createTranslateLoader(http: any) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
     }),
@@ -41,12 +39,7 @@ export function createTranslateLoader(http: any) {
     FormsModule,
     ToastrModule.forRoot()
   ],
-  providers: [
-    AuthService,
-    SubjectService,
-    UnitService,
-    ExerciseService
-  ],
+  providers: [AuthService, SubjectService, UnitService, ExerciseService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

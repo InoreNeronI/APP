@@ -29,13 +29,11 @@ export class NewItemComponent implements OnInit {
     translate: 'no',
     defaultParagraphSeparator: 'p',
     defaultFontName: 'Arial',
-    toolbarHiddenButtons: [
-      ['bold']
-    ],
+    toolbarHiddenButtons: [['bold']],
     customClasses: [
       {
         name: 'quote',
-        class: 'quote',
+        class: 'quote'
       },
       {
         name: 'redText',
@@ -44,8 +42,8 @@ export class NewItemComponent implements OnInit {
       {
         name: 'titleText',
         class: 'titleText',
-        tag: 'h1',
-      },
+        tag: 'h1'
+      }
     ]
   };
 
@@ -65,7 +63,7 @@ export class NewItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       this.item = params.get('item');
       switch (this.item) {
         case 'subjects':
@@ -97,11 +95,14 @@ export class NewItemComponent implements OnInit {
   }
 
   submit() {
-    this.currentService.add(this.form.value)
-      .pipe(catchError((err) => {
-        this.toastr.error(err.error['hydra:description']);
-        return throwError(err);
-      }))
+    this.currentService
+      .add(this.form.value)
+      .pipe(
+        catchError((err) => {
+          this.toastr.error(err.error['hydra:description']);
+          return throwError(err);
+        })
+      )
       .subscribe(() => {
         this.toastr.success(this.translateService.instant('ADDED'));
       });

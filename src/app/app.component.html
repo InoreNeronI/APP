@@ -8,7 +8,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="collapse navbar-collapse main-nav-menu order-2" id="navbarContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0" role="menu">
             <li class="nav-item" *ngIf="authService.isAdmin()">
               <a class="nav-link" aria-current="page" tabIndex="1" role="menuitem" routerLink="/admin" routerLinkActive="active">
@@ -38,7 +38,7 @@
           </ul>
         </div>
         <div class="main-nav-menu order-1">
-          <div class="dropstart">
+          <div class="dropdown">
             <button class="border btn dropdown-toggle p-1 px-sm-2 px-lg-3 px-xxl-4 me-3" type="button" id="dropdownThemeButton" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://material-icons.github.io/material-icons/svg/tune/baseline.svg" alt="{{'THEME' | translate}}">
             </button>
@@ -61,8 +61,8 @@
             </ul>
           </div>
         </div>
-        <div class="main-nav-menu order-2">
-          <div class="dropstart">
+        <div class="main-nav-menu order-3">
+          <div class="dropdown">
             <button class="border btn dropdown-toggle p-1 px-sm-2 px-lg-3 px-xxl-4 me-3" type="button" id="dropdownLanguageButton" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://material-icons.github.io/material-icons/svg/translate/baseline.svg" alt="{{'LANGUAGE' | translate}}">
             </button>
@@ -79,7 +79,7 @@
             </ul>
           </div>
         </div>
-        <div class="main-nav-menu order-3">
+        <div class="main-nav-menu order-4">
           <div class="dropstart">
             <button class="border btn dropdown-toggle p-1 px-sm-2 px-lg-3 px-xxl-4" type="button" id="dropdownUserButton" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://material-icons.github.io/material-icons/svg/face/baseline.svg" alt="{{'SIGN' | translate}}">

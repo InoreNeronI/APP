@@ -5,13 +5,13 @@ import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
-export class AuthGuard  {
-
+export class AuthGuard {
   constructor(
     private auth: AuthService,
     private router: Router,
     private toastr: ToastrService,
-    private translateService: TranslateService) { }
+    private translateService: TranslateService
+  ) {}
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
     if (this.auth.isAdmin()) {
@@ -25,7 +25,7 @@ export class AuthGuard  {
     }
     // not logged in so redirect to login page
     this.toastr.info(this.translateService.instant('LOGIN_PLEASE'));
-    await this.router.navigate(['/auth'], { queryParams: { returnUrl: state.url }});
+    await this.router.navigate(['/auth'], { queryParams: { returnUrl: state.url } });
     return false;
   }
 }

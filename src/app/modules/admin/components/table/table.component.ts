@@ -19,7 +19,8 @@ export class TableComponent {
   constructor(
     private http: HttpClient,
     private toastr: ToastrService,
-    private translateService: TranslateService) { }
+    private translateService: TranslateService
+  ) {}
 
   getArrayDataFromJSON(json) {
     let data = [];
@@ -38,21 +39,23 @@ export class TableComponent {
   internalFieldsFilter(array) {
     const fieldsToRemoveFromResponse = ['@id', '@type'];
 
-    return array.filter(value => fieldsToRemoveFromResponse.indexOf(value) < 0);
+    return array.filter((value) => fieldsToRemoveFromResponse.indexOf(value) < 0);
   }
 
   deleteByID(id: number) {
-    return this.http.delete(
-      environment.apiUrl + '/' + this.currentType + '/' + id,
-      {observe: 'response'}
-    ).pipe(catchError((err) => {
-      this.toastr.error(err.error.error);
-      return throwError(err);
-    })).subscribe(() => {
-      this.toastr.success(this.translateService.instant('DELETED'));
-      const deleted = this.data['hydra:member'].find(x => x.id === id);
-      this.data['hydra:member'].splice(this.data['hydra:member'].indexOf(deleted), 1);
-      this.data['hydra:totalItems'] -= 1;
-    });
+    return this.http
+      .delete(environment.apiUrl + '/' + this.currentType + '/' + id, { observe: 'response' })
+      .pipe(
+        catchError((err) => {
+          this.toastr.error(err.error.error);
+          return throwError(err);
+        })
+      )
+      .subscribe(() => {
+        this.toastr.success(this.translateService.instant('DELETED'));
+        const deleted = this.data['hydra:member'].find((x) => x.id === id);
+        this.data['hydra:member'].splice(this.data['hydra:member'].indexOf(deleted), 1);
+        this.data['hydra:totalItems'] -= 1;
+      });
   }
 }

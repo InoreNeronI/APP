@@ -10,7 +10,7 @@ export class ExerciseComponent implements OnInit {
   type;
   resp;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.type = isNaN(this.exercise.answer) ? 'text' : 'number';

@@ -1,5 +1,4 @@
 export default class Utils {
-
   /**
    * Filter the response form the API for get only the useful fields:
    * @param array
@@ -7,6 +6,6 @@ export default class Utils {
   static internalFieldsFilter(array) {
     const fieldsToRemoveFromResponse = ['@id', '@type', '@context'];
 
-    return array.filter(value => fieldsToRemoveFromResponse.indexOf(value) < 0);
+    return array.filter((value) => fieldsToRemoveFromResponse.indexOf(value) < 0);
   }
 }

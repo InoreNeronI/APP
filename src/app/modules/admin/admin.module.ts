@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './containers/admin/admin.component';
 import { TableComponent } from './components/table/table.component';
-import { TranslateModule} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { EditItemComponent } from './components/edit-item/edit-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AngularEditorModule} from '@kolkov/angular-editor';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NewItemComponent } from './components/new-item/new-item.component';
 import { AuthGuard } from '../auth/auth.guard';
 
@@ -22,4 +22,4 @@ import { AuthGuard } from '../auth/auth.guard';
   ],
   providers: [AuthGuard]
 })
-export class AdminModule { }
+export class AdminModule {}

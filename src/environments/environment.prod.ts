@@ -1,4 +1,3 @@
-
 const basePublicUrl = 'https://pc2.labs.birt.eus/api';
 const baseUrl = 'https://pc2.labs.birt.eus';
 

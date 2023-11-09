@@ -1,4 +1,3 @@
-
 export class Exercise {
   id?: number;
   title: string;

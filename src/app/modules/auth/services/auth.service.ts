@@ -5,12 +5,11 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class AuthService {
-
   constructor(
     private router: Router,
     private toastr: ToastrService,
     private translateService: TranslateService
-  ) { }
+  ) {}
 
   isLogged(): boolean {
     return !!localStorage.getItem('currentUser');

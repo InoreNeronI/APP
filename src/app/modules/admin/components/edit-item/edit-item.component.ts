@@ -31,13 +31,11 @@ export class EditItemComponent implements OnInit {
     translate: 'no',
     defaultParagraphSeparator: 'p',
     defaultFontName: 'Arial',
-    toolbarHiddenButtons: [
-      ['bold']
-    ],
+    toolbarHiddenButtons: [['bold']],
     customClasses: [
       {
         name: 'quote',
-        class: 'quote',
+        class: 'quote'
       },
       {
         name: 'redText',
@@ -46,8 +44,8 @@ export class EditItemComponent implements OnInit {
       {
         name: 'titleText',
         class: 'titleText',
-        tag: 'h1',
-      },
+        tag: 'h1'
+      }
     ]
   };
 
@@ -70,7 +68,7 @@ export class EditItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       this.item = params.get('item');
       switch (this.item) {
         case 'subjects':
@@ -84,11 +82,11 @@ export class EditItemComponent implements OnInit {
           break;
       }
 
-      if(params.get('id')) {
+      if (params.get('id')) {
         this.id = params.get('id');
       }
 
-      this.currentService.getOne(this.id).subscribe(details => {
+      this.currentService.getOne(this.id).subscribe((details) => {
         this.data = details;
         this.fields = Utils.internalFieldsFilter(Object.keys(details));
 
@@ -98,7 +96,9 @@ export class EditItemComponent implements OnInit {
             {
               value: this.data[field],
               disabled: field === 'id'
-            }, Validators.required);
+            },
+            Validators.required
+          );
 
           this.formControlsArray.push(formc);
           this.form.addControl(field, formc);
@@ -112,11 +112,14 @@ export class EditItemComponent implements OnInit {
   }
 
   submit() {
-    this.currentService.edit(this.id, this.form.value)
-      .pipe(catchError((err) => {
-        this.toastr.error(err.error['hydra:description']);
-        return throwError(err);
-      }))
+    this.currentService
+      .edit(this.id, this.form.value)
+      .pipe(
+        catchError((err) => {
+          this.toastr.error(err.error['hydra:description']);
+          return throwError(err);
+        })
+      )
       .subscribe(() => {
         this.toastr.success(this.translateService.instant('EDITED'));
       });

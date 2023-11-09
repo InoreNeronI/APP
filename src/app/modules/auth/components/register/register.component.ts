@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   form: UntypedFormGroup = new UntypedFormGroup({
     firstName: new UntypedFormControl('', Validators.required),
     lastName: new UntypedFormControl('', Validators.required),
-    email: new UntypedFormControl('', [Validators.email, Validators.required ] ),
+    email: new UntypedFormControl('', [Validators.email, Validators.required]),
     password: new UntypedFormControl('', Validators.required)
   });
   loading = true;
@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService,
     private translateService: TranslateService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loading = false;
@@ -38,17 +38,28 @@ export class RegisterComponent implements OnInit {
     this.make(this.form.value);
   }
 
-  make({firstName, lastName, email, password}) {
-    return this.http.post(
-      environment.api.user, {observe: 'response', firstName, lastName, email, plainPassword: password }
-    ).pipe(catchError((err) => {
-      this.error = err.error;
-      return throwError(err);
-    })).subscribe(async response => {
-      if (response.hasOwnProperty('email')) {
-        this.toastr.info(this.translateService.instant('SIGNED_UP', { email: response['email'] }));
-        await this.router.navigate(['/auth']);
-      }
-    });
+  make({ firstName, lastName, email, password }) {
+    return this.http
+      .post(environment.api.user, {
+        observe: 'response',
+        firstName,
+        lastName,
+        email,
+        plainPassword: password
+      })
+      .pipe(
+        catchError((err) => {
+          this.error = err.error;
+          return throwError(err);
+        })
+      )
+      .subscribe(async (response) => {
+        if (response.hasOwnProperty('email')) {
+          this.toastr.info(
+            this.translateService.instant('SIGNED_UP', { email: response['email'] })
+          );
+          await this.router.navigate(['/auth']);
+        }
+      });
   }
 }

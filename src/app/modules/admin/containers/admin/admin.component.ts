@@ -15,15 +15,15 @@ export class AdminComponent implements OnInit {
   currentTab;
   currentService;
 
-  subjects$ : Observable<any>;
-  units$ : Observable<any>;
-  exercises$ : Observable<any>;
+  subjects$: Observable<any>;
+  units$: Observable<any>;
+  exercises$: Observable<any>;
 
   constructor(
     public subjectService: SubjectService,
     public unitService: UnitService,
     public exerciseService: ExerciseService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     //Load all items: (prefetch all)

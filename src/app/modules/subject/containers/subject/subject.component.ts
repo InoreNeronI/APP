@@ -21,18 +21,22 @@ export class SubjectComponent implements OnInit {
     public subjectService: SubjectService,
     public unitService: UnitService,
     public translate: TranslateService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       this.subjectName = params.get('subject');
 
-      this.subjectService.get(/*{page: 1}*/).subscribe(data => {
+      this.subjectService.get(/*{page: 1}*/).subscribe((data) => {
         this.subjects = data;
-        this.subject = this.subjects['hydra:member'].find(value => value.name === this.subjectName);
+        this.subject = this.subjects['hydra:member'].find(
+          (value) => value.name === this.subjectName
+        );
 
-        this.unitService.get(/*{page: 1}*/).subscribe(units => {
-          this.units = units['hydra:member'].filter(unit => unit.subject.split('/')[3] === this.subject.id.toString());
+        this.unitService.get(/*{page: 1}*/).subscribe((units) => {
+          this.units = units['hydra:member'].filter(
+            (unit) => unit.subject.split('/')[3] === this.subject.id.toString()
+          );
         });
       });
     });
