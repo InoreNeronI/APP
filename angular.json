@@ -27,7 +27,12 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@kolkov/angular-editor/assets",
+                "output": "./assets/fonts/"
+              }
             ],
             "styles": [
               "node_modules/ngx-toastr/toastr.css",
@@ -111,12 +116,22 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@kolkov/angular-editor/assets",
+                "output": "./assets/fonts/"
+              }
             ],
             "styles": [
+              "node_modules/ngx-toastr/toastr.css",
+              "src/bootstrap.scss",
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/theme.js"
+            ]
           }
         }
       }

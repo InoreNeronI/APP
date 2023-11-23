@@ -64,7 +64,7 @@ module.exports = {
     "@angular-eslint/template/no-negated-async": "error",
     "@angular-eslint/use-lifecycle-interface": "error",
     "@angular-eslint/use-pipe-transform-interface": "error",
-    "@typescript-eslint/adjacent-overload-signatures": "error",
+    "@typescript-eslint/adjacent-overload-signatures": "off",
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/await-thenable": "off",
     "@typescript-eslint/no-base-to-string": "off",
