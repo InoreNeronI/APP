@@ -2,14 +2,11 @@
   <header>
     <nav class="navbar navbar-expand-lg p-0" role="menu">
       <div class="container-fluid">
-        <a class="navbar-brand" aria-current="page" tabIndex="0" role="menuitem" routerLink="" routerLinkActive="active">
+        <a class="navbar-brand order-0" aria-current="page" tabIndex="0" role="menuitem" routerLink="" routerLinkActive="active">
           <img class="bi-3x d-inline-block" src="https://material-icons.github.io/material-icons/svg/precision_manufacturing/baseline.svg" alt="{{'LOGO' | translate}}"> {{'HOME' | translate}}
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse main-nav-menu order-2" id="navbarContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0" role="menu">
+        <div class="collapse navbar-collapse main-nav-menu order-1" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center" role="menu">
             <li class="nav-item" *ngIf="authService.isAdmin()">
               <a class="nav-link" aria-current="page" tabIndex="1" role="menuitem" routerLink="/admin" routerLinkActive="active">
                 <img class="bi-2x d-inline-block" src="https://material-icons.github.io/material-icons/svg/settings/baseline.svg" alt="{{'ADMIN' | translate}}"> {{'ADMIN' | translate}}
@@ -37,7 +34,7 @@
             </li>
           </ul>
         </div>
-        <div class="main-nav-menu order-1">
+        <div class="main-nav-menu order-2">
           <div class="dropdown">
             <button class="border btn dropdown-toggle p-1 px-sm-2 px-lg-3 px-xxl-4 me-3" type="button" id="dropdownThemeButton" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://material-icons.github.io/material-icons/svg/tune/baseline.svg" alt="{{'THEME' | translate}}">
@@ -100,6 +97,9 @@
             </ul>
           </div>
         </div>
+        <button class="navbar-toggler order-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
     </nav>
   </header>
