@@ -15,7 +15,7 @@ import Utils from '../../../../utils';
 @Component({
   selector: 'app-new-item',
   templateUrl: './edit-item.component.html',
-  styleUrls: ['./edit-item.component.sass']
+  styleUrls: ['./edit-item.component.sass'],
 })
 export class EditItemComponent implements OnInit {
   id;
@@ -35,18 +35,18 @@ export class EditItemComponent implements OnInit {
     customClasses: [
       {
         name: 'quote',
-        class: 'quote'
+        class: 'quote',
       },
       {
         name: 'redText',
-        class: 'redText'
+        class: 'redText',
       },
       {
         name: 'titleText',
         class: 'titleText',
-        tag: 'h1'
-      }
-    ]
+        tag: 'h1',
+      },
+    ],
   };
 
   form: UntypedFormGroup;
@@ -60,10 +60,10 @@ export class EditItemComponent implements OnInit {
     private _formBuilder: UntypedFormBuilder,
     private toastr: ToastrService,
     private translateService: TranslateService,
-    private _location: Location
+    private _location: Location,
   ) {
     this.form = this._formBuilder.group({
-      formControlsArray: this._formBuilder.array([])
+      formControlsArray: this._formBuilder.array([]),
     });
   }
 
@@ -95,9 +95,9 @@ export class EditItemComponent implements OnInit {
           let formc = this._formBuilder.control(
             {
               value: this.data[field],
-              disabled: field === 'id'
+              disabled: field === 'id',
             },
-            Validators.required
+            Validators.required,
           );
 
           this.formControlsArray.push(formc);
@@ -118,7 +118,7 @@ export class EditItemComponent implements OnInit {
         catchError((err) => {
           this.toastr.error(err.error['hydra:description']);
           return throwError(err);
-        })
+        }),
       )
       .subscribe(() => {
         this.toastr.success(this.translateService.instant('EDITED'));

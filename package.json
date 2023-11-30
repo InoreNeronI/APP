@@ -1,5 +1,5 @@
 {
-  "name": "APP",
+  "name": "app",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,20 +8,19 @@
     "build": "ng build",
     "build-prod": "ng build --base-href /front-end/ --deploy-url /front-end/ --prod",
     "test": "ng test",
-    "lint": "eslint --ext .js,.ts src",
-    "lint:fix": "eslint --ext .js,.ts src --fix"
+    "prestart": "eslint . --fix && prettier . --write"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^17.0.4",
-    "@angular/common": "^17.0.4",
-    "@angular/compiler": "^17.0.4",
-    "@angular/core": "^17.0.4",
-    "@angular/forms": "^17.0.4",
-    "@angular/platform-browser": "^17.0.4",
-    "@angular/platform-browser-dynamic": "^17.0.4",
-    "@angular/router": "^17.0.4",
-    "@angular/service-worker": "^17.0.4",
+    "@angular/animations": "^17.0.5",
+    "@angular/common": "^17.0.5",
+    "@angular/compiler": "^17.0.5",
+    "@angular/core": "^17.0.5",
+    "@angular/forms": "^17.0.5",
+    "@angular/platform-browser": "^17.0.5",
+    "@angular/platform-browser-dynamic": "^17.0.5",
+    "@angular/router": "^17.0.5",
+    "@angular/service-worker": "^17.0.5",
     "@kolkov/angular-editor": "^3.0.0-beta.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
@@ -32,14 +31,14 @@
     "zone.js": "^0.14.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.0.3",
+    "@angular-devkit/build-angular": "^17.0.5",
     "@angular-eslint/eslint-plugin": "^17.1.0",
     "@angular-eslint/eslint-plugin-template": "^17.1.0",
     "@angular-eslint/template-parser": "^17.1.0",
-    "@angular/cli": "^17.0.3",
-    "@angular/compiler-cli": "^17.0.4",
+    "@angular/cli": "^17.0.5",
+    "@angular/compiler-cli": "^17.0.5",
     "@types/jasmine": "^5.1.4",
-    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.0",
@@ -52,6 +51,9 @@
     "karma-coverage": "^2.2.1",
     "karma-jasmine": "^5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
+    "prettier": "^3.1.0",
+    "prettier-eslint": "^16.1.2",
+    "prettier-plugin-css-order": "^2.0.1",
     "typescript": "^5.2.2"
   }
 }

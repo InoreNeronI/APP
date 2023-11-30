@@ -13,8 +13,8 @@ export const environment = {
     course: `${basePublicUrl}/courses`,
     unit: `${basePublicUrl}/units`,
     exercise: `${basePublicUrl}/exercises`,
-    user: `${basePublicUrl}/users`
-  }
+    user: `${basePublicUrl}/users`,
+  },
 };
 /*
  * For easier debugging in development mode, you can import the following file

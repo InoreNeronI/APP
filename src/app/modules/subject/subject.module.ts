@@ -9,6 +9,6 @@ import { UnitComponent } from './components/unit/unit.component';
 
 @NgModule({
   declarations: [SubjectComponent, ExerciseComponent, UnitComponent],
-  imports: [CommonModule, SubjectRoutingModule, TranslateModule]
+  imports: [CommonModule, SubjectRoutingModule, TranslateModule],
 })
 export class SubjectModule {}

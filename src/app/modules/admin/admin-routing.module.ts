@@ -8,11 +8,11 @@ import { AuthGuard } from '../auth/auth.guard';
 const routes: Routes = [
   { path: '', component: AdminComponent, canActivate: [AuthGuard] },
   { path: 'new/:item', component: NewItemComponent, canActivate: [AuthGuard] },
-  { path: 'edit/:item/:id', component: EditItemComponent, canActivate: [AuthGuard] }
+  { path: 'edit/:item/:id', component: EditItemComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AdminRoutingModule {}

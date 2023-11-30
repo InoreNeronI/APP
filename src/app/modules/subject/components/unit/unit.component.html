@@ -1,15 +1,29 @@
-<h5 class="text-primary text-center"><strong>{{unit.title}}</strong></h5>
+<h5 class="text-primary text-center">
+  <strong>{{ unit.title }}</strong>
+</h5>
 
 <p [innerHTML]="unit.text"></p>
 
-<div class="accordion mb-3" id="accordion{{unit.id}}">
+<div class="accordion mb-3" id="accordion{{ unit.id }}">
   <div class="accordion-item">
-    <h2 class="accordion-header" id="heading{{unit.id}}">
-      <button class="accordion-button btn collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + unit.id" aria-expanded="true" [attr.aria-controls]="'collapse' + unit.id">
-        {{'EXERCISES' | translate}}
+    <h2 class="accordion-header" id="heading{{ unit.id }}">
+      <button
+        class="accordion-button btn collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        [attr.data-bs-target]="'#collapse' + unit.id"
+        aria-expanded="true"
+        [attr.aria-controls]="'collapse' + unit.id"
+      >
+        {{ 'EXERCISES' | translate }}
       </button>
     </h2>
-    <div id="collapse{{unit.id}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading' + unit.id" [attr.data-bs-parent]="'#accordion' + unit.id">
+    <div
+      id="collapse{{ unit.id }}"
+      class="accordion-collapse collapse"
+      [attr.aria-labelledby]="'heading' + unit.id"
+      [attr.data-bs-parent]="'#accordion' + unit.id"
+    >
       <div class="accordion-body">
         <app-exercise *ngFor="let exercise of exercises" [exercise]="exercise"></app-exercise>
       </div>

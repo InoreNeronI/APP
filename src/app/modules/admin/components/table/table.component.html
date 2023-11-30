@@ -1,38 +1,49 @@
 <button class="btn" [routerLink]="['/admin/new/', currentType]">
   <img
     src="https://material-icons.github.io/material-icons/svg/add/baseline.svg"
-    alt="{{'ADD' | translate}}" title="{{'ADD' | translate}}" class="d-inline-block align-top">
+    alt="{{ 'ADD' | translate }}"
+    title="{{ 'ADD' | translate }}"
+    class="d-inline-block align-top"
+  />
 </button>
 
 <div *ngIf="data && data['hydra:member'] && data['hydra:totalItems'] > 0">
   <table class="table table-bordered" role="table">
     <thead>
-    <tr class="table-row text-center" role="rowgroup">
-      <th *ngFor="let head of getArrayFieldsFromJSON(data['hydra:member'][0])" role="columnheader" scope="col">
-        {{head | translate}}
-      </th>
-      <th role="columnheader" scope="col">{{'ACTIONS' | translate}}</th>
-    </tr>
+      <tr class="table-row text-center" role="rowgroup">
+        <th *ngFor="let head of getArrayFieldsFromJSON(data['hydra:member'][0])" role="columnheader" scope="col">
+          {{ head | translate }}
+        </th>
+        <th role="columnheader" scope="col">{{ 'ACTIONS' | translate }}</th>
+      </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let row of data['hydra:member']" class="table-body table-row text-center" role="rowgroup">
-      <td *ngFor="let column of getArrayDataFromJSON(row)" role="cell">
-        {{column}}
-      </td>
-      <td role="cell">
-        <button class="btn p-0" [routerLink]="['/admin/edit/', currentType, row.id]">
-          <img src="https://material-icons.github.io/material-icons/svg/edit/baseline.svg" alt="{{'EDIT' | translate}}" title="{{'EDIT' | translate}}" class="d-inline-block align-top">
-        </button>
-        <button class="btn ms-2 p-0" (click)="deleteByID(row.id)">
-          <img src="https://material-icons.github.io/material-icons/svg/delete/baseline.svg" alt="{{'DELETE' | translate}}" title="{{'DELETE' | translate}}" class="d-inline-block align-top">
-        </button>
-      </td>
-    </tr>
+      <tr *ngFor="let row of data['hydra:member']" class="table-body table-row text-center" role="rowgroup">
+        <td *ngFor="let column of getArrayDataFromJSON(row)" role="cell">
+          {{ column }}
+        </td>
+        <td role="cell">
+          <button class="btn p-0" [routerLink]="['/admin/edit/', currentType, row.id]">
+            <img
+              src="https://material-icons.github.io/material-icons/svg/edit/baseline.svg"
+              alt="{{ 'EDIT' | translate }}"
+              title="{{ 'EDIT' | translate }}"
+              class="d-inline-block align-top"
+            />
+          </button>
+          <button class="btn ms-2 p-0" (click)="deleteByID(row.id)">
+            <img
+              src="https://material-icons.github.io/material-icons/svg/delete/baseline.svg"
+              alt="{{ 'DELETE' | translate }}"
+              title="{{ 'DELETE' | translate }}"
+              class="d-inline-block align-top"
+            />
+          </button>
+        </td>
+      </tr>
     </tbody>
   </table>
-  <p>
-    {{'TOTAL_ITEMS' | translate}}: {{data['hydra:totalItems']}}
-  </p>
+  <p>{{ 'TOTAL_ITEMS' | translate }}: {{ data['hydra:totalItems'] }}</p>
   <!--todo: paginator component-->
   <!--
   <nav aria-label="Page navigation example">

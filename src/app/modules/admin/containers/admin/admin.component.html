@@ -1,13 +1,40 @@
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-link active" id="subjects" (click)="setCurrentNav($event)" data-bs-toggle="tab" href="#nav-subject" role="tab" aria-controls="nav-subject" aria-selected="true">
-      {{'SUBJECTS' | translate}}
+    <a
+      class="nav-link active"
+      id="subjects"
+      (click)="setCurrentNav($event)"
+      data-bs-toggle="tab"
+      href="#nav-subject"
+      role="tab"
+      aria-controls="nav-subject"
+      aria-selected="true"
+    >
+      {{ 'SUBJECTS' | translate }}
     </a>
-    <a class="nav-link" id="units" (click)="setCurrentNav($event)" data-bs-toggle="tab" href="#nav-units" role="tab" aria-controls="nav-units" aria-selected="false">
-      {{'UNITS' | translate}}
+    <a
+      class="nav-link"
+      id="units"
+      (click)="setCurrentNav($event)"
+      data-bs-toggle="tab"
+      href="#nav-units"
+      role="tab"
+      aria-controls="nav-units"
+      aria-selected="false"
+    >
+      {{ 'UNITS' | translate }}
     </a>
-    <a class="nav-link" id="exercises" (click)="setCurrentNav($event)" data-bs-toggle="tab" href="#nav-exercises" role="tab" aria-controls="nav-exercises" aria-selected="false">
-      {{'EXERCISES' | translate}}
+    <a
+      class="nav-link"
+      id="exercises"
+      (click)="setCurrentNav($event)"
+      data-bs-toggle="tab"
+      href="#nav-exercises"
+      role="tab"
+      aria-controls="nav-exercises"
+      aria-selected="false"
+    >
+      {{ 'EXERCISES' | translate }}
     </a>
   </div>
 </nav>

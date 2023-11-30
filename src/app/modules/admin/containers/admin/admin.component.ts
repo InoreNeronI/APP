@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.sass']
+  styleUrls: ['./admin.component.sass'],
 })
 export class AdminComponent implements OnInit {
   //page: number = 1;
@@ -22,7 +22,7 @@ export class AdminComponent implements OnInit {
   constructor(
     public subjectService: SubjectService,
     public unitService: UnitService,
-    public exerciseService: ExerciseService
+    public exerciseService: ExerciseService,
   ) {}
 
   ngOnInit(): void {

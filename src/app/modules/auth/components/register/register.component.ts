@@ -11,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.sass']
+  styleUrls: ['./register.component.sass'],
 })
 export class RegisterComponent implements OnInit {
   error: any;
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     firstName: new UntypedFormControl('', Validators.required),
     lastName: new UntypedFormControl('', Validators.required),
     email: new UntypedFormControl('', [Validators.email, Validators.required]),
-    password: new UntypedFormControl('', Validators.required)
+    password: new UntypedFormControl('', Validators.required),
   });
   loading = true;
 
@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private toastr: ToastrService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
   ) {}
 
   ngOnInit(): void {
@@ -45,19 +45,17 @@ export class RegisterComponent implements OnInit {
         firstName,
         lastName,
         email,
-        plainPassword: password
+        plainPassword: password,
       })
       .pipe(
         catchError((err) => {
           this.error = err.error;
           return throwError(err);
-        })
+        }),
       )
       .subscribe(async (response) => {
         if (response.hasOwnProperty('email')) {
-          this.toastr.info(
-            this.translateService.instant('SIGNED_UP', { email: response['email'] })
-          );
+          this.toastr.info(this.translateService.instant('SIGNED_UP', { email: response['email'] }));
           await this.router.navigate(['/auth']);
         }
       });

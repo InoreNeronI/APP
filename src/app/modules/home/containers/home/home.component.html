@@ -2,11 +2,11 @@
   <div class="row align-items-center justify-content-around">
     <div class="col-md-6 col-sm-12 my-2" *ngFor="let subject of subjects['hydra:member']">
       <div class="card">
-        <img [src]="'assets/images/' + subject.name + '.jpg'" class="card-img-top img-fluid" [alt]="subject.name">
+        <img [src]="'assets/images/' + subject.name + '.jpg'" class="card-img-top img-fluid" [alt]="subject.name" />
         <div class="card-body text-center">
-          <h5 class="card-title">{{subject.name | uppercase | translate}}</h5>
-          <p *ngIf="subject.desc" class="card-text">{{subject.desc}}</p>
-          <a [href]="'subject/'+subject.name" class="btn btn-outline-primary">{{'LEARN' | translate}}</a>
+          <h5 class="card-title">{{ subject.name | uppercase | translate }}</h5>
+          <p *ngIf="subject.desc" class="card-text">{{ subject.desc }}</p>
+          <a [href]="'subject/' + subject.name" class="btn btn-outline-primary">{{ 'LEARN' | translate }}</a>
         </div>
       </div>
     </div>

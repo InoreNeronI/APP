@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-exercise',
   templateUrl: './exercise.component.html',
-  styleUrls: ['./exercise.component.sass']
+  styleUrls: ['./exercise.component.sass'],
 })
 export class ExerciseComponent implements OnInit {
   @Input() exercise;

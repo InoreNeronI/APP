@@ -18,14 +18,14 @@ export class ExerciseService {
     values.unit = environment.api.unit + '/' + values.unit;
     return this.http.post(environment.api.exercise, {
       observe: 'response',
-      ...values
+      ...values,
     });
   }
 
   edit(id: number, values) {
     return this.http.put(environment.api.exercise + '/' + id, {
       observe: 'response',
-      ...values
+      ...values,
     });
   } /*
 

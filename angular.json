@@ -20,9 +20,7 @@
             "outputPath": "dist/APP",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "sass",
             "assets": [
@@ -34,15 +32,8 @@
                 "output": "./assets/fonts/"
               }
             ],
-            "styles": [
-              "node_modules/ngx-toastr/toastr.css",
-              "src/bootstrap.scss",
-              "src/styles.sass"
-            ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "src/theme.js"
-            ]
+            "styles": ["node_modules/ngx-toastr/toastr.css", "src/bootstrap.scss", "src/styles.sass"],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", "src/theme.js"]
           },
           "configurations": {
             "production": {
@@ -107,10 +98,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "sass",
             "karmaConfig": "karma.conf.js",
@@ -123,15 +111,8 @@
                 "output": "./assets/fonts/"
               }
             ],
-            "styles": [
-              "node_modules/ngx-toastr/toastr.css",
-              "src/bootstrap.scss",
-              "src/styles.sass"
-            ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "src/theme.js"
-            ]
+            "styles": ["node_modules/ngx-toastr/toastr.css", "src/bootstrap.scss", "src/styles.sass"],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", "src/theme.js"]
           }
         }
       }
