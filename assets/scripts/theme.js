@@ -37,10 +37,7 @@ const showActiveTheme = (theme, focus = false) => {
 
   const themeSwitcherText = document.querySelector('#bd-theme-text');
   const activeThemeIcon = document.querySelector('.theme-icon-active use');
-  let btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
-  if (!btnToActive) {
-    btnToActive = document.querySelector('[data-bs-theme-value="auto"]');
-  }
+  const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
   const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href');
 
   document.querySelectorAll('[data-bs-theme-value]').forEach((element) => {
@@ -68,6 +65,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
 
 window.addEventListener('DOMContentLoaded', () => {
   showActiveTheme(getPreferredTheme());
+
   document.querySelectorAll('[data-bs-theme-value]').forEach((toggle) => {
     toggle.addEventListener('click', () => {
       const theme = toggle.getAttribute('data-bs-theme-value');

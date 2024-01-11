@@ -12,28 +12,33 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/APP",
-            "index": "src/index.html",
+            "index": "assets/.dist/assets/templates/main.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "sass",
             "assets": [
-              "src/assets",
-              "src/manifest.webmanifest",
               {
-                "glob": "**/*",
-                "input": "./node_modules/@kolkov/angular-editor/assets",
-                "output": "./assets/fonts/"
+                "glob": "**/*.{css,map,js}",
+                "input": "assets/.dist",
+                "output": ""
+              },
+              {
+                "glob": "**/*.json",
+                "input": "assets/i18n",
+                "output": "assets/i18n"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "assets/images",
+                "output": "assets/images"
               }
-            ],
-            "styles": ["node_modules/ngx-toastr/toastr.css", "src/bootstrap.scss", "src/styles.sass"],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", "src/theme.js"]
+            ]
           },
           "configurations": {
             "production": {
@@ -103,16 +108,22 @@
             "inlineStyleLanguage": "sass",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/assets",
-              "src/manifest.webmanifest",
               {
-                "glob": "**/*",
-                "input": "./node_modules/@kolkov/angular-editor/assets",
-                "output": "./assets/fonts/"
+                "glob": "**/*.{css,map,js}",
+                "input": "assets/.dist",
+                "output": ""
+              },
+              {
+                "glob": "**/*.json",
+                "input": "assets/i18n",
+                "output": "assets/i18n"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "assets/images",
+                "output": "assets/images"
               }
-            ],
-            "styles": ["node_modules/ngx-toastr/toastr.css", "src/bootstrap.scss", "src/styles.sass"],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", "src/theme.js"]
+            ]
           }
         }
       }
