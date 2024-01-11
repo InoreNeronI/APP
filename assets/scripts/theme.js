@@ -47,7 +47,7 @@ const showActiveTheme = (theme, focus = false) => {
 
   btnToActive.classList.add('active');
   btnToActive.setAttribute('aria-pressed', 'true');
-  activeThemeIcon.setAttribute('href', svgOfActiveBtn);
+  activeThemeIcon.setAttribute('href', theme === 'auto' ? '#check' : svgOfActiveBtn);
   const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`;
   themeSwitcher.setAttribute('aria-label', themeSwitcherLabel);
 

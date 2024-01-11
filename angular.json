@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                "glob": "**/*.{css,map,js}",
+                "glob": "**/*.{css,map,js,png,webmanifest}",
                 "input": "assets/.dist",
                 "output": ""
               },
@@ -109,7 +109,7 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               {
-                "glob": "**/*.{css,map,js}",
+                "glob": "**/*.{css,map,js,png,webmanifest}",
                 "input": "assets/.dist",
                 "output": ""
               },
