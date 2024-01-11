@@ -26,6 +26,7 @@
   "FIRST_NAME_REQUIRED": "First name is required",
   "FORBIDDEN": "Forbidden access",
   "GO_BACK": "Go back",
+  "HOME": "",
   "id": "Id",
   "ICON": "Icon",
   "Invalid credentials.": "Invalid password",

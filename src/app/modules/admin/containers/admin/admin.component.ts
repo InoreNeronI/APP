@@ -6,8 +6,7 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.sass'],
+  templateUrl: './admin.component.html'
 })
 export class AdminComponent implements OnInit {
   //page: number = 1;

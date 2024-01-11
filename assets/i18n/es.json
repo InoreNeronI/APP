@@ -26,6 +26,7 @@
   "FIRST_NAME_REQUIRED": "Se requiere el nombre",
   "FORBIDDEN": "Acceso no permitido",
   "GO_BACK": "Volver",
+  "HOME": "",
   "id": "Id",
   "ICON": "Icono",
   "Invalid credentials.": "Contraseña no válida",

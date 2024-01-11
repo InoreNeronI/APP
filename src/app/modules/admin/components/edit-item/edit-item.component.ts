@@ -14,8 +14,7 @@ import Utils from '../../../../utils';
 
 @Component({
   selector: 'app-new-item',
-  templateUrl: './edit-item.component.html',
-  styleUrls: ['./edit-item.component.sass'],
+  templateUrl: './edit-item.component.html'
 })
 export class EditItemComponent implements OnInit {
   id;

@@ -6,7 +6,7 @@
         <div class="card-body text-center">
           <h5 class="card-title">{{ subject.name | uppercase | translate }}</h5>
           <p *ngIf="subject.desc" class="card-text">{{ subject.desc }}</p>
-          <a [href]="'subject/' + subject.name" class="btn btn-outline-primary">{{ 'LEARN' | translate }}</a>
+          <a [routerLink]="'subject/' + subject.name" class="btn btn-outline-primary">{{ 'LEARN' | translate }}</a>
         </div>
       </div>
     </div>

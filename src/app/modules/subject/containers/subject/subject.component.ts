@@ -6,8 +6,7 @@ import { UnitService } from '../../../../services/unit.service';
 
 @Component({
   selector: 'app-subject',
-  templateUrl: './subject.component.html',
-  styleUrls: ['./subject.component.sass'],
+  templateUrl: './subject.component.html'
 })
 export class SubjectComponent implements OnInit {
   subjects;
