@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href https://inoreneroni.github.io/APP",
+    "build": "ng build --base-href=https://inoreneroni.github.io/APP",
     "test": "ng test",
     "parcel:dev": "parcel build assets/**/*.html --config .parcelrc --dist-dir assets/.dist --log-level verbose",
     "parcel:prod": "parcel build assets/**/*.html --config @parcel/config-default --dist-dir assets/.dist --log-level verbose",
