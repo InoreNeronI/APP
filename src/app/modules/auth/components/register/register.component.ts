@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html'
+  templateUrl: './register.component.html',
 })
 export class RegisterComponent implements OnInit {
   error: any;

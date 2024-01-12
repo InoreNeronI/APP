@@ -3,7 +3,7 @@ import { ExerciseService } from '../../../../services/exercise.service';
 
 @Component({
   selector: 'app-unit',
-  templateUrl: './unit.component.html'
+  templateUrl: './unit.component.html',
 })
 export class UnitComponent implements OnInit {
   @Input() unit;

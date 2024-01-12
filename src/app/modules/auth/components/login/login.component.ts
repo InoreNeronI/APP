@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-auth',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit {
   error: any;

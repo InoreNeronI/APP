@@ -13,7 +13,7 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-new-item',
-  templateUrl: './new-item.component.html'
+  templateUrl: './new-item.component.html',
 })
 export class NewItemComponent implements OnInit {
   item;

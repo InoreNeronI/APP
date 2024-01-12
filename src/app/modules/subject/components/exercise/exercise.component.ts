@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-exercise',
-  templateUrl: './exercise.component.html'
+  templateUrl: './exercise.component.html',
 })
 export class ExerciseComponent implements OnInit {
   @Input() exercise;

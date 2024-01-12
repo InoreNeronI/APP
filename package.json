@@ -5,11 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build-prod": "ng build --base-href /front-end --deploy-url /front-end --prod",
+    "build": "ng build --base-href /APP --deploy-url /APP --prod",
     "test": "ng test",
-    "parcel:dev": "parcel build {assets,src}/**/*.html --config .parcelrc --dist-dir assets/.dist --log-level verbose",
-    "parcel:prod": "parcel build {assets,src}/**/*.html --config @parcel/config-default --dist-dir assets/.dist --log-level verbose",
+    "parcel:dev": "parcel build assets/**/*.html --config .parcelrc --dist-dir assets/.dist --log-level verbose",
+    "parcel:prod": "parcel build assets/**/*.html --config @parcel/config-default --dist-dir assets/.dist --log-level verbose --public-url /APP",
     "prestart": "npm run lint && npm run parcel:dev",
     "prebuild": "npm run lint && npm run parcel:prod",
     "lint": "eslint --fix . && prettier --write ."

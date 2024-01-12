@@ -15,6 +15,7 @@ import { UnitService } from './services/unit.service';
 import { ExerciseService } from './services/exercise.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LazyTranslateLoader } from './loaders/translate.loader';
 
 export function createTranslateLoader(http: any) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -30,6 +31,7 @@ export function createTranslateLoader(http: any) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
+        useClass: LazyTranslateLoader,
         useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
