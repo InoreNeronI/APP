@@ -5,10 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /APP --configuration production",
+    "build": "ng build --base-href /APP/ --configuration production",
     "test": "ng test",
     "parcel:dev": "parcel build assets/**/*.html --config .parcelrc --dist-dir assets/.dist --log-level verbose",
-    "parcel:prod": "parcel build assets/**/*.html --config @parcel/config-default --dist-dir assets/.dist --log-level verbose",
+    "parcel:prod": "parcel build assets/**/*.html --config @parcel/config-default --dist-dir assets/.dist --log-level verbose --public-url /APP",
+    "postbuild": "ngh -n InoreNeronI -e martinmozos@gmail.com",
     "prestart": "npm run lint && npm run parcel:dev",
     "prebuild": "npm run lint && npm run parcel:prod",
     "lint": "eslint --fix . && prettier --write ."
@@ -45,6 +46,7 @@
     "@parcel/transformer-webmanifest": "^2.11.0",
     "@types/jasmine": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "angular-cli-ghpages": "^1.0.7",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
