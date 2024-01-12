@@ -1,0 +1,118 @@
+{
+  "configVersion": 1,
+  "timestamp": 1705077164794,
+  "index": "/APP/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/APP/153.5f38e5a5e5cfa551.js",
+        "/APP/162.9cf11f32bc842360.js",
+        "/APP/607.eaefb0c71e1da220.js",
+        "/APP/638.7aecaa77368f7834.js",
+        "/APP/index.a1b43496.js",
+        "/APP/index.c895b7f5.css",
+        "/APP/index.html",
+        "/APP/main.ac10b68baa9820e8.js",
+        "/APP/manifest.webmanifest",
+        "/APP/polyfills.c8ade24d70802be0.js",
+        "/APP/runtime.cd49e51df81d6c55.js"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/APP/assets/i18n/en.json",
+        "/APP/assets/i18n/es.json",
+        "/APP/assets/i18n/eu.json",
+        "/APP/assets/images/dev.jpg",
+        "/APP/assets/images/english.jpg",
+        "/APP/assets/images/math.jpg",
+        "/APP/assets/images/music.jpg",
+        "/APP/icon-128x128.794a3311.png",
+        "/APP/icon-144x144.68e3aed8.png",
+        "/APP/icon-152x152.fe9ecb88.png",
+        "/APP/icon-192x192.a0b74100.png",
+        "/APP/icon-384x384.003e808e.png",
+        "/APP/icon-512x512.4929474b.png",
+        "/APP/icon-72x72.ba149ac2.png",
+        "/APP/icon-96x96.69a857ae.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-performance",
+      "patterns": [
+        "http:\\/\\/pc2\\.labs\\.birt\\.eus\\/api\\/.*",
+        "https:\\/\\/pc2\\.labs\\.birt\\.eus\\/api\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 50,
+      "maxAge": 120000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/APP/153.5f38e5a5e5cfa551.js": "70c5dd4785a36f59dfe30a636e819c698690ad40",
+    "/APP/162.9cf11f32bc842360.js": "6c97b4d4d933d26f92824f2a353ce344f9c32055",
+    "/APP/607.eaefb0c71e1da220.js": "0a0dae7913a1be465a7c5d4a0e1643e1ec2dd248",
+    "/APP/638.7aecaa77368f7834.js": "f1779ef15977457be62ff46575f7a53d523fefef",
+    "/APP/assets/i18n/en.json": "dcf3b8a73e307d6e82b8a2cfedb41fa7408f6833",
+    "/APP/assets/i18n/es.json": "13a4dbcfdeeaae1dc2173cbc557eeeccf365e126",
+    "/APP/assets/i18n/eu.json": "9badf71d46f9b824b2312c172a040f132cc5e315",
+    "/APP/assets/images/dev.jpg": "6456e7996bf4238a1b098dd39c9a408e7351c993",
+    "/APP/assets/images/english.jpg": "50dc1c871951f02c53d53af91b8cda88a76795da",
+    "/APP/assets/images/math.jpg": "92b460f06b77d64b22c1bc1d0e6305f8641a452b",
+    "/APP/assets/images/music.jpg": "4c6adbf8ad50881045d1a631323fb699cd432849",
+    "/APP/icon-128x128.794a3311.png": "c94ff9ddd45eed8d5ee8cc9c8c66dbf5a6178b71",
+    "/APP/icon-144x144.68e3aed8.png": "2bee4b1a3c8b0465269b4f0cfa9ad7e5b03e5066",
+    "/APP/icon-152x152.fe9ecb88.png": "36838d493d0eeca3313ffeea824f9a0bc3237e1e",
+    "/APP/icon-192x192.a0b74100.png": "7b04cba6107cad341845796eefc46234e78bcea8",
+    "/APP/icon-384x384.003e808e.png": "86f28712117cf3561dacfa5a5e8117197e34e9b2",
+    "/APP/icon-512x512.4929474b.png": "1fe97b01cf204e79149ffebfa2b9667f776ad224",
+    "/APP/icon-72x72.ba149ac2.png": "98e7c44fe2b8ca957cffee6399c06ea4a648f121",
+    "/APP/icon-96x96.69a857ae.png": "410347a463b6d2432e4c679ce5c6fff76d58b493",
+    "/APP/index.a1b43496.js": "86213a200e2e9c6af61a8bb9c8b0383974280ff8",
+    "/APP/index.c895b7f5.css": "25ace2e73c800f8e80729e3ef60e0025d24b5c7b",
+    "/APP/index.html": "003373bdd2e9384d8118b4136a47cdccf5ed302e",
+    "/APP/main.ac10b68baa9820e8.js": "f9814d76386e4484b9ca208db929c45ff6bd78b8",
+    "/APP/manifest.webmanifest": "e1dba15460c10b2c677020acea5eeb3b4b5bd151",
+    "/APP/polyfills.c8ade24d70802be0.js": "51acd80f07308b24cf1a471fd09b9a0aa50c35af",
+    "/APP/runtime.cd49e51df81d6c55.js": "8e5af9d9af9f458d5f5a2358e04e47cc7b355673"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
