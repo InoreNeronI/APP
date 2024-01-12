@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1705077732220,
+  "timestamp": 1705078142077,
   "index": "/APP/index.html",
   "assetGroups": [
     {
@@ -90,9 +90,9 @@
     "/APP/icon-96x96.69a857ae.png": "410347a463b6d2432e4c679ce5c6fff76d58b493",
     "/APP/index.a1b43496.js": "86213a200e2e9c6af61a8bb9c8b0383974280ff8",
     "/APP/index.c895b7f5.css": "25ace2e73c800f8e80729e3ef60e0025d24b5c7b",
-    "/APP/index.html": "5e5d649b97743bec78b2258123f2bd4b06328de5",
+    "/APP/index.html": "1d20c61fca43b715eccb06d0cc5f60c9c3252750",
     "/APP/main.ac10b68baa9820e8.js": "f9814d76386e4484b9ca208db929c45ff6bd78b8",
-    "/APP/manifest.webmanifest": "e1dba15460c10b2c677020acea5eeb3b4b5bd151",
+    "/APP/manifest.webmanifest": "abc48eb0a78cf198a2b005e5350812c3e90152b2",
     "/APP/polyfills.c8ade24d70802be0.js": "51acd80f07308b24cf1a471fd09b9a0aa50c35af",
     "/APP/runtime.ffd155883d92ec0d.js": "07a6ab6a35ce18a65b987eee3153173b02ec1d59"
   },
