@@ -8,9 +8,9 @@
     "build": "ng build --base-href /APP",
     "test": "ng test",
     "parcel:dev": "parcel build assets/**/*.html --config .parcelrc --dist-dir assets/.dist --log-level verbose",
-    "parcel:prod": "parcel build assets/**/*.html --config @parcel/config-default --dist-dir assets/.dist --log-level verbose --public-url /APP",
+    "parcel:prod": "parcel build assets/**/*.html --config @parcel/config-default --dist-dir assets/.dist --log-level verbose",
     "prestart": "npm run lint && npm run parcel:dev",
-    "prebuild": "npm run lint && npm run parcel:prod && pwd",
+    "prebuild": "npm run lint && npm run parcel:prod",
     "lint": "eslint --fix . && prettier --write ."
   },
   "private": true,
