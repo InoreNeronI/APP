@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { SubjectService } from '../../../../services/subject.service';
-import { UnitService } from '../../../../services/unit.service';
-import { ExerciseService } from '../../../../services/exercise.service';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { BOLD_BUTTON, EditorConfig, ITALIC_BUTTON, SEPARATOR, UNDO_BUTTON } from 'ngx-simple-text-editor';
+import { SubjectService } from '../../../../services/subject.service';
+import { UnitService } from '../../../../services/unit.service';
+import { ExerciseService } from '../../../../services/exercise.service';
 
 @Component({
   selector: 'app-new-item',
@@ -20,6 +21,10 @@ export class NewItemComponent implements OnInit {
   fields;
   form: UntypedFormGroup;
   formControlsArray = [];
+
+  config: EditorConfig = {
+    buttons: [UNDO_BUTTON, SEPARATOR, BOLD_BUTTON, ITALIC_BUTTON],
+  };
 
   constructor(
     public route: ActivatedRoute,
