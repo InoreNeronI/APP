@@ -19,7 +19,7 @@ import { InterceptorModule } from './http-interceptor.module';
 import { LazyTranslateLoader } from './loaders/translate.loader';
 
 export function createTranslateLoader(http: any) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
 
 @NgModule({
