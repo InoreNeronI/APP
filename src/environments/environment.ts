@@ -1,8 +1,8 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-const basePublicUrl = 'http://127.0.0.1:8000/api';
-const baseUrl = 'http://127.0.0.1:8000';
+const basePublicUrl = 'https://api.beltza.eus/api';
+const baseUrl = 'https://api.beltza.eus';
 
 export const environment = {
   production: false,
@@ -13,8 +13,8 @@ export const environment = {
     course: `${basePublicUrl}/courses`,
     unit: `${basePublicUrl}/units`,
     exercise: `${basePublicUrl}/exercises`,
-    user: `${basePublicUrl}/users`,
-  },
+    user: `${basePublicUrl}/users`
+  }
 };
 /*
  * For easier debugging in development mode, you can import the following file

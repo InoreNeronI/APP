@@ -13,7 +13,7 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-new-item',
-  templateUrl: './new-item.component.html',
+  templateUrl: './new-item.component.html'
 })
 export class NewItemComponent implements OnInit {
   item;
@@ -32,18 +32,18 @@ export class NewItemComponent implements OnInit {
     customClasses: [
       {
         name: 'quote',
-        class: 'quote',
+        class: 'quote'
       },
       {
         name: 'redText',
-        class: 'redText',
+        class: 'redText'
       },
       {
         name: 'titleText',
         class: 'titleText',
-        tag: 'h1',
-      },
-    ],
+        tag: 'h1'
+      }
+    ]
   };
 
   constructor(
@@ -54,10 +54,10 @@ export class NewItemComponent implements OnInit {
     private _formBuilder: UntypedFormBuilder,
     private toastr: ToastrService,
     private translateService: TranslateService,
-    private _location: Location,
+    private _location: Location
   ) {
     this.form = this._formBuilder.group({
-      formControlsArray: this._formBuilder.array([]),
+      formControlsArray: this._formBuilder.array([])
     });
   }
 
@@ -100,7 +100,7 @@ export class NewItemComponent implements OnInit {
         catchError((err) => {
           this.toastr.error(err.error['hydra:description']);
           return throwError(err);
-        }),
+        })
       )
       .subscribe(() => {
         this.toastr.success(this.translateService.instant('ADDED'));

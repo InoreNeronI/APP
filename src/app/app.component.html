@@ -41,7 +41,7 @@
           {{ 'HOME' | translate }}
         </a>
         <div class="collapse navbar-collapse main-nav-menu order-1" id="navbarContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center" role="menu">
+          <ul class="navbar-nav mx-auto text-center" role="menu">
             <li class="nav-item" *ngIf="authService.isAdmin()">
               <a
                 class="nav-link"
@@ -181,7 +181,7 @@
                 alt="{{ 'LANGUAGE' | translate }}"
               />
             </button>
-            <ul class="dropdown-menu text-start" aria-labelledby="dropdownLanguageButton">
+            <ul class="dropdown-menu text-center" aria-labelledby="dropdownLanguageButton">
               <li *ngIf="!isLang('en')">
                 <a class="dropdown-item" (click)="changeLang('en')">{{ 'ENGLISH' | translate }}</a>
               </li>
@@ -208,7 +208,7 @@
                 alt="{{ 'SIGN' | translate }}"
               />
             </button>
-            <ul class="dropdown-menu text-end" aria-labelledby="dropdownUserButton">
+            <ul class="dropdown-menu text-center" aria-labelledby="dropdownUserButton">
               <li *ngIf="authService.isLogged()">
                 <a class="dropdown-item" (click)="logout()" routerLinkActive="active"
                   ><img

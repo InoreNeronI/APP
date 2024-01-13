@@ -6,7 +6,7 @@ import { UnitService } from '../../../../services/unit.service';
 
 @Component({
   selector: 'app-subject',
-  templateUrl: './subject.component.html',
+  templateUrl: './subject.component.html'
 })
 export class SubjectComponent implements OnInit {
   subjects;
@@ -19,7 +19,7 @@ export class SubjectComponent implements OnInit {
     public route: ActivatedRoute,
     public subjectService: SubjectService,
     public unitService: UnitService,
-    public translate: TranslateService,
+    public translate: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -28,11 +28,13 @@ export class SubjectComponent implements OnInit {
 
       this.subjectService.get(/*{page: 1}*/).subscribe((data) => {
         this.subjects = data;
-        this.subject = this.subjects['hydra:member'].find((value) => value.name === this.subjectName);
+        this.subject = this.subjects['hydra:member'].find(
+          (value) => value.name === this.subjectName
+        );
 
         this.unitService.get(/*{page: 1}*/).subscribe((units) => {
           this.units = units['hydra:member'].filter(
-            (unit) => unit.subject.split('/')[3] === this.subject.id.toString(),
+            (unit) => unit.subject.split('/')[3] === this.subject.id.toString()
           );
         });
       });

@@ -12,7 +12,14 @@ import { AuthGuard } from '../auth/auth.guard';
 
 @NgModule({
   declarations: [AdminComponent, TableComponent, EditItemComponent, NewItemComponent],
-  imports: [CommonModule, AdminRoutingModule, TranslateModule, FormsModule, ReactiveFormsModule, AngularEditorModule],
-  providers: [AuthGuard],
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    TranslateModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularEditorModule
+  ],
+  providers: [AuthGuard]
 })
 export class AdminModule {}

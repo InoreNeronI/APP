@@ -6,9 +6,15 @@ import Popover from 'bootstrap/js/src/popover';
 import './theme';
 
 window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-bs-toggle="collapse"]').forEach((collapse) => new Collapse(collapse, {}));
-  document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach((dropdown) => new Dropdown(dropdown, {}));
-  document.querySelectorAll('[data-bs-toggle="popover"]').forEach((popover) => new Popover(popover, {}));
+  document
+    .querySelectorAll('[data-bs-toggle="collapse"]')
+    .forEach((collapse) => new Collapse(collapse, {}));
+  document
+    .querySelectorAll('[data-bs-toggle="dropdown"]')
+    .forEach((dropdown) => new Dropdown(dropdown, {}));
+  document
+    .querySelectorAll('[data-bs-toggle="popover"]')
+    .forEach((popover) => new Popover(popover, {}));
   // @see https://stackoverflow.com/a/42401686
   const menuBrand = document.querySelector('.navbar-brand');
   const menuToggle = document.getElementById('navbarContent');

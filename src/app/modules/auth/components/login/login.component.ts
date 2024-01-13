@@ -10,13 +10,13 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-auth',
-  templateUrl: './login.component.html',
+  templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
   error: any;
   form: UntypedFormGroup = new UntypedFormGroup({
     email: new UntypedFormControl('', [Validators.required, Validators.email]),
-    password: new UntypedFormControl('', Validators.required),
+    password: new UntypedFormControl('', Validators.required)
   });
   loading = true;
 
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private toastr: ToastrService,
-    private translateService: TranslateService,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         catchError((err) => {
           this.error = err.error;
           return throwError(err);
-        }),
+        })
       )
       .subscribe(async (response) => {
         if (response.hasOwnProperty('roles')) {

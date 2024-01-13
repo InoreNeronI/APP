@@ -10,6 +10,6 @@ export const environment = {
     course: `${basePublicUrl}/courses`,
     unit: `${basePublicUrl}/units`,
     exercise: `${basePublicUrl}/exercises`,
-    user: `${basePublicUrl}/users`,
-  },
+    user: `${basePublicUrl}/users`
+  }
 };

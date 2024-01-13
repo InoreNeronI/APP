@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { AuthService } from './modules/auth/services/auth.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AngularEditorModule } from '@kolkov/angular-editor';
@@ -15,11 +14,8 @@ import { UnitService } from './services/unit.service';
 import { ExerciseService } from './services/exercise.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InterceptorModule } from './http-interceptor.module';
 import { LazyTranslateLoader } from './loaders/translate.loader';
-
-export function createTranslateLoader(http: any) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,16 +28,16 @@ export function createTranslateLoader(http: any) {
       loader: {
         provide: TranslateLoader,
         useClass: LazyTranslateLoader,
-        useFactory: createTranslateLoader,
-        deps: [HttpClient],
-      },
+        deps: [HttpClient]
+      }
     }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AngularEditorModule,
     FormsModule,
     ToastrModule.forRoot(),
+    InterceptorModule
   ],
   providers: [AuthService, SubjectService, UnitService, ExerciseService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

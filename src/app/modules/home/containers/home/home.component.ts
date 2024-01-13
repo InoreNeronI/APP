@@ -4,14 +4,14 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
+  templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
   subjects;
 
   constructor(
     public subjectService: SubjectService,
-    public translate: TranslateService,
+    public translate: TranslateService
   ) {}
 
   ngOnInit(): void {

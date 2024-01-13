@@ -8,7 +8,7 @@ export class AuthService {
   constructor(
     private router: Router,
     private toastr: ToastrService,
-    private translateService: TranslateService,
+    private translateService: TranslateService
   ) {}
 
   isLogged(): boolean {

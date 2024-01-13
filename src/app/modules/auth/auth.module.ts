@@ -9,6 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
-  imports: [CommonModule, AuthRoutingModule, FormsModule, ReactiveFormsModule, TranslateModule],
+  imports: [CommonModule, AuthRoutingModule, FormsModule, ReactiveFormsModule, TranslateModule]
 })
 export class AuthModule {}
