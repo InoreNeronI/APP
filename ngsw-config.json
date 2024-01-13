@@ -21,7 +21,7 @@
   "dataGroups": [
     {
       "name": "api-performance",
-      "urls": ["http://pc2.labs.birt.eus/api/**", "https://pc2.labs.birt.eus/api/**"],
+      "urls": ["http://api.beltza.eus/api/**", "https://api.beltza.eus/api/**"],
       "cacheConfig": {
         "strategy": "performance",
         "maxAge": "2m",

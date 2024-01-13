@@ -1,5 +1,5 @@
-const basePublicUrl = 'https://pc2.labs.birt.eus/api';
-const baseUrl = 'https://pc2.labs.birt.eus';
+const basePublicUrl = 'https://api.beltza.eus/api';
+const baseUrl = 'https://api.beltza.eus';
 
 export const environment = {
   production: true,
