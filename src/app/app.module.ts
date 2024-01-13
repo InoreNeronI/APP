@@ -8,7 +8,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 import { FormsModule } from '@angular/forms';
 import { SubjectService } from './services/subject.service';
 import { UnitService } from './services/unit.service';
@@ -17,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorModule } from './http-interceptor.module';
 import { LazyTranslateLoader } from './loaders/translate.loader';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 export function createTranslateLoader(http: any) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,7 +38,7 @@ export function createTranslateLoader(http: any) {
       },
     }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    AngularEditorModule,
+    EditorModule,
     FormsModule,
     ToastrModule.forRoot(),
     InterceptorModule,

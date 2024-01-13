@@ -9,7 +9,6 @@ import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-new-item',
@@ -21,30 +20,6 @@ export class NewItemComponent implements OnInit {
   fields;
   form: UntypedFormGroup;
   formControlsArray = [];
-
-  config: AngularEditorConfig = {
-    editable: true,
-    minHeight: '5rem',
-    translate: 'no',
-    defaultParagraphSeparator: 'p',
-    defaultFontName: 'Arial',
-    toolbarHiddenButtons: [['bold']],
-    customClasses: [
-      {
-        name: 'quote',
-        class: 'quote',
-      },
-      {
-        name: 'redText',
-        class: 'redText',
-      },
-      {
-        name: 'titleText',
-        class: 'titleText',
-        tag: 'h1',
-      },
-    ],
-  };
 
   constructor(
     public route: ActivatedRoute,

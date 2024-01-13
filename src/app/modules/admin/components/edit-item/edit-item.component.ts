@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { ActivatedRoute } from '@angular/router';
 import { SubjectService } from '../../../../services/subject.service';
 import { UnitService } from '../../../../services/unit.service';
@@ -23,31 +22,6 @@ export class EditItemComponent implements OnInit {
   fields;
   data;
   htmlContent = '';
-
-  config: AngularEditorConfig = {
-    editable: true,
-    minHeight: '5rem',
-    translate: 'no',
-    defaultParagraphSeparator: 'p',
-    defaultFontName: 'Arial',
-    toolbarHiddenButtons: [['bold']],
-    customClasses: [
-      {
-        name: 'quote',
-        class: 'quote',
-      },
-      {
-        name: 'redText',
-        class: 'redText',
-      },
-      {
-        name: 'titleText',
-        class: 'titleText',
-        tag: 'h1',
-      },
-    ],
-  };
-
   form: UntypedFormGroup;
   formControlsArray = [];
 
