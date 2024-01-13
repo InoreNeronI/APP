@@ -7,6 +7,7 @@ import {
   HTTP_INTERCEPTORS
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 // @see https://srinathsree122.medium.com/fixing-cors-issues-in-angular16-application-3d53d46dc845
 // @see https://stackoverflow.com/q/49349103
@@ -18,7 +19,7 @@ export class HttpCoreInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     request = request.clone({
       setHeaders: {
-        'Access-Control-Allow-Origin': 'api.beltza.eus'
+        'Access-Control-Allow-Origin': environment.apiUrl
       }
     });
 
