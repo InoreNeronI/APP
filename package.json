@@ -11,8 +11,7 @@
     "parcel:prod": "parcel build assets/**/*.html --config @parcel/config-default --dist-dir assets/.dist --log-level verbose --public-url /APP",
     "prestart": "npm run lint && npm run parcel:dev",
     "prebuild": "npm run lint && npm run parcel:prod",
-    "lint": "eslint --fix . && prettier --write .",
-    "deploy": "ngh -n InoreNeronI -e martinmozos@gmail.com"
+    "lint": "eslint --fix . && prettier --write ."
   },
   "private": true,
   "dependencies": {
@@ -47,7 +46,6 @@
     "@parcel/transformer-webmanifest": "^2.11.0",
     "@types/jasmine": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^6.18.1",
-    "angular-cli-ghpages": "^1.0.7",
     "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^10.0.0",
     "eslint": "^8.56.0",
