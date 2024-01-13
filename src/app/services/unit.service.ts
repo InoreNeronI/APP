@@ -27,14 +27,11 @@ export class UnitService {
       observe: 'response',
       ...values,
     });
-  } /*
+  }
 
   delete(id: number) {
-    return this.http.delete(
-      environment.api.unit + '/' + id,
-      {
-        observe: 'response'
-      }
-    );
-  }*/
+    return this.http.delete(environment.api.unit + '/' + id, {
+      observe: 'response',
+    });
+  }
 }

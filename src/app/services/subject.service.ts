@@ -26,16 +26,13 @@ export class SubjectService {
       observe: 'response',
       ...SubjectService.changeCourseToNumber(values),
     });
-  } /*
+  }
 
   delete(id: number) {
-    return this.http.delete(
-      environment.api.subject + '/' + id,
-      {
-        observe: 'response'
-      }
-    );
-  }*/
+    return this.http.delete(environment.api.subject + '/' + id, {
+      observe: 'response',
+    });
+  }
 
   private static changeCourseToNumber(json) {
     if (json.course) {

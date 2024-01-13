@@ -27,14 +27,11 @@ export class ExerciseService {
       observe: 'response',
       ...values,
     });
-  } /*
+  }
 
   delete(id: number) {
-    return this.http.delete(
-      environment.api.exercise + '/' + id,
-      {
-        observe: 'response'
-      }
-    );
-  }*/
+    return this.http.delete(environment.api.exercise + '/' + id, {
+      observe: 'response',
+    });
+  }
 }

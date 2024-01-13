@@ -1,6 +1,6 @@
 # APP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
 
 <img src="https://raw.githubusercontent.com/InoreNeronI/APP/main/preview.gif" alt="APP" width="600px" />
 
