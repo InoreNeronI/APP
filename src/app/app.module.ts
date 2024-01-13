@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AuthService } from './modules/auth/services/auth.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AngularEditorModule } from '@kolkov/angular-editor';
@@ -17,6 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorModule } from './http-interceptor.module';
 import { LazyTranslateLoader } from './loaders/translate.loader';
 
+export function createTranslateLoader(http: any) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -28,6 +33,7 @@ import { LazyTranslateLoader } from './loaders/translate.loader';
       loader: {
         provide: TranslateLoader,
         useClass: LazyTranslateLoader,
+        useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
     }),
