@@ -18,7 +18,7 @@ export class HttpCoreInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     request = request.clone({
       setHeaders: {
-        'Access-Control-Allow-Origin': 'inoreneroni.github.io'
+        'Access-Control-Allow-Origin': 'api.beltza.eus'
       }
     });
 
