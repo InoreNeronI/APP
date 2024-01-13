@@ -8,11 +8,11 @@ import { EditItemComponent } from './components/edit-item/edit-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewItemComponent } from './components/new-item/new-item.component';
 import { AuthGuard } from '../auth/auth.guard';
-import { EditorModule } from '@tinymce/tinymce-angular';
+import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 
 @NgModule({
   declarations: [AdminComponent, TableComponent, EditItemComponent, NewItemComponent],
-  imports: [CommonModule, AdminRoutingModule, TranslateModule, FormsModule, ReactiveFormsModule, EditorModule],
+  imports: [CommonModule, AdminRoutingModule, TranslateModule, FormsModule, ReactiveFormsModule, RichTextEditorModule],
   providers: [AuthGuard],
 })
 export class AdminModule {}

@@ -55,7 +55,7 @@ export class NewItemComponent implements OnInit {
       }
 
       for (let field of this.fields) {
-        //create form controls dinamically:
+        //create form controls dynamically:
         let formc = this._formBuilder.control('', Validators.required);
 
         this.formControlsArray.push(formc);

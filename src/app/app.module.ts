@@ -16,7 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorModule } from './http-interceptor.module';
 import { LazyTranslateLoader } from './loaders/translate.loader';
-import { EditorModule } from '@tinymce/tinymce-angular';
+import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 
 export function createTranslateLoader(http: any) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,7 +38,7 @@ export function createTranslateLoader(http: any) {
       },
     }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    EditorModule,
+    RichTextEditorModule,
     FormsModule,
     ToastrModule.forRoot(),
     InterceptorModule,

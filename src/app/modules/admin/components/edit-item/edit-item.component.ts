@@ -64,7 +64,7 @@ export class EditItemComponent implements OnInit {
         this.fields = Utils.internalFieldsFilter(Object.keys(details));
 
         for (let field of this.fields) {
-          //create form controls dinamically:
+          //create form controls dynamically:
           let formc = this._formBuilder.control(
             {
               value: this.data[field],

@@ -3,7 +3,7 @@
     <label [for]="field" class="form-label" role="button">{{ field | translate }}</label>
     <input *ngIf="field !== 'text'" type="text" class="form-control" [id]="field" [formControl]="formControlsArray[i]" />
     <!--todo question improvement for show false or true / text-->
-    <editor *ngIf="item === 'units' && field === 'text'" [formControl]="formControlsArray[i]" [init]="{plugins: 'link'}"></editor>
+    <ejs-richtexteditor *ngIf="item === 'units' && field === 'text'" [formControl]="formControlsArray[i]" ></ejs-richtexteditor>
   </div>
   <div class="form-actions mt-3 text-center">
     <button type="submit" class="btn btn-outline-primary me-3" (click)="submit()">{{ 'SAVE' | translate }}</button>
