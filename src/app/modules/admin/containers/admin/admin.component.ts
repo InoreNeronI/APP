@@ -37,6 +37,7 @@ export class AdminComponent implements OnInit {
 
   setCurrentNav(event) {
     this.currentTab = event.target.id;
+    console.log(this.currentTab, event.target);
   }
 
   setCurrentData() {
