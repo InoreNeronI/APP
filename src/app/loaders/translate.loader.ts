@@ -16,8 +16,6 @@ export class LazyTranslateLoader implements TranslateLoader {
    * Gets the translations from the server
    */
   public getTranslation(lang: string): Observable<Object> {
-    return this.http
-      .get(`/assets/i18n/${lang}.json`)
-      .pipe(catchError(() => this.http.get(`/assets/i18n/${DEFAULT_LANG}.json`)));
+    return this.http.get(`/assets/i18n/${lang}.json`).pipe(catchError(() => this.http.get(`/assets/i18n/${DEFAULT_LANG}.json`)));
   }
 }

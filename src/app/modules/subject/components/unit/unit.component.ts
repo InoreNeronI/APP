@@ -13,9 +13,7 @@ export class UnitComponent implements OnInit {
 
   ngOnInit(): void {
     this.exerciseService.get(/*{page: 1}*/).subscribe((exercises) => {
-      this.exercises = exercises['hydra:member'].filter(
-        (exercise) => exercise.unit.split('/')[3] === this.unit.id.toString(),
-      );
+      this.exercises = exercises['hydra:member'].filter((exercise) => exercise.unit.split('/')[3] === this.unit.id.toString());
     });
   }
 }

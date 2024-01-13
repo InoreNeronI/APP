@@ -14,11 +14,7 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:@typescript-eslint/recommended-requiring-type-checking', 'plugin:prettier/recommended'],
   parser: '@angular-eslint/template-parser',
   parserOptions: {
     sourceType: 'module',
@@ -166,18 +162,7 @@ module.exports = {
     'eol-last': 'error',
     eqeqeq: ['error', 'smart'],
     'guard-for-in': 'error',
-    'id-blacklist': [
-      'error',
-      'any',
-      'Number',
-      'number',
-      'String',
-      'string',
-      'Boolean',
-      'boolean',
-      'Undefined',
-      'undefined',
-    ],
+    'id-blacklist': ['error', 'any', 'Number', 'number', 'String', 'string', 'Boolean', 'boolean', 'Undefined', 'undefined'],
     'id-match': 'error',
     'import/no-deprecated': 'off',
     'jsdoc/check-alignment': 'off',
@@ -187,7 +172,7 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 140,
+        code: 160,
       },
     ],
     'new-parens': 'error',
