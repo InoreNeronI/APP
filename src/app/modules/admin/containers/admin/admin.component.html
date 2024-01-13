@@ -57,12 +57,12 @@
 </ul>
 <div class="tab-content">
   <div class="tab-pane fade show active" id="nav-subjects" role="tabpanel" aria-labelledby="subjects">
-    <app-table [currentType]="currentTab" data-target[data]="subjects$ | async"></app-table>
+    <app-table [currentType]="currentTab" [data]="subjects$ | async"></app-table>
   </div>
   <div class="tab-pane fade" id="nav-units" role="tabpanel" aria-labelledby="units">
-    <app-table [currentType]="currentTab" data-target[data]="units$ | async"></app-table>
+    <app-table [currentType]="currentTab" [data]="units$ | async"></app-table>
   </div>
   <div class="tab-pane fade" id="nav-exercises" role="tabpanel" aria-labelledby="exercises">
-    <app-table [currentType]="currentTab" data-target[data]="exercises$ | async"></app-table>
+    <app-table [currentType]="currentTab" [data]="exercises$ | async"></app-table>
   </div>
 </div>
