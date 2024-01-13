@@ -12,17 +12,17 @@ Happy linting! 💖
 module.exports = {
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   parser: '@angular-eslint/template-parser',
   parserOptions: {
     sourceType: 'module',
-    project: 'tsconfig.json'
+    project: 'tsconfig.json',
   },
   plugins: [
     '@angular-eslint/eslint-plugin',
@@ -31,7 +31,7 @@ module.exports = {
     'eslint-plugin-import',
     'eslint-plugin-jsdoc',
     'eslint-plugin-prefer-arrow',
-    'simple-import-sort' // @see https://dev.to/julioxavierr/sorting-your-imports-with-eslint-3ped
+    'simple-import-sort', // @see https://dev.to/julioxavierr/sorting-your-imports-with-eslint-3ped
   ],
   rules: {
     '@angular-eslint/component-class-suffix': 'error',
@@ -40,8 +40,8 @@ module.exports = {
       {
         type: 'element',
         prefix: 'app',
-        style: 'kebab-case'
-      }
+        style: 'kebab-case',
+      },
     ],
     '@angular-eslint/contextual-lifecycle': 'error',
     '@angular-eslint/directive-class-suffix': 'error',
@@ -50,8 +50,8 @@ module.exports = {
       {
         type: 'attribute',
         prefix: 'app',
-        style: 'camelCase'
-      }
+        style: 'camelCase',
+      },
     ],
     '@angular-eslint/no-conflicting-lifecycle': 'error',
     '@angular-eslint/no-host-metadata-property': 'error',
@@ -90,26 +90,25 @@ module.exports = {
       {
         types: {
           Object: {
-            message: 'Avoid using the `Object` type. Did you mean `object`?'
+            message: 'Avoid using the `Object` type. Did you mean `object`?',
           },
           Function: {
-            message:
-              'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.'
+            message: 'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.',
           },
           Boolean: {
-            message: 'Avoid using the `Boolean` type. Did you mean `boolean`?'
+            message: 'Avoid using the `Boolean` type. Did you mean `boolean`?',
           },
           Number: {
-            message: 'Avoid using the `Number` type. Did you mean `number`?'
+            message: 'Avoid using the `Number` type. Did you mean `number`?',
           },
           String: {
-            message: 'Avoid using the `String` type. Did you mean `string`?'
+            message: 'Avoid using the `String` type. Did you mean `string`?',
           },
           Symbol: {
-            message: 'Avoid using the `Symbol` type. Did you mean `symbol`?'
-          }
-        }
-      }
+            message: 'Avoid using the `Symbol` type. Did you mean `symbol`?',
+          },
+        },
+      },
     ],
     '@typescript-eslint/consistent-type-assertions': 'off',
     '@typescript-eslint/dot-notation': 'off',
@@ -119,13 +118,13 @@ module.exports = {
       {
         multiline: {
           delimiter: 'semi',
-          requireLast: true
+          requireLast: true,
         },
         singleline: {
           delimiter: 'semi',
-          requireLast: false
-        }
-      }
+          requireLast: false,
+        },
+      },
     ],
     '@typescript-eslint/member-ordering': 'error',
     '@typescript-eslint/naming-convention': 'off',
@@ -135,8 +134,8 @@ module.exports = {
     '@typescript-eslint/no-inferrable-types': [
       'error',
       {
-        ignoreParameters: true
-      }
+        ignoreParameters: true,
+      },
     ],
     '@typescript-eslint/no-misused-new': 'error',
     '@typescript-eslint/no-namespace': 'error',
@@ -155,8 +154,8 @@ module.exports = {
       {
         path: 'always',
         types: 'prefer-import',
-        lib: 'always'
-      }
+        lib: 'always',
+      },
     ],
     '@typescript-eslint/type-annotation-spacing': 'error',
     '@typescript-eslint/unified-signatures': 'error',
@@ -177,7 +176,7 @@ module.exports = {
       'Boolean',
       'boolean',
       'Undefined',
-      'undefined'
+      'undefined',
     ],
     'id-match': 'error',
     'import/no-deprecated': 'off',
@@ -188,8 +187,8 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 140
-      }
+        code: 140,
+      },
     ],
     'new-parens': 'error',
     'no-bitwise': 'error',
@@ -217,9 +216,9 @@ module.exports = {
           'profile',
           'profileEnd',
           'timeStamp',
-          'context'
-        ]
-      }
+          'context',
+        ],
+      },
     ],
     'no-debugger': 'error',
     'no-empty': 'off',
@@ -231,8 +230,8 @@ module.exports = {
     'no-shadow': [
       'error',
       {
-        hoist: 'all'
-      }
+        hoist: 'all',
+      },
     ],
     'no-throw-literal': 'error',
     'no-trailing-spaces': 'error',
@@ -252,15 +251,15 @@ module.exports = {
       {
         anonymous: 'never',
         asyncArrow: 'always',
-        named: 'never'
-      }
+        named: 'never',
+      },
     ],
     'spaced-comment': [
       'error',
       'always',
       {
-        markers: ['/']
-      }
+        markers: ['/'],
+      },
     ],
     'use-isnan': 'error',
     'valid-typeof': 'off',
@@ -274,11 +273,11 @@ module.exports = {
         tabWidth: 2,
         endOfLine: 'lf',
         arrowParens: 'always',
-        bracketSpacing: true
-      }
+        bracketSpacing: true,
+      },
     ],
     'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error'
+    'simple-import-sort/exports': 'error',
   },
   overrides: [
     // override "simple-import-sort" config
@@ -300,11 +299,11 @@ module.exports = {
               // Other relative imports. Put same-folder imports and `.` last.
               ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
               // Style imports.
-              ['^.+\\.?(css)$']
-            ]
-          }
-        ]
-      }
-    }
-  ]
+              ['^.+\\.?(css)$'],
+            ],
+          },
+        ],
+      },
+    },
+  ],
 };

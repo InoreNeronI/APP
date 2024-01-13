@@ -17,20 +17,20 @@ export class SubjectService {
   add(values) {
     return this.http.post(environment.api.subject, {
       observe: 'response',
-      ...SubjectService.changeCourseToNumber(values)
+      ...SubjectService.changeCourseToNumber(values),
     });
   }
 
   edit(id: number, values) {
     return this.http.put(environment.api.subject + '/' + id, {
       observe: 'response',
-      ...SubjectService.changeCourseToNumber(values)
+      ...SubjectService.changeCourseToNumber(values),
     });
   }
 
   delete(id: number) {
     return this.http.delete(environment.api.subject + '/' + id, {
-      observe: 'response'
+      observe: 'response',
     });
   }
 

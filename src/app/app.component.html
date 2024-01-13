@@ -52,7 +52,7 @@
                 routerLinkActive="active"
               >
                 <img
-                  class="bi-2x d-inline-block"
+                  class="bi-3x d-inline-block"
                   src="https://material-icons.github.io/material-icons/svg/settings/baseline.svg"
                   alt="{{ 'ADMIN' | translate }}"
                 />
@@ -69,7 +69,7 @@
                 routerLinkActive="active"
               >
                 <img
-                  class="bi-2x d-inline-block"
+                  class="bi-3x d-inline-block"
                   src="https://material-icons.github.io/material-icons/svg/calculate/baseline.svg"
                   alt="{{ 'MATH' | translate }}"
                 />
@@ -86,7 +86,7 @@
                 routerLinkActive="active"
               >
                 <img
-                  class="bi-2x d-inline-block"
+                  class="bi-3x d-inline-block"
                   src="https://material-icons.github.io/material-icons/svg/queue_music/baseline.svg"
                   alt="{{ 'MUSIC' | translate }}"
                 />
@@ -103,7 +103,7 @@
                 routerLinkActive="active"
               >
                 <img
-                  class="bi-2x d-inline-block"
+                  class="bi-3x d-inline-block"
                   src="https://material-icons.github.io/material-icons/svg/question_answer/baseline.svg"
                   alt="{{ 'ENGLISH' | translate }}"
                 />
@@ -120,7 +120,7 @@
                 routerLinkActive="active"
               >
                 <img
-                  class="bi-2x d-inline-block"
+                  class="bi-3x d-inline-block"
                   src="https://material-icons.github.io/material-icons/svg/code/baseline.svg"
                   alt="{{ 'DEV' | translate }}"
                 />
@@ -139,7 +139,7 @@
               data-bs-toggle="dropdown"
               data-bs-display="static"
             >
-              <svg class="bi-2x my-1 theme-icon-active"><use></use></svg>
+              <svg class="bi-3x my-1 theme-icon-active"><use></use></svg>
               <span id="bd-theme-text"></span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-theme">
@@ -177,6 +177,7 @@
               aria-expanded="false"
             >
               <img
+                class="bi-3x d-inline-block"
                 src="https://material-icons.github.io/material-icons/svg/translate/baseline.svg"
                 alt="{{ 'LANGUAGE' | translate }}"
               />
@@ -204,6 +205,7 @@
               aria-expanded="false"
             >
               <img
+                class="bi-3x d-inline-block"
                 src="https://material-icons.github.io/material-icons/svg/face/baseline.svg"
                 alt="{{ 'SIGN' | translate }}"
               />
@@ -212,7 +214,7 @@
               <li *ngIf="authService.isLogged()">
                 <a class="dropdown-item" (click)="logout()" routerLinkActive="active"
                   ><img
-                    class="bi-2x d-inline-block"
+                    class="bi-3x d-inline-block"
                     src="https://material-icons.github.io/material-icons/svg/logout/baseline.svg"
                     alt="{{ 'LOGOUT' | translate }}"
                   />&nbsp;{{ 'LOGOUT' | translate }}</a
@@ -221,7 +223,7 @@
               <li *ngIf="!authService.isLogged()">
                 <a class="dropdown-item" routerLink="/auth/login" routerLinkActive="active"
                   ><img
-                    class="bi-2x d-inline-block"
+                    class="bi-3x d-inline-block"
                     src="https://material-icons.github.io/material-icons/svg/login/baseline.svg"
                     alt="{{ 'LOGIN' | translate }}"
                   />&nbsp;{{ 'LOGIN' | translate }}</a
@@ -233,7 +235,7 @@
               <li *ngIf="!authService.isLogged()">
                 <a class="dropdown-item" routerLink="/auth/register" routerLinkActive="active"
                   ><img
-                    class="bi-2x d-inline-block"
+                    class="bi-3x d-inline-block"
                     src="https://material-icons.github.io/material-icons/svg/app_registration/baseline.svg"
                     alt="{{ 'REGISTER' | translate }}"
                   />&nbsp;{{ 'REGISTER' | translate }}</a

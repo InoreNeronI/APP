@@ -10,7 +10,7 @@ export class AuthGuard {
     private auth: AuthService,
     private router: Router,
     private toastr: ToastrService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
   ) {}
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {

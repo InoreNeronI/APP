@@ -9,7 +9,7 @@ import { throwError } from 'rxjs';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.sass']
+  styleUrls: ['./table.component.sass'],
 })
 export class TableComponent {
   @Input() data;
@@ -19,7 +19,7 @@ export class TableComponent {
   constructor(
     private http: HttpClient,
     private toastr: ToastrService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
   ) {}
 
   getArrayDataFromJSON(json) {
@@ -49,7 +49,7 @@ export class TableComponent {
         catchError((err) => {
           this.toastr.error(err.error.error);
           return throwError(err);
-        })
+        }),
       )
       .subscribe(() => {
         this.toastr.success(this.translateService.instant('DELETED'));

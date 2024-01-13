@@ -19,7 +19,7 @@ import { InterceptorModule } from './http-interceptor.module';
 import { LazyTranslateLoader } from './loaders/translate.loader';
 
 export function createTranslateLoader(http: any) {
-  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -34,16 +34,16 @@ export function createTranslateLoader(http: any) {
         provide: TranslateLoader,
         useClass: LazyTranslateLoader,
         useFactory: createTranslateLoader,
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AngularEditorModule,
     FormsModule,
     ToastrModule.forRoot(),
-    InterceptorModule
+    InterceptorModule,
   ],
   providers: [AuthService, SubjectService, UnitService, ExerciseService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

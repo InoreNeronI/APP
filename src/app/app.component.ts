@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   languages = ['en', 'es', 'eu'];
@@ -17,7 +17,7 @@ export class AppComponent {
     private title_platform: Title,
     private meta: Meta,
     public authService: AuthService,
-    public translate: TranslateService
+    public translate: TranslateService,
   ) {
     this.setLang();
     title_platform.setTitle(this.title);

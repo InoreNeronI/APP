@@ -1,11 +1,5 @@
 import { Injectable, NgModule } from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
-  HTTP_INTERCEPTORS
-} from '@angular/common/http';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // @see https://srinathsree122.medium.com/fixing-cors-issues-in-angular16-application-3d53d46dc845
@@ -18,8 +12,8 @@ export class HttpCoreInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     request = request.clone({
       setHeaders: {
-        'Access-Control-Allow-Origin': '*'
-      }
+        'Access-Control-Allow-Origin': '*',
+      },
     });
 
     return next.handle(request);
@@ -27,6 +21,6 @@ export class HttpCoreInterceptor implements HttpInterceptor {
 }
 
 @NgModule({
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpCoreInterceptor, multi: true }]
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpCoreInterceptor, multi: true }],
 })
 export class InterceptorModule {}
