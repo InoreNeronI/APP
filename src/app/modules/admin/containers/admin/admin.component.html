@@ -1,54 +1,58 @@
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a
-      [class.active]="currentTab === 'subjects'"
-      class="nav-link"
-      id="subjects"
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button
       (click)="setCurrentNav($event)"
+      class="nav-link active"
+      id="subjects"
       data-bs-toggle="tab"
-      href="./#nav-subjects"
+      data-bs-target="#nav-subjects"
+      type="button"
       role="tab"
       aria-controls="nav-subjects"
       aria-selected="true"
     >
       {{ 'SUBJECTS' | translate }}
-    </a>
-    <a
-      [class.active]="currentTab === 'units'"
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button
+      (click)="setCurrentNav($event)"
       class="nav-link"
       id="units"
-      (click)="setCurrentNav($event)"
       data-bs-toggle="tab"
-      href="./#nav-units"
+      data-bs-target="#nav-units"
+      type="button"
       role="tab"
       aria-controls="nav-units"
       aria-selected="false"
     >
       {{ 'UNITS' | translate }}
-    </a>
-    <a
-      [class.active]="currentTab === 'exercises'"
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button
+      (click)="setCurrentNav($event)"
       class="nav-link"
       id="exercises"
-      (click)="setCurrentNav($event)"
       data-bs-toggle="tab"
-      href="./#nav-exercises"
+      data-bs-target="#nav-exercises"
+      type="button"
       role="tab"
       aria-controls="nav-exercises"
       aria-selected="false"
     >
       {{ 'EXERCISES' | translate }}
-    </a>
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-subjects" role="tabpanel">
+    </button>
+  </li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="nav-subjects" role="tabpanel" aria-labelledby="subjects">
     <app-table [currentType]="currentTab" [data]="subjects$ | async"></app-table>
   </div>
-  <div class="tab-pane fade" id="nav-units" role="tabpanel">
+  <div class="tab-pane fade" id="nav-units" role="tabpanel" aria-labelledby="units">
     <app-table [currentType]="currentTab" [data]="units$ | async"></app-table>
   </div>
-  <div class="tab-pane fade" id="nav-exercises" role="tabpanel">
+  <div class="tab-pane fade" id="nav-exercises" role="tabpanel" aria-labelledby="exercises">
     <app-table [currentType]="currentTab" [data]="exercises$ | async"></app-table>
   </div>
 </div>
