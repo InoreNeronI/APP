@@ -88,11 +88,11 @@ a {
 
 // Rich editor styles
 .st-area, .st-toolbar {
-  background-color: inherit;
-  border: var(--bs-border-width)solid var(--bs-border-color);
+  background-color: inherit !important;
+  border: var(--bs-border-width)solid var(--bs-border-color) !important;
 }
 .st-toolbar {
   button, button:hover {
-    background-color: inherit;
+    background-color: inherit !important;
   }
 }
