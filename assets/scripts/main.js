@@ -4,6 +4,7 @@ import Collapse from 'bootstrap/js/src/collapse';
 import Dropdown from 'bootstrap/js/src/dropdown';
 import Popover from 'bootstrap/js/src/popover';
 import Tab from 'bootstrap/js/src/tab';
+import Tooltip from 'bootstrap/js/src/tooltip';
 import './theme';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -11,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach((dropdown) => new Dropdown(dropdown, {}));
   document.querySelectorAll('[data-bs-toggle="popover"]').forEach((popover) => new Popover(popover, {}));
   document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => new Tab(tab, {}));
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((tooltip) => new Tooltip(tooltip, {}));
   // @see https://stackoverflow.com/a/42401686
   const menuBrand = document.querySelector('.navbar-brand');
   const menuToggle = document.getElementById('navbarContent');
