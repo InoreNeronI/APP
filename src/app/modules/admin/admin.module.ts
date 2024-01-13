@@ -6,13 +6,13 @@ import { TableComponent } from './components/table/table.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { EditItemComponent } from './components/edit-item/edit-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NewItemComponent } from './components/new-item/new-item.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [AdminComponent, TableComponent, EditItemComponent, NewItemComponent],
-  imports: [CommonModule, AdminRoutingModule, TranslateModule, FormsModule, ReactiveFormsModule, AngularEditorModule],
+  imports: [CommonModule, AdminRoutingModule, TranslateModule, FormsModule, ReactiveFormsModule, EditorModule],
   providers: [AuthGuard],
 })
 export class AdminModule {}
