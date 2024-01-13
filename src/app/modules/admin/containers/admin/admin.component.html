@@ -1,23 +1,25 @@
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <a
-      class="nav-link active"
+      [class.active]="currentTab === 'subjects'"
+      class="nav-link"
       id="subjects"
       (click)="setCurrentNav($event)"
       data-bs-toggle="tab"
-      data-target="#nav-subject"
+      href="#nav-subjects"
       role="tab"
-      aria-controls="nav-subject"
+      aria-controls="nav-subjects"
       aria-selected="true"
     >
       {{ 'SUBJECTS' | translate }}
     </a>
     <a
+      [class.active]="currentTab === 'units'"
       class="nav-link"
       id="units"
       (click)="setCurrentNav($event)"
       data-bs-toggle="tab"
-      data-target="#nav-units"
+      href="#nav-units"
       role="tab"
       aria-controls="nav-units"
       aria-selected="false"
@@ -25,11 +27,12 @@
       {{ 'UNITS' | translate }}
     </a>
     <a
+      [class.active]="currentTab === 'exercises'"
       class="nav-link"
       id="exercises"
       (click)="setCurrentNav($event)"
       data-bs-toggle="tab"
-      data-target="#nav-exercises"
+      href="#nav-exercises"
       role="tab"
       aria-controls="nav-exercises"
       aria-selected="false"
@@ -39,13 +42,13 @@
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-subject" role="tabpanel" aria-labelledby="nav-subject-tab">
+  <div class="tab-pane fade show active" id="nav-subjects" role="tabpanel">
     <app-table [currentType]="currentTab" [data]="subjects$ | async"></app-table>
   </div>
-  <div class="tab-pane fade" id="nav-units" role="tabpanel" aria-labelledby="nav-units-tab">
+  <div class="tab-pane fade" id="nav-units" role="tabpanel">
     <app-table [currentType]="currentTab" [data]="units$ | async"></app-table>
   </div>
-  <div class="tab-pane fade" id="nav-exercises" role="tabpanel" aria-labelledby="nav-exercises-tab">
+  <div class="tab-pane fade" id="nav-exercises" role="tabpanel">
     <app-table [currentType]="currentTab" [data]="exercises$ | async"></app-table>
   </div>
 </div>
