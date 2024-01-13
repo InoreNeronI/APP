@@ -51,68 +51,8 @@ SEE LICENSE IN LICENSE
 @ngx-translate/http-loader
 SEE LICENSE IN LICENSE
 
-@syncfusion/ej2-angular-base
-SEE LICENSE IN license
-
-@syncfusion/ej2-angular-richtexteditor
-SEE LICENSE IN license
-
-@syncfusion/ej2-base
-SEE LICENSE IN license
-
-@syncfusion/ej2-buttons
-SEE LICENSE IN license
-
-@syncfusion/ej2-calendars
-SEE LICENSE IN license
-
-@syncfusion/ej2-compression
-SEE LICENSE IN license
-
-@syncfusion/ej2-data
-SEE LICENSE IN license
-
-@syncfusion/ej2-dropdowns
-SEE LICENSE IN license
-
-@syncfusion/ej2-excel-export
-SEE LICENSE IN license
-
-@syncfusion/ej2-file-utils
-SEE LICENSE IN license
-
-@syncfusion/ej2-filemanager
-SEE LICENSE IN license
-
-@syncfusion/ej2-grids
-SEE LICENSE IN license
-
-@syncfusion/ej2-inputs
-SEE LICENSE IN license
-
-@syncfusion/ej2-layouts
-SEE LICENSE IN license
-
-@syncfusion/ej2-lists
-SEE LICENSE IN license
-
-@syncfusion/ej2-navigations
-SEE LICENSE IN license
-
-@syncfusion/ej2-notifications
-SEE LICENSE IN license
-
-@syncfusion/ej2-pdf-export
-SEE LICENSE IN license
-
-@syncfusion/ej2-popups
-SEE LICENSE IN license
-
-@syncfusion/ej2-richtexteditor
-SEE LICENSE IN license
-
-@syncfusion/ej2-splitbuttons
-SEE LICENSE IN license
+ngx-simple-text-editor
+MIT
 
 ngx-toastr
 MIT
