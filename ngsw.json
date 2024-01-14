@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1705234067763,
+  "timestamp": 1705235505210,
   "index": "/APP/index.html",
   "assetGroups": [
     {
@@ -11,7 +11,7 @@
         "ignoreVary": true
       },
       "urls": [
-        "/APP/153.874bfb4491b3c16d.js",
+        "/APP/153.bf5b918914ad3ec4.js",
         "/APP/162.07fe616c58c521e1.js",
         "/APP/585.b469c61c9e6dacca.js",
         "/APP/607.e66d66d3d615bbcb.js",
@@ -21,7 +21,7 @@
         "/APP/main.c216f8ddf3abccc0.js",
         "/APP/manifest.webmanifest",
         "/APP/polyfills.fd77f1dc5a97e41b.js",
-        "/APP/runtime.f155e995d30698a8.js"
+        "/APP/runtime.15d25e4e47cc828d.js"
       ],
       "patterns": []
     },
@@ -69,7 +69,7 @@
     }
   ],
   "hashTable": {
-    "/APP/153.874bfb4491b3c16d.js": "348ed06302ced243c3a99ed8ef704dd1c8d5b784",
+    "/APP/153.bf5b918914ad3ec4.js": "cd21f06976fcffdf222e830c901fcf0e9d0b7a28",
     "/APP/162.07fe616c58c521e1.js": "74ee067b306a8aedb7360805e31b8c3154bb9176",
     "/APP/585.b469c61c9e6dacca.js": "7e8cb465d514f3813d7da16a2e80a86aa07645fa",
     "/APP/607.e66d66d3d615bbcb.js": "d58f44fe27b1bbc585b5eccba96fe928d0a28393",
@@ -90,11 +90,11 @@
     "/APP/icon-96x96.69a857ae.png": "410347a463b6d2432e4c679ce5c6fff76d58b493",
     "/APP/index.588b6b62.js": "78cea67faf3a44a04ef30ed37e619703e492ce45",
     "/APP/index.b3d0c6a3.css": "b67c9970a0030c9a61bcb6a67d9f111e86799272",
-    "/APP/index.html": "09eee843fdb5f9fbf0b5f219a9d1eff2092322f3",
+    "/APP/index.html": "7c47188530f7d016343d74efe7d219545470398a",
     "/APP/main.c216f8ddf3abccc0.js": "033645847c1b8ada3d3224eb2b276942c46ddc16",
     "/APP/manifest.webmanifest": "abc48eb0a78cf198a2b005e5350812c3e90152b2",
     "/APP/polyfills.fd77f1dc5a97e41b.js": "dd01d83f4ab80c173441dff915c39371687549fe",
-    "/APP/runtime.f155e995d30698a8.js": "2d0578db4d80cde9719af46aed0f3c79b261e13c"
+    "/APP/runtime.15d25e4e47cc828d.js": "a99a830bdc0249903e8a5e70e04d1660662bc666"
   },
   "navigationUrls": [
     {
