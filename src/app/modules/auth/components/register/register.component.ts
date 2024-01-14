@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { environment } from '../../../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
+import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { ToastrService } from 'ngx-toastr';
-import { TranslateService } from '@ngx-translate/core';
+import { Particles } from '../../../../particles';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent extends Particles implements OnInit {
   error: any;
   form: UntypedFormGroup = new UntypedFormGroup({
     firstName: new UntypedFormControl('', Validators.required),
@@ -27,10 +28,13 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService,
     private translateService: TranslateService,
-  ) {}
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
     this.loading = false;
+    this.drawParticles();
   }
 
   register(): void {

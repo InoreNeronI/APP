@@ -1,4 +1,5 @@
-<div class="container-sm">
+<canvas class="canvas-background"></canvas>
+<div class="container">
   <h2 class="text-center">{{ 'LOGIN' | translate }}</h2>
   <form name="form" [formGroup]="form" role="form" (ngSubmit)="login()">
     <div class="form-group" [ngClass]="{ 'has-error': form.controls.email.touched && form.controls.email.errors?.required }">
