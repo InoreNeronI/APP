@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Particles } from '../../../../particles';
 import { SubjectService } from '../../../../services/subject.service';
-import { Particles } from './particles';
 
 @Component({
   selector: 'app-home',

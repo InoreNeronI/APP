@@ -1,4 +1,3 @@
-
 // @see https://codepen.io/72lions/pen/nzdpWz
 export class Particles {
   QUANTITY = 100;
@@ -13,8 +12,6 @@ export class Particles {
 
   constructor() {
     this.CONTAINER = document.querySelector('section');
-    this.SCREEN_WIDTH = this.CONTAINER.offsetWidth;
-    this.SCREEN_HEIGHT = this.CONTAINER.offsetHeight;
     // @see https://stackoverflow.com/a/52620181/16711967
     this.window = document.defaultView;
   }
