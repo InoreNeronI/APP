@@ -87,12 +87,23 @@ a {
 }
 
 // Rich editor styles
-.st-area, .st-toolbar {
+.st-area,
+.st-toolbar {
+  border: var(--bs-border-width) solid var(--bs-border-color) !important;
   background-color: inherit !important;
-  border: var(--bs-border-width)solid var(--bs-border-color) !important;
 }
 .st-toolbar {
-  button, button:hover {
+  button,
+  button:hover {
     background-color: inherit !important;
+  }
+}
+
+// Particles canvas
+app-home {
+  width: 100%;
+  height: 100%;
+  .canvas-background {
+    position: absolute;
   }
 }
