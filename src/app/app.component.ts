@@ -15,15 +15,15 @@ export class AppComponent extends Particles implements AfterViewInit {
   title = 'APP';
 
   // @see https://www.digitalocean.com/community/tutorials/angular-viewchild-access-component-es
-  canvasParticles: any;
+  canvasParticlesElement: any;
 
   @ViewChild(ParticlesDirective)
   set particlesElement(directive: ParticlesDirective) {
-    this.canvasParticles = directive.element;
+    this.canvasParticlesElement = directive.element;
   }
 
   ngAfterViewInit() {
-    this.drawParticles(this.document.querySelector('.canvas-background'), this.document.querySelector('section'));
+    this.drawParticles(this.canvasParticlesElement, this.canvasParticlesElement.parentElement);
   }
 
   constructor(
