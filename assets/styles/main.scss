@@ -34,21 +34,15 @@
 body,
 main {
   height: 100%;
-} /*
-body {
-  min-width: 375px;
 }
-a img {
-  cursor: pointer;
-} */
 .dropdown-menu {
   min-width: 2rem;
 }
-a {
-  cursor: pointer;
-}
 .navbar-toggler:focus {
   box-shadow: 0 0 0 1.5px;
+}
+a {
+  cursor: pointer;
 }
 
 // Bootstrap Color-mode styles
@@ -86,19 +80,6 @@ a {
   }
 }
 
-// Rich editor styles
-.st-area,
-.st-toolbar {
-  border: var(--bs-border-width) solid var(--bs-border-color) !important;
-  background-color: inherit !important;
-}
-.st-toolbar {
-  button,
-  button:hover {
-    background-color: inherit !important;
-  }
-}
-
 // Particles canvas
 app-root main section {
   .canvas-background {
@@ -112,5 +93,18 @@ app-root main section {
     justify-content: center;
     align-items: center;
     height: 100%;
+  }
+
+  // Rich editor styles
+  .st-area,
+  .st-toolbar {
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+    background-color: inherit !important;
+  }
+  .st-toolbar {
+    button,
+    button:hover {
+      background-color: inherit !important;
+    }
   }
 }
