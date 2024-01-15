@@ -35,76 +35,80 @@ body,
 main {
   height: 100%;
 }
-.dropdown-menu {
-  min-width: 2rem;
-}
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 1.5px;
-}
-a {
-  cursor: pointer;
-}
 
-// Bootstrap Color-mode styles
-@import 'icon-list';
-.bi {
-  width: 1rem;
-  height: 1rem;
-  fill: currentcolor;
-}
-.bi-2x {
-  width: 2rem;
-  height: 2rem;
-  fill: currentcolor;
-}
-.bi-3x {
-  width: 2.3333rem;
-  height: 2.3333rem;
-  fill: currentcolor;
-}
-.color-modes {
-  .dropdown-menu {
-    padding: 0.25rem;
-    li + li {
-      margin-top: 0.125rem;
+app-root main {
+  a {
+    cursor: pointer;
+  }
+  // Bootstrap Color-mode styles
+  @import 'icon-list';
+  .bi {
+    width: 1rem;
+    height: 1rem;
+    fill: currentcolor;
+  }
+  .bi-2x {
+    width: 2rem;
+    height: 2rem;
+    fill: currentcolor;
+  }
+  .bi-3x {
+    width: 2.3333rem;
+    height: 2.3333rem;
+    fill: currentcolor;
+  }
+  header {
+    .color-modes {
+      .dropdown-menu {
+        padding: 0.25rem;
+        li + li {
+          margin-top: 0.125rem;
+        }
+      }
+      .dropdown-item {
+        @include border-radius(0.25rem);
+      }
+      .active {
+        font-weight: 600;
+        .bi {
+          display: block !important;
+        }
+      }
+    }
+    .dropdown-menu {
+      min-width: 2rem;
+    }
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 1.5px;
     }
   }
-  .dropdown-item {
-    @include border-radius(0.25rem);
-  }
-  .active {
-    font-weight: 600;
-    .bi {
-      display: block !important;
+
+  // Particles canvas
+  section {
+    .canvas-background {
+      position: absolute;
+      z-index: -1;
     }
-  }
-}
+    .container {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
 
-// Particles canvas
-app-root main section {
-  .canvas-background {
-    position: absolute;
-    z-index: -1;
-  }
-  .container {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
-  // Rich editor styles
-  .st-area,
-  .st-toolbar {
-    border: var(--bs-border-width) solid var(--bs-border-color) !important;
-    background-color: inherit !important;
-  }
-  .st-toolbar {
-    button,
-    button:hover {
+    // Rich editor styles
+    .st-area,
+    .st-toolbar {
+      border: var(--bs-border-width) solid var(--bs-border-color) !important;
       background-color: inherit !important;
+    }
+    .st-toolbar {
+      button,
+      button:hover {
+        background-color: inherit !important;
+      }
     }
   }
 }
