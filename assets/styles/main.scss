@@ -3,7 +3,7 @@
 @import '../../node_modules/bootstrap/scss/mixins/border-radius';
 @import 'ngx-toastr/toastr-bs5-alert';
 
-// Custom styles
+// Bootstrap Color-mode styles
 :root {
   &[data-bs-theme='dark'] {
     a,
@@ -30,6 +30,8 @@
     }
   }
 }
+
+// Custom styles
 :root,
 body,
 main {
@@ -40,7 +42,6 @@ app-root main {
   a {
     cursor: pointer;
   }
-  // Bootstrap Color-mode styles
   @import 'icon-list';
   .bi {
     width: 1rem;
