@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1705321662890,
+  "timestamp": 1705321761707,
   "index": "/APP/index.html",
   "assetGroups": [
     {
@@ -18,7 +18,7 @@
         "/APP/index.588b6b62.js",
         "/APP/index.c0270c6a.css",
         "/APP/index.html",
-        "/APP/main.600874d742ab5f5e.js",
+        "/APP/main.a09c15351bf8cb14.js",
         "/APP/manifest.webmanifest",
         "/APP/polyfills.fd77f1dc5a97e41b.js",
         "/APP/runtime.c5c53d17ef664f81.js"
@@ -90,8 +90,8 @@
     "/APP/icon-96x96.69a857ae.png": "410347a463b6d2432e4c679ce5c6fff76d58b493",
     "/APP/index.588b6b62.js": "78cea67faf3a44a04ef30ed37e619703e492ce45",
     "/APP/index.c0270c6a.css": "725cdf9639cc5ecf7f44a8f3563caf112cb8fc05",
-    "/APP/index.html": "40fdeab4a715f3d6690e6d908970f4a5a421608f",
-    "/APP/main.600874d742ab5f5e.js": "eb73fa27623dcdb24787adbd04a5dd84e62f10ba",
+    "/APP/index.html": "971cfeb6427bac5a7ea8e0c1b7938d23d231ca4d",
+    "/APP/main.a09c15351bf8cb14.js": "80f29b071b1f3e1e17893182497fcdabe6ac3234",
     "/APP/manifest.webmanifest": "abc48eb0a78cf198a2b005e5350812c3e90152b2",
     "/APP/polyfills.fd77f1dc5a97e41b.js": "dd01d83f4ab80c173441dff915c39371687549fe",
     "/APP/runtime.c5c53d17ef664f81.js": "55f664e1dbf1c4481f99f22833cf3525dc07beed"
