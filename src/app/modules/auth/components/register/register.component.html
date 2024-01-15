@@ -12,17 +12,17 @@
         placeholder="{{ 'FIRST_NAME' | translate }}"
         required
       />
-      <span *ngIf="form.controls.firstName.touched && form.controls.firstName.errors?.required" class="form-text">{{ 'FIRST_NAME_REQUIRED' | translate }}</span>
+      <small *ngIf="form.controls.firstName.touched && form.controls.firstName.errors?.required" class="form-text position-absolute text-danger">{{ 'FIRST_NAME_REQUIRED' | translate }}</small>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': form.controls.lastName.touched && form.controls.lastName.errors?.required }">
       <label for="lastName" role="button">&nbsp;</label>
       <input type="text" name="lastName" formControlName="lastName" id="lastName" class="form-control" placeholder="{{ 'LAST_NAME' | translate }}" required />
-      <span *ngIf="form.controls.lastName.touched && form.controls.lastName.errors?.required" class="form-text">{{ 'LAST_NAME_REQUIRED' | translate }}</span>
+      <small *ngIf="form.controls.lastName.touched && form.controls.lastName.errors?.required" class="form-text position-absolute text-danger">{{ 'LAST_NAME_REQUIRED' | translate }}</small>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': form.controls.email.touched && form.controls.email.errors?.required }">
       <label for="email" role="button">&nbsp;</label>
       <input type="text" name="email" id="email" formControlName="email" class="form-control" placeholder="{{ 'EMAIL' | translate }}" required />
-      <span *ngIf="form.controls.email.touched && form.controls.email.errors?.required" class="form-text">{{ 'EMAIL_REQUIRED' | translate }}</span>
+      <small *ngIf="form.controls.email.touched && form.controls.email.errors?.required" class="form-text position-absolute text-danger">{{ 'EMAIL_REQUIRED' | translate }}</small>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': form.controls.password.touched && form.controls.password.errors?.required }">
       <label for="password" role="button">&nbsp;</label>
@@ -35,10 +35,9 @@
         placeholder="{{ 'PASSWORD' | translate }}"
         required
       />
-      <span *ngIf="form.controls.password.touched && form.controls.password.errors?.required" class="form-text">{{ 'PASSWORD_REQUIRED' | translate }}</span>
+      <small *ngIf="form.controls.password.touched && form.controls.password.errors?.required" class="form-text position-absolute text-danger">{{ 'PASSWORD_REQUIRED' | translate }}</small>
     </div>
-    <div class="alert alert-danger mb-0 mt-3 px-2 py-1" role="alert" *ngIf="error">{{ 'EMAIL_EXISTS' | translate }}</div>
-    <div class="form-actions mt-3 text-center">
+    <div class="form-actions mt-4 text-center">
       <button type="submit" [disabled]="!form.valid && !loading" class="btn btn-outline-primary me-3">{{ 'REGISTER' | translate }}</button>
       <img
         *ngIf="loading"
@@ -47,5 +46,6 @@
       />
       <button [routerLink]="['/auth']" class="btn btn-outline">{{ 'CANCEL' | translate }}</button>
     </div>
+    <div class="alert alert-danger mb-0 mt-3 px-2 py-1" role="alert" *ngIf="error">{{ 'EMAIL_EXISTS' | translate }}</div>
   </form>
 </div>
