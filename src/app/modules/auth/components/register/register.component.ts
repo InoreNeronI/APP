@@ -6,14 +6,13 @@ import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { Particles } from '../../../../particles';
 import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
 })
-export class RegisterComponent extends Particles implements OnInit {
+export class RegisterComponent implements OnInit {
   error: any;
   form: UntypedFormGroup = new UntypedFormGroup({
     firstName: new UntypedFormControl('', Validators.required),
@@ -28,13 +27,10 @@ export class RegisterComponent extends Particles implements OnInit {
     private router: Router,
     private toastr: ToastrService,
     private translateService: TranslateService,
-  ) {
-    super();
-  }
+  ) {}
 
   ngOnInit(): void {
     this.loading = false;
-    this.drawParticles();
   }
 
   register(): void {

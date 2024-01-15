@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorModule } from './http-interceptor.module';
 import { LazyTranslateLoader } from './loaders/translate.loader';
+import { ParticlesDirective } from './particles.directive';
 
 export function createTranslateLoader(http: any) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,6 +41,7 @@ export function createTranslateLoader(http: any) {
     FormsModule,
     ToastrModule.forRoot(),
     InterceptorModule,
+    ParticlesDirective,
   ],
   providers: [AuthService, SubjectService, UnitService, ExerciseService],
   bootstrap: [AppComponent],

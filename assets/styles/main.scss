@@ -100,11 +100,7 @@ a {
 }
 
 // Particles canvas
-app-auth,
-app-home,
-app-register {
-  width: 100%;
-  height: 100%;
+app-root main section {
   .canvas-background {
     position: absolute;
   }

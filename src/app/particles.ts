@@ -8,16 +8,18 @@ export class Particles {
   CANVAS;
   context;
   particles;
+  document;
   window;
 
-  constructor() {
-    this.CONTAINER = document.querySelector('section');
+  constructor(document: Document) {
+    this.document = document;
     // @see https://stackoverflow.com/a/52620181/16711967
     this.window = document.defaultView;
   }
 
-  drawParticles(): void {
-    this.CANVAS = document.querySelector('.canvas-background');
+  drawParticles(el: any, container: any): void {
+    this.CANVAS = el;
+    this.CONTAINER = container;
     if (!!(this.CANVAS && this.CANVAS.getContext)) {
       //CANVAS.style.position = 'absolute';
       this.context = this.CANVAS.getContext('2d');
@@ -66,61 +68,57 @@ export class Particles {
   }
 
   loop(): void {
-    this.CANVAS = document.querySelector('.canvas-background');
-    if (!!(this.CANVAS && this.CANVAS.getContext)) {
-      console.log('LOOPING', this.CANVAS);
-      const theme = document.documentElement.getAttribute('data-bs-theme');
-      this.context.fillStyle = theme === 'dark' ? 'rgba(33, 37, 41, 0.2)' : 'rgba(248, 249, 250, 0.2)';
-      this.context.fillRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+    const theme = this.document.documentElement.getAttribute('data-bs-theme');
+    this.context.fillStyle = theme === 'dark' ? 'rgba(33, 37, 41, 0.2)' : 'rgba(248, 249, 250, 0.2)';
+    this.context.fillRect(0, 0, this.context.canvas.width, this.context.canvas.height);
 
-      let z = 0;
-      let xdist = 0;
-      let ydist = 0;
-      let dist = 0;
+    let z = 0;
+    let xdist = 0;
+    let ydist = 0;
+    let dist = 0;
 
-      for (let i = 0; i < this.particles.length; i++) {
-        const particle = this.particles[i];
+    for (let i = 0; i < this.particles.length; i++) {
+      const particle = this.particles[i];
 
-        const lp = { x: particle.position.x, y: particle.position.y };
+      const lp = { x: particle.position.x, y: particle.position.y };
 
-        if (particle.position.x <= particle.size / 2 || particle.position.x >= this.SCREEN_WIDTH - this.PARTICLE_SIZE / 2) {
-          particle.directionX *= -1;
-        }
-
-        if (particle.position.y <= particle.size / 2 || particle.position.y >= this.SCREEN_HEIGHT - this.PARTICLE_SIZE / 2) {
-          particle.directionY *= -1;
-        }
-
-        for (let s = 0; s < this.particles.length; s++) {
-          const bounceParticle = this.particles[s];
-          if (bounceParticle.index !== particle.index) {
-            //what are the distances
-            z = this.PARTICLE_SIZE;
-            xdist = Math.abs(bounceParticle.position.x - particle.position.x);
-            ydist = Math.abs(bounceParticle.position.y - particle.position.y);
-            dist = Math.sqrt(xdist ** 2 + ydist ** 2);
-            if (dist < z) {
-              this.randomiseDirection(particle);
-              this.randomiseDirection(bounceParticle);
-            }
-          }
-        }
-
-        particle.position.x -= particle.directionX;
-        particle.position.y -= particle.directionY;
-
-        this.context.beginPath();
-        this.context.fillStyle = particle.fillColor;
-        this.context.lineWidth = particle.size;
-        this.context.moveTo(lp.x, lp.y);
-        this.context.arc(particle.position.x, particle.position.y, particle.size / 2, 0, Math.PI * 2, true);
-        this.context.closePath();
-        this.context.fill();
+      if (particle.position.x <= particle.size / 2 || particle.position.x >= this.SCREEN_WIDTH - this.PARTICLE_SIZE / 2) {
+        particle.directionX *= -1;
       }
 
-      // @see https://stackoverflow.com/a/43505254/16711967
-      this.window.requestAnimationFrame(this.loop.bind(this));
+      if (particle.position.y <= particle.size / 2 || particle.position.y >= this.SCREEN_HEIGHT - this.PARTICLE_SIZE / 2) {
+        particle.directionY *= -1;
+      }
+
+      for (let s = 0; s < this.particles.length; s++) {
+        const bounceParticle = this.particles[s];
+        if (bounceParticle.index !== particle.index) {
+          //what are the distances
+          z = this.PARTICLE_SIZE;
+          xdist = Math.abs(bounceParticle.position.x - particle.position.x);
+          ydist = Math.abs(bounceParticle.position.y - particle.position.y);
+          dist = Math.sqrt(xdist ** 2 + ydist ** 2);
+          if (dist < z) {
+            this.randomiseDirection(particle);
+            this.randomiseDirection(bounceParticle);
+          }
+        }
+      }
+
+      particle.position.x -= particle.directionX;
+      particle.position.y -= particle.directionY;
+
+      this.context.beginPath();
+      this.context.fillStyle = particle.fillColor;
+      this.context.lineWidth = particle.size;
+      this.context.moveTo(lp.x, lp.y);
+      this.context.arc(particle.position.x, particle.position.y, particle.size / 2, 0, Math.PI * 2, true);
+      this.context.closePath();
+      this.context.fill();
     }
+
+    // @see https://stackoverflow.com/a/43505254/16711967
+    this.window.requestAnimationFrame(this.loop.bind(this));
   }
 
   randomiseDirection(particle): void {

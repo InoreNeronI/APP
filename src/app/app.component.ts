@@ -1,24 +1,39 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { AfterViewInit, Component, Inject, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { AuthService } from './modules/auth/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Particles } from './particles';
+import { ParticlesDirective } from './particles.directive';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent extends Particles implements AfterViewInit {
   languages = ['en', 'es', 'eu'];
   title = 'APP';
 
+  // @see https://www.digitalocean.com/community/tutorials/angular-viewchild-access-component-es
+  canvasParticles: any;
+
+  @ViewChild(ParticlesDirective)
+  set particlesElement(directive: ParticlesDirective) {
+    this.canvasParticles = directive.element;
+  }
+
+  ngAfterViewInit() {
+    this.drawParticles(document.querySelector('.canvas-background'), document.querySelector('section'));
+  }
+
   constructor(
-    @Inject(DOCUMENT) private document: Document,
+    @Inject(DOCUMENT) public override document: Document,
     private title_platform: Title,
     private meta: Meta,
     public authService: AuthService,
     public translate: TranslateService,
   ) {
+    super(document);
     this.setLang();
     title_platform.setTitle(this.title);
     this.setMeta();
