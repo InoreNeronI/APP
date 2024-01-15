@@ -23,7 +23,7 @@ export class AppComponent extends Particles implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.drawParticles(document.querySelector('.canvas-background'), document.querySelector('section'));
+    this.drawParticles(this.document.querySelector('.canvas-background'), this.document.querySelector('section'));
   }
 
   constructor(
