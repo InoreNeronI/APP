@@ -21,7 +21,6 @@ export class Particles {
     this.CANVAS = el;
     this.CONTAINER = container;
     if (!!(this.CANVAS && this.CANVAS.getContext)) {
-      //CANVAS.style.position = 'absolute';
       this.context = this.CANVAS.getContext('2d');
       this.context.globalCompositeOperation = 'destination-over';
       // @see https://stackoverflow.com/a/51600005
