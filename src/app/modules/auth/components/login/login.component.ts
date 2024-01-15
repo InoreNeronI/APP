@@ -50,6 +50,7 @@ export class LoginComponent extends Particles implements OnInit {
       )
       .subscribe(async (response) => {
         if (response.hasOwnProperty('roles')) {
+          this.loading = true;
           localStorage.setItem('currentUser', email);
           localStorage.setItem('currentRole', JSON.parse(response['roles'].content)[0]);
           this.toastr.info(this.translateService.instant('LOGGED_IN'));

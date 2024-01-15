@@ -58,6 +58,7 @@ export class RegisterComponent extends Particles implements OnInit {
       )
       .subscribe(async (response) => {
         if (response.hasOwnProperty('email')) {
+          this.loading = true;
           this.toastr.info(this.translateService.instant('SIGNED_UP', { email: response['email'] }));
           await this.router.navigate(['/auth']);
         }
