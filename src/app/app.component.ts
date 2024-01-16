@@ -26,6 +26,7 @@ export class AppComponent extends Particles implements AfterContentInit, AfterVi
     this.drawParticles(this.canvasParticlesElement, this.canvasParticlesElement.parentElement);
   }
 
+  // @see https://stackoverflow.com/a/37374281/16711967
   ngAfterContentInit() {
     this.drawParticles(this.canvasParticlesElement, this.canvasParticlesElement.parentElement);
   }
