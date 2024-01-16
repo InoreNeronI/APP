@@ -25,9 +25,7 @@ export class AppComponent extends Particles implements AfterViewInit {
   ngAfterViewInit() {
     this.drawParticles(this.canvasParticlesElement, this.canvasParticlesElement.parentElement);
     // @see https://christiankohler.net/how-to-use-resizeobserver-with-angular
-    const observer = new ResizeObserver((entries) => {
-      entries.forEach(() => this.windowResizeHandler());
-    });
+    const observer = new ResizeObserver((entries) => entries.forEach(this.windowResizeHandler.bind(this)));
     observer.observe(this.canvasParticlesElement.parentElement);
   }
 
