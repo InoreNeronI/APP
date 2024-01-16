@@ -1,8 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, Inject, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { AuthService } from './modules/auth/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from './modules/auth/services/auth.service';
 import { Particles } from './particles';
 import { ParticlesDirective } from './particles.directive';
 
@@ -11,11 +11,10 @@ import { ParticlesDirective } from './particles.directive';
   templateUrl: './app.component.html',
 })
 export class AppComponent extends Particles implements AfterViewInit {
-  languages = ['en', 'es', 'eu'];
-  title = 'APP';
-
   // @see https://www.digitalocean.com/community/tutorials/angular-viewchild-access-component-es
   canvasParticlesElement: HTMLElement;
+  languages = ['en', 'es', 'eu'];
+  title = 'APP';
 
   @ViewChild(ParticlesDirective)
   set particlesElement(directive: ParticlesDirective) {
