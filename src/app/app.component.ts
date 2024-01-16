@@ -15,7 +15,7 @@ export class AppComponent extends Particles implements AfterViewInit {
   title = 'APP';
 
   // @see https://www.digitalocean.com/community/tutorials/angular-viewchild-access-component-es
-  canvasParticlesElement: any;
+  canvasParticlesElement: HTMLElement;
 
   @ViewChild(ParticlesDirective)
   set particlesElement(directive: ParticlesDirective) {
@@ -24,6 +24,11 @@ export class AppComponent extends Particles implements AfterViewInit {
 
   ngAfterViewInit() {
     this.drawParticles(this.canvasParticlesElement, this.canvasParticlesElement.parentElement);
+    // @see https://christiankohler.net/how-to-use-resizeobserver-with-angular
+    const observer = new ResizeObserver((entries) => {
+      entries.forEach(() => this.windowResizeHandler());
+    });
+    observer.observe(this.canvasParticlesElement.parentElement);
   }
 
   constructor(
