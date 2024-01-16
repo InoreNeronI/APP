@@ -59,8 +59,8 @@ export class AppComponent extends Particles implements AfterViewInit {
     return this.translate.currentLang === lang;
   }
 
-  logout(): void {
-    this.authService.logout();
+  async logout(): Promise<void> {
+    await this.authService.logout();
   }
 
   setLang(): void {
