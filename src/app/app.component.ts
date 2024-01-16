@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { AfterContentInit, AfterViewInit, Component, Inject, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Inject, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { AuthService } from './modules/auth/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -10,7 +10,7 @@ import { ParticlesDirective } from './particles.directive';
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent extends Particles implements AfterContentInit, AfterViewInit {
+export class AppComponent extends Particles implements AfterViewInit {
   languages = ['en', 'es', 'eu'];
   title = 'APP';
 
@@ -23,11 +23,6 @@ export class AppComponent extends Particles implements AfterContentInit, AfterVi
   }
 
   ngAfterViewInit() {
-    this.drawParticles(this.canvasParticlesElement, this.canvasParticlesElement.parentElement);
-  }
-
-  // @see https://stackoverflow.com/a/37374281/16711967
-  ngAfterContentInit() {
     this.drawParticles(this.canvasParticlesElement, this.canvasParticlesElement.parentElement);
   }
 
