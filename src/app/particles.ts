@@ -15,8 +15,7 @@ export class Particles {
   }
 
   drawParticles(el: HTMLCanvasElement, container: HTMLElement): void {
-    this.CONTAINER = container;
-    const CANVAS = el;
+    const CANVAS: HTMLCanvasElement = el;
     if (!!(CANVAS && CANVAS.getContext)) {
       this.context = CANVAS.getContext('2d');
       this.context.globalCompositeOperation = 'destination-over';
@@ -24,7 +23,8 @@ export class Particles {
       // @see https://stackoverflow.com/a/43505254/16711967
       this.window.addEventListener('resize', this.windowResizeHandler.bind(this), false);
       // @see https://christiankohler.net/how-to-use-resizeobserver-with-angular
-      const observer = new ResizeObserver((entries) => entries.forEach(this.windowResizeHandler.bind(this)));
+      const observer: ResizeObserver = new ResizeObserver((entries: ResizeObserverEntry[]) => entries.forEach(this.windowResizeHandler.bind(this)));
+      this.CONTAINER = container;
       observer.observe(this.CONTAINER);
       this.windowResizeHandler();
       this.createParticles();
@@ -41,13 +41,13 @@ export class Particles {
     this.particles = [];
     const depth = 0;
 
-    for (let i = 0; i < this.QUANTITY; i++) {
-      const posX = this.PARTICLE_SIZE / 2 + Math.random() * (this.context.canvas.width - this.PARTICLE_SIZE / 2);
-      const posY = this.PARTICLE_SIZE / 2 + Math.random() * (this.context.canvas.offsetHeight - this.PARTICLE_SIZE / 2);
+    for (let i: number = 0; i < this.QUANTITY; i++) {
+      const posX: number = this.PARTICLE_SIZE / 2 + Math.random() * (this.context.canvas.width - this.PARTICLE_SIZE / 2);
+      const posY: number = this.PARTICLE_SIZE / 2 + Math.random() * (this.context.canvas.offsetHeight - this.PARTICLE_SIZE / 2);
 
       const speed = 2;
-      const directionX = -speed + Math.random() * speed * 2;
-      const directionY = -speed + Math.random() * speed * 2;
+      const directionX: number = -speed + Math.random() * speed * 2;
+      const directionY: number = -speed + Math.random() * speed * 2;
 
       this.particles.push({
         position: { x: posX, y: posY },
@@ -65,19 +65,19 @@ export class Particles {
   }
 
   loop(): void {
-    const theme = this.document.documentElement.getAttribute('data-bs-theme');
+    const theme: string = this.document.documentElement.getAttribute('data-bs-theme');
     this.context.fillStyle = theme === 'dark' ? 'rgba(33, 37, 41, 0.2)' : 'rgba(248, 249, 250, 0.2)';
     this.context.fillRect(0, 0, this.context.canvas.width, this.context.canvas.height);
 
-    let z = 0;
-    let xdist = 0;
-    let ydist = 0;
-    let dist = 0;
+    let z: number = 0;
+    let x: number = 0;
+    let y: number = 0;
+    let dist: number = 0;
 
-    for (let i = 0; i < this.particles.length; i++) {
-      const particle = this.particles[i];
+    for (let i: number = 0; i < this.particles.length; i++) {
+      const particle: any = this.particles[i];
 
-      const lp = { x: particle.position.x, y: particle.position.y };
+      const lp: { x: number; y: number } = { x: particle.position.x, y: particle.position.y };
 
       if (particle.position.x <= particle.size / 2 || particle.position.x >= this.context.canvas.width - this.PARTICLE_SIZE / 2) {
         particle.directionX *= -1;
@@ -87,14 +87,14 @@ export class Particles {
         particle.directionY *= -1;
       }
 
-      for (let s = 0; s < this.particles.length; s++) {
+      for (let s: number = 0; s < this.particles.length; s++) {
         const bounceParticle = this.particles[s];
         if (bounceParticle.index !== particle.index) {
-          //what are the distances
+          // what are the distances
           z = this.PARTICLE_SIZE;
-          xdist = Math.abs(bounceParticle.position.x - particle.position.x);
-          ydist = Math.abs(bounceParticle.position.y - particle.position.y);
-          dist = Math.sqrt(xdist ** 2 + ydist ** 2);
+          x = Math.abs(bounceParticle.position.x - particle.position.x);
+          y = Math.abs(bounceParticle.position.y - particle.position.y);
+          dist = Math.sqrt(x ** 2 + y ** 2);
           if (dist < z) {
             this.randomiseDirection(particle);
             this.randomiseDirection(bounceParticle);
@@ -119,13 +119,13 @@ export class Particles {
   }
 
   randomiseDirection(particle: any): void {
-    //pick a random deg
-    let d = 0;
+    // pick a random deg
+    let d: number = 0;
     while (d === 0 || d === 90 || d === 180 || d === 360) {
       d = Math.floor(Math.random() * 360);
     }
 
-    const r = (d * 180) / Math.PI;
+    const r: number = (d * 180) / Math.PI;
     particle.directionX = Math.sin(r) * particle.speed;
     particle.directionY = Math.cos(r) * particle.speed;
   }
