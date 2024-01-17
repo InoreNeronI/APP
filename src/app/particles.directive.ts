@@ -6,7 +6,7 @@ import { Directive, ElementRef, Renderer2 } from '@angular/core';
   standalone: true,
 })
 export class ParticlesDirective {
-  element: any;
+  element: HTMLCanvasElement;
 
   constructor(el: ElementRef, renderer: Renderer2) {
     this.element = renderer.createElement('canvas');

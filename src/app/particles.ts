@@ -1,15 +1,15 @@
 // @see https://codepen.io/72lions/pen/nzdpWz
 export class Particles {
-  QUANTITY = 100;
-  PARTICLE_SIZE = 10;
-  CONTAINER;
-  SCREEN_WIDTH;
-  SCREEN_HEIGHT;
-  CANVAS;
-  context;
-  particles;
-  document;
-  window;
+  QUANTITY: number = 100;
+  PARTICLE_SIZE: number = 10;
+  CONTAINER: HTMLElement;
+  SCREEN_WIDTH: number;
+  SCREEN_HEIGHT: number;
+  CANVAS: HTMLCanvasElement;
+  context: CanvasRenderingContext2D;
+  particles: Array<any>;
+  document: Document;
+  window: Window;
 
   constructor(document: Document) {
     this.document = document;
@@ -17,7 +17,7 @@ export class Particles {
     this.window = document.defaultView;
   }
 
-  drawParticles(el: any, container: any): void {
+  drawParticles(el: HTMLCanvasElement, container: HTMLElement): void {
     this.CANVAS = el;
     this.CONTAINER = container;
     if (!!(this.CANVAS && this.CANVAS.getContext)) {
@@ -26,6 +26,9 @@ export class Particles {
       // @see https://stackoverflow.com/a/51600005
       // @see https://stackoverflow.com/a/43505254/16711967
       this.window.addEventListener('resize', this.windowResizeHandler.bind(this), false);
+      // @see https://christiankohler.net/how-to-use-resizeobserver-with-angular
+      const observer = new ResizeObserver((entries) => entries.forEach(this.windowResizeHandler.bind(this)));
+      observer.observe(this.CONTAINER);
       this.windowResizeHandler();
       this.createParticles();
       this.loop();
@@ -120,7 +123,7 @@ export class Particles {
     this.window.requestAnimationFrame(this.loop.bind(this));
   }
 
-  randomiseDirection(particle): void {
+  randomiseDirection(particle: any): void {
     //pick a random deg
     let d = 0;
     while (d === 0 || d === 90 || d === 180 || d === 360) {
