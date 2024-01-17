@@ -3,9 +3,6 @@ export class Particles {
   QUANTITY: number = 100;
   PARTICLE_SIZE: number = 10;
   CONTAINER: HTMLElement;
-  SCREEN_WIDTH: number;
-  SCREEN_HEIGHT: number;
-  CANVAS: HTMLCanvasElement;
   context: CanvasRenderingContext2D;
   particles: Array<any>;
   document: Document;
@@ -18,10 +15,10 @@ export class Particles {
   }
 
   drawParticles(el: HTMLCanvasElement, container: HTMLElement): void {
-    this.CANVAS = el;
     this.CONTAINER = container;
-    if (!!(this.CANVAS && this.CANVAS.getContext)) {
-      this.context = this.CANVAS.getContext('2d');
+    const CANVAS = el;
+    if (!!(CANVAS && CANVAS.getContext)) {
+      this.context = CANVAS.getContext('2d');
       this.context.globalCompositeOperation = 'destination-over';
       // @see https://stackoverflow.com/a/51600005
       // @see https://stackoverflow.com/a/43505254/16711967
@@ -36,10 +33,8 @@ export class Particles {
   }
 
   windowResizeHandler(): void {
-    this.SCREEN_WIDTH = this.CONTAINER.offsetWidth;
-    this.SCREEN_HEIGHT = this.CONTAINER.offsetHeight;
-    this.CANVAS.width = this.SCREEN_WIDTH;
-    this.CANVAS.height = this.SCREEN_HEIGHT;
+    this.context.canvas.width = this.CONTAINER.offsetWidth;
+    this.context.canvas.height = this.CONTAINER.offsetHeight;
   }
 
   createParticles(): void {
@@ -47,8 +42,8 @@ export class Particles {
     const depth = 0;
 
     for (let i = 0; i < this.QUANTITY; i++) {
-      const posX = this.PARTICLE_SIZE / 2 + Math.random() * (this.CONTAINER.offsetWidth - this.PARTICLE_SIZE / 2);
-      const posY = this.PARTICLE_SIZE / 2 + Math.random() * (this.CONTAINER.offsetHeight - this.PARTICLE_SIZE / 2);
+      const posX = this.PARTICLE_SIZE / 2 + Math.random() * (this.context.canvas.width - this.PARTICLE_SIZE / 2);
+      const posY = this.PARTICLE_SIZE / 2 + Math.random() * (this.context.canvas.offsetHeight - this.PARTICLE_SIZE / 2);
 
       const speed = 2;
       const directionX = -speed + Math.random() * speed * 2;
@@ -84,11 +79,11 @@ export class Particles {
 
       const lp = { x: particle.position.x, y: particle.position.y };
 
-      if (particle.position.x <= particle.size / 2 || particle.position.x >= this.SCREEN_WIDTH - this.PARTICLE_SIZE / 2) {
+      if (particle.position.x <= particle.size / 2 || particle.position.x >= this.context.canvas.width - this.PARTICLE_SIZE / 2) {
         particle.directionX *= -1;
       }
 
-      if (particle.position.y <= particle.size / 2 || particle.position.y >= this.SCREEN_HEIGHT - this.PARTICLE_SIZE / 2) {
+      if (particle.position.y <= particle.size / 2 || particle.position.y >= this.context.canvas.offsetHeight - this.PARTICLE_SIZE / 2) {
         particle.directionY *= -1;
       }
 
