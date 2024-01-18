@@ -1,13 +1,16 @@
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, Inject, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { TranslateService } from '@ngx-translate/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AuthService } from './modules/auth/services/auth.service';
 import { Particles } from './particles';
 import { ParticlesDirective } from './particles.directive';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, ParticlesDirective, RouterLink, RouterLinkActive, RouterOutlet, TranslateModule],
   templateUrl: './app.component.html',
 })
 export class AppComponent extends Particles implements AfterViewInit {

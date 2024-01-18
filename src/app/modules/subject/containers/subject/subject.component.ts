@@ -9,11 +9,11 @@ import { UnitService } from '../../../../services/unit.service';
   templateUrl: './subject.component.html',
 })
 export class SubjectComponent implements OnInit {
-  subjects;
-  subjectName;
-  subject;
-  exercise;
-  units;
+  subjects: Object;
+  subjectName: string;
+  subject: any;
+  exercise: any;
+  units: any;
 
   constructor(
     public route: ActivatedRoute,
@@ -23,15 +23,15 @@ export class SubjectComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
+    this.route.paramMap.subscribe((params): void => {
       this.subjectName = params.get('subject');
 
-      this.subjectService.get(/*{page: 1}*/).subscribe((data) => {
+      this.subjectService.get(/*{page: 1}*/).subscribe((data): void => {
         this.subjects = data;
-        this.subject = this.subjects['hydra:member'].find((value) => value.name === this.subjectName);
+        this.subject = this.subjects['hydra:member'].find((value: any): boolean => value.name === this.subjectName);
 
-        this.unitService.get(/*{page: 1}*/).subscribe((units) => {
-          this.units = units['hydra:member'].filter((unit) => unit.subject.split('/')[3] === this.subject.id.toString());
+        this.unitService.get(/*{page: 1}*/).subscribe((units): void => {
+          this.units = units['hydra:member'].filter((unit: any): boolean => unit.subject.split('/')[3] === this.subject.id.toString());
         });
       });
     });

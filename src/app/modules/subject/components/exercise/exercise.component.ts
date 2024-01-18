@@ -5,9 +5,9 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './exercise.component.html',
 })
 export class ExerciseComponent implements OnInit {
-  @Input() exercise;
-  type;
-  resp;
+  @Input() exercise: any;
+  type: string;
+  resp: boolean;
 
   constructor() {}
 
@@ -15,7 +15,7 @@ export class ExerciseComponent implements OnInit {
     this.type = isNaN(this.exercise.answer) ? 'text' : 'number';
   }
 
-  checkResponse(event) {
+  checkResponse(event: any): void {
     this.resp = event.target.value === this.exercise.answer;
   }
 }
