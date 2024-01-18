@@ -30,5 +30,5 @@ export const appConfig: ApplicationConfig = {
     provideToastr(),
     SubjectService,
     UnitService,
-  ]
+  ],
 };
