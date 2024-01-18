@@ -1,5 +1,5 @@
-import { LocationStrategy } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { isDevMode } from '@angular/core';
 import { TranslateLoader } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -10,13 +10,10 @@ const DEFAULT_LANG = 'en';
 export class LazyTranslateLoader implements TranslateLoader {
   constructor(
     private http: HttpClient,
-    private locationStrategy: LocationStrategy,
-    private readonly prefix: string,
+    // @see https://stackoverflow.com/a/67717547/16711967
+    private prefix: string = isDevMode() ? '/assets/i18n/' : '/APP/assets/i18n/',
     private suffix: string = '.json',
-  ) {
-    // @see https://stackoverflow.com/a/69207853/16711967
-    this.prefix = `${this.locationStrategy.getBaseHref()}assets/i18n/`;
-  }
+  ) {}
 
   /**
    * Gets the translations from the server
