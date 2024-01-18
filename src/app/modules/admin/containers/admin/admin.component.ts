@@ -3,10 +3,16 @@ import { SubjectService } from '../../../../services/subject.service';
 import { UnitService } from '../../../../services/unit.service';
 import { ExerciseService } from '../../../../services/exercise.service';
 import { Observable } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
+import { AsyncPipe } from '@angular/common';
+import { TableComponent } from '../../components/table/table.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
+  standalone: true,
+  imports: [RouterLink, TableComponent, AsyncPipe, TranslateModule],
 })
 export class AdminComponent implements OnInit {
   //page: number = 1;

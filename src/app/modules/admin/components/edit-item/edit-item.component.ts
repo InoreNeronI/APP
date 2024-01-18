@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { Location, NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
-import { EditorConfig, UNDO_BUTTON, SEPARATOR, BOLD_BUTTON, ITALIC_BUTTON } from 'ngx-simple-text-editor';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { EditorConfig, UNDO_BUTTON, SEPARATOR, BOLD_BUTTON, ITALIC_BUTTON, NgxSimpleTextEditorModule } from 'ngx-simple-text-editor';
 import { ToastrService } from 'ngx-toastr';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -15,6 +15,8 @@ import Utils from '../../../../utils';
 @Component({
   selector: 'app-new-item',
   templateUrl: './edit-item.component.html',
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, NgFor, NgIf, NgxSimpleTextEditorModule, TranslateModule],
 })
 export class EditItemComponent implements OnInit {
   id: number;

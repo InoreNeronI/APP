@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SubjectService } from '../../../../services/subject.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { UnitService } from '../../../../services/unit.service';
+import { UnitComponent } from '../../components/unit/unit.component';
+import { NgIf, NgFor, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-subject',
   templateUrl: './subject.component.html',
+  standalone: true,
+  imports: [NgIf, NgFor, UnitComponent, UpperCasePipe, TranslateModule],
 })
 export class SubjectComponent implements OnInit {
   subjects: Object;

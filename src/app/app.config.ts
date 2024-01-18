@@ -14,6 +14,7 @@ import { UnitService } from './services/unit.service';
 export const appConfig: ApplicationConfig = {
   providers: [
     AuthService,
+    ExerciseService,
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
@@ -23,7 +24,6 @@ export const appConfig: ApplicationConfig = {
         },
       }),
     ),
-    ExerciseService,
     provideAnimations(),
     provideHttpClient(),
     provideRouter(routes),

@@ -2,14 +2,18 @@ import { Component, Input } from '@angular/core';
 import { environment } from '../../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { RouterLink } from '@angular/router';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.sass'],
+  standalone: true,
+  imports: [NgIf, NgFor, RouterLink, TranslateModule],
 })
 export class TableComponent {
   @Input() data: Object;

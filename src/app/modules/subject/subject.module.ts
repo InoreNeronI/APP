@@ -7,7 +7,6 @@ import { SubjectComponent } from './containers/subject/subject.component';
 import { SubjectRoutingModule } from './subject-routing.module';
 
 @NgModule({
-  declarations: [SubjectComponent, ExerciseComponent, UnitComponent],
-  imports: [CommonModule, SubjectRoutingModule, TranslateModule],
+  imports: [CommonModule, SubjectRoutingModule, TranslateModule, SubjectComponent, ExerciseComponent, UnitComponent],
 })
 export class SubjectModule {}
