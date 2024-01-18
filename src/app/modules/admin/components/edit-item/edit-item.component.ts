@@ -17,11 +17,11 @@ import Utils from '../../../../utils';
   templateUrl: './edit-item.component.html',
 })
 export class EditItemComponent implements OnInit {
-  id;
-  item;
-  currentService;
-  fields;
-  data;
+  id: number;
+  item: string;
+  currentService: SubjectService | UnitService | ExerciseService;
+  fields: any;
+  data: Object;
   htmlContent = '';
 
   config: EditorConfig = {
@@ -37,7 +37,7 @@ export class EditItemComponent implements OnInit {
     public unitService: UnitService,
     public exerciseService: ExerciseService,
     private _formBuilder: UntypedFormBuilder,
-    private toastr: ToastrService,
+    private toaster: ToastrService,
     private translateService: TranslateService,
     private _location: Location,
   ) {
@@ -62,7 +62,7 @@ export class EditItemComponent implements OnInit {
       }
 
       if (params.get('id')) {
-        this.id = params.get('id');
+        this.id = parseInt(params.get('id'));
       }
 
       this.currentService.getOne(this.id).subscribe((details) => {
@@ -71,7 +71,7 @@ export class EditItemComponent implements OnInit {
 
         for (let field of this.fields) {
           //create form controls dynamically:
-          let formc = this._formBuilder.control(
+          let form = this._formBuilder.control(
             {
               value: this.data[field],
               disabled: field === 'id',
@@ -79,8 +79,8 @@ export class EditItemComponent implements OnInit {
             Validators.required,
           );
 
-          this.formControlsArray.push(formc);
-          this.form.addControl(field, formc);
+          this.formControlsArray.push(form);
+          this.form.addControl(field, form);
         }
       });
     });
@@ -95,12 +95,12 @@ export class EditItemComponent implements OnInit {
       .edit(this.id, this.form.value)
       .pipe(
         catchError((err) => {
-          this.toastr.error(err.error['hydra:description']);
+          this.toaster.error(err.error['hydra:description']);
           return throwError(err);
         }),
       )
       .subscribe(() => {
-        this.toastr.success(this.translateService.instant('EDITED'));
+        this.toaster.success(this.translateService.instant('EDITED'));
       });
   }
 }

@@ -11,8 +11,8 @@ import { Observable } from 'rxjs';
 export class AdminComponent implements OnInit {
   //page: number = 1;
 
-  currentTab;
-  currentService;
+  currentTab: string;
+  currentService: SubjectService | UnitService | ExerciseService;
 
   subjects$: Observable<any>;
   units$: Observable<any>;

@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { AuthService } from './modules/auth/services/auth.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
@@ -18,10 +17,6 @@ import { InterceptorModule } from './http-interceptor.module';
 import { LazyTranslateLoader } from './loaders/translate.loader';
 import { ParticlesDirective } from './particles.directive';
 
-export function createTranslateLoader(http: any) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -33,7 +28,6 @@ export function createTranslateLoader(http: any) {
       loader: {
         provide: TranslateLoader,
         useClass: LazyTranslateLoader,
-        useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
     }),

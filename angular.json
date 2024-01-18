@@ -22,9 +22,10 @@
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "sass",
             "assets": [
               {
-                "glob": "**/*.{css,map,js,png,webmanifest}",
+                "glob": "**/*.{css,ico,map,js,png,webmanifest}",
                 "input": "assets/.dist",
                 "output": ""
               },
@@ -40,7 +41,7 @@
               }
             ],
             "customWebpackConfig": {
-              "path": "src/custom-webpack.config.js",
+              "path": "webpack.config.js",
               "replaceDuplicatePlugins": true
             }
           },
@@ -106,13 +107,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "sass",
             "karmaConfig": "karma.conf.js",
             "assets": [
               {
-                "glob": "**/*.{css,map,js,png,webmanifest}",
+                "glob": "**/*.{css,ico,map,js,png,webmanifest}",
                 "input": "assets/.dist",
                 "output": ""
               },

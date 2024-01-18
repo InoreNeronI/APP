@@ -13,8 +13,8 @@ import { ParticlesDirective } from './particles.directive';
 export class AppComponent extends Particles implements AfterViewInit {
   // @see https://www.digitalocean.com/community/tutorials/angular-viewchild-access-component-es
   canvasParticlesElement: HTMLCanvasElement;
-  languages = ['en', 'es', 'eu'];
-  title = 'APP';
+  languages: string[] = ['en', 'es', 'eu'];
+  title: string = 'APP';
 
   @ViewChild(ParticlesDirective)
   set particlesElement(directive: ParticlesDirective) {
@@ -69,7 +69,7 @@ export class AppComponent extends Particles implements AfterViewInit {
 
   setMeta(): void {
     this.translate.get('DESCRIPTION').subscribe((text: string) => {
-      this.meta.updateTag({ name: 'description', content: text });
+      this.meta.addTag({ name: 'description', content: text });
     });
   }
 }

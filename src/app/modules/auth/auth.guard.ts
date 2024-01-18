@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivate } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
-export class AuthGuard {
+export class AuthGuard implements CanActivate {
   constructor(
     private auth: AuthService,
     private router: Router,
-    private toastr: ToastrService,
+    private toaster: ToastrService,
     private translateService: TranslateService,
   ) {}
 
@@ -20,11 +20,11 @@ export class AuthGuard {
     }
     if (this.auth.isUser()) {
       // logged in as plain user so return false and warn
-      this.toastr.error(this.translateService.instant('FORBIDDEN'));
+      this.toaster.error(this.translateService.instant('FORBIDDEN'));
       return false;
     }
     // not logged in so redirect to login page
-    this.toastr.info(this.translateService.instant('LOGIN_PLEASE'));
+    this.toaster.info(this.translateService.instant('LOGIN_PLEASE'));
     await this.router.navigate(['/auth'], { queryParams: { returnUrl: state.url } });
     return false;
   }

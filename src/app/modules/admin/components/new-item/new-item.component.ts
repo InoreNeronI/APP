@@ -16,9 +16,9 @@ import { ExerciseService } from '../../../../services/exercise.service';
   templateUrl: './new-item.component.html',
 })
 export class NewItemComponent implements OnInit {
-  item;
-  currentService;
-  fields;
+  item: string;
+  currentService: SubjectService | UnitService | ExerciseService;
+  fields: string[];
   form: UntypedFormGroup;
   formControlsArray = [];
 
@@ -32,7 +32,7 @@ export class NewItemComponent implements OnInit {
     public unitService: UnitService,
     public exerciseService: ExerciseService,
     private _formBuilder: UntypedFormBuilder,
-    private toastr: ToastrService,
+    private toaster: ToastrService,
     private translateService: TranslateService,
     private _location: Location,
   ) {
@@ -61,10 +61,10 @@ export class NewItemComponent implements OnInit {
 
       for (let field of this.fields) {
         //create form controls dynamically:
-        let formc = this._formBuilder.control('', Validators.required);
+        let form = this._formBuilder.control('', Validators.required);
 
-        this.formControlsArray.push(formc);
-        this.form.addControl(field, formc);
+        this.formControlsArray.push(form);
+        this.form.addControl(field, form);
       }
     });
   }
@@ -78,12 +78,12 @@ export class NewItemComponent implements OnInit {
       .add(this.form.value)
       .pipe(
         catchError((err) => {
-          this.toastr.error(err.error['hydra:description']);
+          this.toaster.error(err.error['hydra:description']);
           return throwError(err);
         }),
       )
       .subscribe(() => {
-        this.toastr.success(this.translateService.instant('ADDED'));
+        this.toaster.success(this.translateService.instant('ADDED'));
       });
   }
 }

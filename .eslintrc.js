@@ -265,7 +265,7 @@ module.exports = {
     'simple-import-sort/exports': 'error',
   },
   overrides: [
-    // override "simple-import-sort" config
+    // override 'simple-import-sort' config
     {
       files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
       rules: {

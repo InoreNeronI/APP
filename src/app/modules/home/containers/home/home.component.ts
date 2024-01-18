@@ -7,7 +7,7 @@ import { SubjectService } from '../../../../services/subject.service';
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
-  subjects;
+  subjects: Object;
 
   constructor(
     public subjectService: SubjectService,

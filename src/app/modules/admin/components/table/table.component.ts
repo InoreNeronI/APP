@@ -12,13 +12,13 @@ import { throwError } from 'rxjs';
   styleUrls: ['./table.component.sass'],
 })
 export class TableComponent {
-  @Input() data;
-  @Input() currentType;
-  fields;
+  @Input() data: Object;
+  @Input() currentType: string;
+  fields: any;
 
   constructor(
     private http: HttpClient,
-    private toastr: ToastrService,
+    private toaster: ToastrService,
     private translateService: TranslateService,
   ) {}
 
@@ -36,7 +36,7 @@ export class TableComponent {
     return this.fields;
   }
 
-  internalFieldsFilter(array) {
+  internalFieldsFilter(array: any[]) {
     const fieldsToRemoveFromResponse = ['@id', '@type'];
 
     return array.filter((value) => fieldsToRemoveFromResponse.indexOf(value) < 0);
@@ -47,12 +47,12 @@ export class TableComponent {
       .delete(environment.apiUrl + '/' + this.currentType + '/' + id, { observe: 'response' })
       .pipe(
         catchError((err) => {
-          this.toastr.error(err.error.error);
+          this.toaster.error(err.error.error);
           return throwError(err);
         }),
       )
       .subscribe(() => {
-        this.toastr.success(this.translateService.instant('DELETED'));
+        this.toaster.success(this.translateService.instant('DELETED'));
         const deleted = this.data['hydra:member'].find((x) => x.id === id);
         this.data['hydra:member'].splice(this.data['hydra:member'].indexOf(deleted), 1);
         this.data['hydra:totalItems'] -= 1;
