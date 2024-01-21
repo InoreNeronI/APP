@@ -38,11 +38,10 @@ main {
   height: 100%;
 }
 
-app-root main {
+main {
   a {
     cursor: pointer;
   }
-  @import 'icon-list';
   .bi {
     width: 1rem;
     height: 1rem;

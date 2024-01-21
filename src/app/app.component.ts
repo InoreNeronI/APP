@@ -24,7 +24,7 @@ export class AppComponent extends Particles implements AfterViewInit {
     this.canvasParticlesElement = directive.element;
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.drawParticles(this.canvasParticlesElement, this.canvasParticlesElement.parentElement);
   }
 
@@ -72,7 +72,7 @@ export class AppComponent extends Particles implements AfterViewInit {
 
   setMeta(): void {
     this.translate.get('DESCRIPTION').subscribe((text: string) => {
-      this.meta.addTag({ name: 'description', content: text });
+      this.meta.updateTag({ name: 'description', content: text });
     });
   }
 }
