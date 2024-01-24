@@ -57,6 +57,10 @@ main {
     height: 2.3333rem;
     fill: currentcolor;
   }
+  .canvas-background {
+    position: absolute;
+    z-index: -1;
+  }
   header {
     .color-modes {
       .dropdown-menu {
@@ -85,16 +89,8 @@ main {
 
   // Particles canvas
   section {
-    .canvas-background {
-      position: absolute;
-      z-index: -1;
-    }
     .container {
-      display: flex;
       position: relative;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       height: 100%;
     }
 
