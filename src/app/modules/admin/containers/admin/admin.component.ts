@@ -41,11 +41,11 @@ export class AdminComponent implements OnInit {
     this.currentService = this.subjectService;
   }
 
-  setCurrentNav(event) {
+  setCurrentNav(event: Event | any): void {
     this.currentTab = event.target.id;
   }
 
-  setCurrentData() {
+  setCurrentData(): void {
     switch (this.currentTab) {
       case 'subjects':
         this.currentService = this.subjectService;
