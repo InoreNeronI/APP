@@ -33,7 +33,7 @@
     "zone.js": "^0.14.4"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^17.0.0",
+    "@angular-builders/custom-webpack": "^17.0.1",
     "@angular-devkit/build-angular": "^17.2.0",
     "@angular-eslint/eslint-plugin": "^17.2.1",
     "@angular-eslint/eslint-plugin-template": "^17.2.1",
@@ -44,7 +44,7 @@
     "@parcel/transformer-sass": "^2.11.0",
     "@parcel/transformer-webmanifest": "^2.11.0",
     "@types/jasmine": "^5.1.4",
-    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
     "compression-webpack-plugin": "^11.0.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
